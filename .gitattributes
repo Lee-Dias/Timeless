@@ -5,7 +5,7 @@
 *.cs      diff=csharp text
 *.shader  text
 # Unity YAML
-*.mat merge=unityyamlmerge eol=lf
+*.mat filter=lfs diff=lfs merge=lfs -text
 *.anim merge=unityyamlmerge eol=lf
 *.unity merge=unityyamlmerge eol=lf
 *.prefab merge=unityyamlmerge eol=lf
@@ -96,3 +96,4 @@
 *.meta linguist-generated
 *.prefab linguist-generated
 *.unity linguist-generated
+*.blend1 filter=lfs diff=lfs merge=lfs -text

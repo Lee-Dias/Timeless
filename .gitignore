@@ -70,3 +70,4 @@ crashlytics-build.properties
 # TextMesh Pro files
 **/[Aa]ssets/TextMesh*Pro*
 Timeless/Assets/Models.meta
+Timeless/Assets/Materials.meta
