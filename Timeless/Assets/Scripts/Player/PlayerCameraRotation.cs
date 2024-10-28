@@ -6,15 +6,19 @@ public class PlayerCameraRotation : MonoBehaviour
     private PlayerInputs playerInputs;
 
     [Header("Camera")]
-    [SerializeField, Tooltip("This will add lerping to the camera.")] private bool smoothCamera = true;
-    [SerializeField, Range(20f, 90f), Tooltip("90 = Smooth, 20 = SILK")] private float smoothness = 35f;
-    private float sensitivity;
+    [SerializeField] Transform cameraPivot;
+    [Space]
+    [SerializeField] private bool invertY = false;
+    [SerializeField, Range(60, 85)] private float maxLookUpDownAndle = 75;
+    [Space]
     [SerializeField, Tooltip("Rotation multiplication for mouse")] private float mouseSensitivity = 50;
     [SerializeField, Tooltip("Rotation multiplication for gamepad")] private float gamepadSensitivity = 80f;
-    [SerializeField] private bool invertY = false;
+    [Space]
+    [SerializeField, Tooltip("This will add lerping to the camera.")] private bool smoothCamera = true;
+    [SerializeField, Range(20f, 90f), Tooltip("90 = Smooth, 20 = SILK")] private float smoothness = 35f;
 
-    [SerializeField, Range(60, 85)] private float maxLookUpDownAndle = 75;
-    [SerializeField] Transform cameraPivot;
+
+    private float sensitivity;
     private float targetYaw, targetPitch;
 
     private float yaw;
