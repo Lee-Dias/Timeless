@@ -9,6 +9,12 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerInputs : Singleton<PlayerInputs>
 {
+
+    [Header("Sensitivities")]
+
+    [SerializeField] private float mouseSensitivity = .2f;
+    [SerializeField] private float gamepadSensitivity = 75f;
+
     private InputSystem_Actions inputActions;
 
     /// <summary>
@@ -89,6 +95,9 @@ public class PlayerInputs : Singleton<PlayerInputs>
     private void OnLookPerformed(InputAction.CallbackContext context)
     {
         LookInput = context.ReadValue<Vector2>();
+
+        if (currentDeviceType == DeviceType.Gamepad) LookInput *= gamepadSensitivity;
+        else LookInput *= mouseSensitivity;
     }
 
 
@@ -132,6 +141,8 @@ public class PlayerInputs : Singleton<PlayerInputs>
         {
             currentDeviceType = DeviceType.KeyboardMouse;
         }
+
+        Debug.Log(currentDeviceType);
     }
 
     /// <summary>
