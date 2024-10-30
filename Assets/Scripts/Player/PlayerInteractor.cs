@@ -14,7 +14,6 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (playerInputs.InteractButtonDown)
         {
-            Debug.Log("DOWN");
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 50, interactablesLayerMask))
             {
                 Interactable interactable = hit.transform.GetComponent<Interactable>();
