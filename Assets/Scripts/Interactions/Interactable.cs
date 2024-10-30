@@ -26,5 +26,10 @@ public class Interactable : MonoBehaviour
         {
             interactionEventsHandler.TriggerItemPickedUp(this);
         }
+
+        if (type == InteractType.Pickable && inspectType == InspectType.BringToCamera )
+        {
+            interactionEventsHandler.TriggerInspectObject(gameObject);
+        }
     }
 }
