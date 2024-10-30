@@ -141,8 +141,6 @@ public class PlayerInputs : Singleton<PlayerInputs>
         {
             currentDeviceType = DeviceType.KeyboardMouse;
         }
-
-        Debug.Log(currentDeviceType);
     }
 
     /// <summary>
