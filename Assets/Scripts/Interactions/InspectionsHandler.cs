@@ -7,7 +7,6 @@ public class InspectionsHandler : MonoBehaviour
     InteractionEventsHandler interactionEventsHandler;
     [SerializeField] private Transform objectContainer;
     private GameObject inspectingObject;
-    [SerializeField] private LayerMask inspectLayer;
     private Interactable currenctInteractable;
 
     private float maxDistance = 0f;
@@ -15,9 +14,10 @@ public class InspectionsHandler : MonoBehaviour
 
     private void Start()
     {
-        interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
+        GetComponent<Camera>().enabled = false;
         playerInputs = FindFirstObjectByType<PlayerInputs>();
 
+        interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
         interactionEventsHandler.InspectObject += InspectObject;
     }
 
@@ -28,7 +28,7 @@ public class InspectionsHandler : MonoBehaviour
             currenctInteractable = gameObject.GetComponent<Interactable>();
             if (currenctInteractable != null)
             {
-                inspectingObject = Instantiate(gameObject, objectContainer.position, Quaternion.Euler(0, 90, 0));
+                inspectingObject = Instantiate(gameObject, objectContainer.position, GetComponentInParent<Transform>().rotation);
                 inspectingObject.transform.SetParent(objectContainer);
                 gameObject.SetActive(false);
                 StartCoroutine(InspectionCoroutine());
@@ -39,6 +39,8 @@ public class InspectionsHandler : MonoBehaviour
     private IEnumerator InspectionCoroutine()
     {
         yield return null;
+
+        GetComponent<Camera>().enabled = true;
 
         float pitch = inspectingObject.transform.rotation.eulerAngles.x;
         float yaw = inspectingObject.transform.rotation.eulerAngles.y;
@@ -67,12 +69,13 @@ public class InspectionsHandler : MonoBehaviour
             if (playerInputs.GrabButtonDown)
             {
                 interactionEventsHandler.TriggerItemPickedUp(currenctInteractable);
-                
+
                 currenctInteractable = null;
                 Destroy(inspectingObject);
 
                 interactionEventsHandler.TriggerFinishInspect();
 
+                GetComponent<Camera>().enabled = false;
                 yield break;
             }
             if (playerInputs.ReturnButtonDown)
@@ -83,6 +86,7 @@ public class InspectionsHandler : MonoBehaviour
 
                 interactionEventsHandler.TriggerFinishInspect();
 
+                GetComponent<Camera>().enabled = false;
                 yield break;
             }
             yield return null;

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerUIInventory : MonoBehaviour
 {
+    private Animator anim;
     InteractionEventsHandler interactionEventsHandler;
 
     [SerializeField] private GameObject inventorySlotPrefab;
@@ -12,6 +13,8 @@ public class PlayerUIInventory : MonoBehaviour
     private void Awake()
     {
         icons = new List<GameObject>();
+
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -34,5 +37,6 @@ public class PlayerUIInventory : MonoBehaviour
         icons[i].GetComponent<InventorySlotUI>().ItemName = interactable.Name;
         icons[i].GetComponent<InventorySlotUI>().Icon.sprite = interactable.Icon;
         icons[i].transform.SetParent(transform);
+        anim.SetTrigger("In");
     }
 }
