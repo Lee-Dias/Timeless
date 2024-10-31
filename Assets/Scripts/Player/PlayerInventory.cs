@@ -4,11 +4,11 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     InteractionEventsHandler interactionEventsHandler;
-    public Dictionary<int, Interactable> Inventory { get; private set; }
+    public Dictionary<string, Interactable> Inventory { get; private set; }
 
     private void Awake()
     {
-        Inventory = new Dictionary<int, Interactable>();
+        Inventory = new Dictionary<string, Interactable>();
     }
 
     private void Start()
@@ -19,10 +19,10 @@ public class PlayerInventory : MonoBehaviour
 
     public void OnItemPickedUp(Interactable interactable)
     {
-        Debug.Log("Item picked up: " + interactable.name);
-        if (!Inventory.ContainsValue(interactable))
+        if (!Inventory.ContainsKey(interactable.Name))
         {
-            Inventory.Add(Inventory.Count, interactable);
+            Debug.Log("Item picked up: " + interactable.Name);
+            Inventory.Add(interactable.Name, interactable);
             interactable.gameObject.SetActive(false);
         }
     }

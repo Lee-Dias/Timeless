@@ -29,9 +29,10 @@ public class PlayerUIInventory : MonoBehaviour
         {
             foreach (GameObject icon in icons)
             {
-                if (icon.GetComponent<InventorySlotUI>().ItemName == interactable.Name) break;
+                if (icon.GetComponent<InventorySlotUI>().ItemName == interactable.Name) return;
             }
         }
+
         int i = icons.Count;
         icons.Add(Instantiate(inventorySlotPrefab));
         icons[i].GetComponent<InventorySlotUI>().ItemName = interactable.Name;
