@@ -10,6 +10,13 @@ public class Interactable : MonoBehaviour
     [SerializeField] private InteractType type;
     [SerializeField] private InspectType inspectType = InspectType.None;
 
+    public string Name => interactableName;
+
+    public Sprite Icon => icon;
+
+    [SerializeField] private string interactableName;
+    [SerializeField] private Sprite icon;
+
     private void Start()
     {
         interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
@@ -27,7 +34,7 @@ public class Interactable : MonoBehaviour
             interactionEventsHandler.TriggerItemPickedUp(this);
         }
 
-        if (type == InteractType.Pickable && inspectType == InspectType.BringToCamera )
+        if (type == InteractType.Pickable && inspectType == InspectType.BringToCamera)
         {
             interactionEventsHandler.TriggerInspectObject(gameObject);
         }

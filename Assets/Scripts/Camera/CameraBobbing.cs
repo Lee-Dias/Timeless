@@ -10,7 +10,7 @@ public class CameraBobbing : MonoBehaviour
 
     [Tooltip("Amplitude of the bobbing effect (vertical and horizontal movement).")]
     [SerializeField, Range(0, 0.1f)]
-    private float amplitude = 0.0065f;
+    private float amplitude = 0.00065f;
 
     [Tooltip("Frequency of the bobbing effect (speed of movement).")]
     [SerializeField, Range(0, 30)]
@@ -31,17 +31,24 @@ public class CameraBobbing : MonoBehaviour
     private Vector3 startPos;
 
     private Rigidbody rb;
+    InteractionEventsHandler interactionEventsHandler;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         startPos = cameraBobber.localPosition;
     }
+    private void Start()
+    {
+        interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
+        interactionEventsHandler.InspectObject += InspectObject;
+        interactionEventsHandler.FinishInspect += FinishInspect;
+    }
 
     // Updates the camera bobbing effect on each fixed frame.
     // Checks motion to trigger bobbing, resets position if required,
     // and ensures the camera looks at the target.
-    private void FixedUpdate()
+    private void Update()
     {
         if (!enable) return;
 
@@ -109,5 +116,15 @@ public class CameraBobbing : MonoBehaviour
         if (cameraBobber.localPosition == startPos) return;
 
         cameraBobber.localPosition = Vector3.Lerp(cameraBobber.localPosition, startPos, 1 * Time.deltaTime);
+    }
+
+    private void InspectObject(GameObject gameObject)
+    {
+        enabled = false;
+    }
+    
+    private void FinishInspect()
+    {
+        enabled = true;
     }
 }

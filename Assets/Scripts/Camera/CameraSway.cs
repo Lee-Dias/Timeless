@@ -13,12 +13,17 @@ public class CameraSway : MonoBehaviour
     [SerializeField, Tooltip("The max angle it will rotate")] private float clampMax = 7.5f;
 
     PlayerInputs playerInputs;
+    InteractionEventsHandler interactionEventsHandler;
 
     private float turn = 0f;
 
     private void Start()
     {
         playerInputs = FindFirstObjectByType<PlayerInputs>();
+
+        interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
+        interactionEventsHandler.InspectObject += InspectObject;
+        interactionEventsHandler.FinishInspect += FinishInspect;
     }
 
     /// <summary>
@@ -37,4 +42,13 @@ public class CameraSway : MonoBehaviour
         swayObject.localRotation = Quaternion.Euler(rot);
     }
 
+    private void InspectObject(GameObject gameObject)
+    {
+        enabled = false;
+    }
+
+    private void FinishInspect()
+    {
+        enabled = true;
+    }
 }

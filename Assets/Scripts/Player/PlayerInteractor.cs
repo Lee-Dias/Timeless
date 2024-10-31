@@ -4,6 +4,7 @@ public class PlayerInteractor : MonoBehaviour
 {
     PlayerInputs playerInputs;
     [SerializeField] LayerMask interactablesLayerMask;
+    [SerializeField] private float interactionDistance = 1;
 
     private void Start()
     {
@@ -14,7 +15,7 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (playerInputs.InteractButtonDown)
         {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 50, interactablesLayerMask))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, interactionDistance, interactablesLayerMask))
             {
                 Interactable interactable = hit.transform.GetComponent<Interactable>();
                 if (interactable != null)

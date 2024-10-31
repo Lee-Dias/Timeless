@@ -285,8 +285,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 361693672}
-  - component: {fileID: 361693669}
   - component: {fileID: 361693677}
+  - component: {fileID: 361693669}
   - component: {fileID: 361693673}
   - component: {fileID: 361693674}
   - component: {fileID: 361693675}
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enable: 1
-  amplitude: 0.0065
+  amplitude: 0.00065
   frequency: 8
   cameraBobber: {fileID: 442559291}
   cameraPivot: {fileID: 85858417}
@@ -464,6 +464,7 @@ MonoBehaviour:
   interactablesLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  interactionDistance: 2
 --- !u!1 &442559290
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +791,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1622183680}
+  - {fileID: 841231810}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -797,6 +799,91 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &841231809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841231810}
+  - component: {fileID: 841231812}
+  - component: {fileID: 841231811}
+  - component: {fileID: 841231813}
+  m_Layer: 5
+  m_Name: InventorySlots
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &841231810
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841231809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 747217642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 15}
+  m_SizeDelta: {x: -30, y: 80}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &841231811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841231809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb2588f166a1fb48851d741de98d5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySlotPrefab: {fileID: 5057015660486453048, guid: 508b67a285b6f83438fc8e05911efd18, type: 3}
+--- !u!222 &841231812
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841231809}
+  m_CullTransparentMesh: 1
+--- !u!114 &841231813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841231809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +1077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164841681}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ObjectContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,6 +1232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   inspectType: 0
+  interactableName: Fuse
+  icon: {fileID: 21300000, guid: 2ccdd07603da7b94e80d4517a7a70901, type: 3}
 --- !u!1 &1552611148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,7 +1582,7 @@ GameObject:
   - component: {fileID: 2109044276}
   - component: {fileID: 2109044279}
   - component: {fileID: 2109044278}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: InspectCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1547,7 +1636,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.2
+  near clip plane: 0.01
   far clip plane: 5
   field of view: 55
   orthographic: 0
@@ -1555,7 +1644,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1582,7 +1671,7 @@ MonoBehaviour:
   objectContainer: {fileID: 1164841681}
   inspectLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
