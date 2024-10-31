@@ -42,8 +42,8 @@ public class InspectionsHandler : MonoBehaviour
 
         GetComponent<Camera>().enabled = true;
 
-        float pitch = inspectingObject.transform.rotation.eulerAngles.x;
-        float yaw = inspectingObject.transform.rotation.eulerAngles.y;
+        float pitch = 0;
+        float yaw = 0;
 
         while (currenctInteractable != null)
         {
@@ -63,7 +63,7 @@ public class InspectionsHandler : MonoBehaviour
                 yaw -= playerInputs.LookInput.x;
                 pitch += playerInputs.LookInput.y;
 
-                inspectingObject.transform.rotation = Quaternion.Euler(pitch, yaw, 0);
+                inspectingObject.transform.localRotation = Quaternion.Euler(0, yaw, pitch);
             }
 
             if (playerInputs.GrabButtonDown)
