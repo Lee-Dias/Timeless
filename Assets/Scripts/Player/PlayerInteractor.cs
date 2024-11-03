@@ -23,6 +23,8 @@ public class PlayerInteractor : MonoBehaviour
                     interactable.Interact();
                 }
             }
+            
         }
+        
     }
 }

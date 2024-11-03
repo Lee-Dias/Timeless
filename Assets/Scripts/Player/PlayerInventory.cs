@@ -6,6 +6,8 @@ public class PlayerInventory : MonoBehaviour
     InteractionEventsHandler interactionEventsHandler;
     public Dictionary<string, Interactable> Inventory { get; private set; }
 
+    private Interactable selectedItem;
+
     private void Awake()
     {
         Inventory = new Dictionary<string, Interactable>();
@@ -25,5 +27,10 @@ public class PlayerInventory : MonoBehaviour
             Inventory.Add(interactable.Name, interactable);
             interactable.gameObject.SetActive(false);
         }
+    }
+
+    public Interactable GetSelected(){
+        return selectedItem;
+        
     }
 }
