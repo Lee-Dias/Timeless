@@ -5,11 +5,11 @@ public class PlayerUIInventory : MonoBehaviour
 {
     private Animator anim;
     [SerializeField] private GameObject inventorySlotPrefab;
-    private List<GameObject> icons;
+    private Dictionary<int, GameObject> iconDictionary;
 
     private void Awake()
     {
-        icons = new List<GameObject>();
+        iconDictionary = new Dictionary<int, GameObject>();
 
         anim = GetComponent<Animator>();
 
@@ -22,35 +22,39 @@ public class PlayerUIInventory : MonoBehaviour
 
     public void AddSlotToUI(Item item)
     {
-        if (icons.Count != 0)
+        // Check if the item already exists in the inventory by ID
+        if (iconDictionary.ContainsKey(item.ID)) return;
+
+        // Instantiate new slot, assign properties, and add to dictionary
+        GameObject newSlot = Instantiate(inventorySlotPrefab);
+        InventorySlotUI slotUI = newSlot.GetComponent<InventorySlotUI>();
+
+        if (slotUI == null)
         {
-            foreach (GameObject icon in icons)
-            {
-                if (icon.GetComponent<InventorySlotUI>().ID == item.ID) return;
-            }
+            Debug.LogError("InventorySlotUI component missing on inventorySlotPrefab!");
+            Destroy(newSlot); // Clean up in case of error
+            return;
         }
 
-        // This is stupid, if someone knows a better way, feel free to do it!
-        int i = icons.Count;
-        icons.Add(Instantiate(inventorySlotPrefab));
-        icons[i].GetComponent<InventorySlotUI>().ItemName = item.Name;
-        icons[i].GetComponent<InventorySlotUI>().Icon.sprite = item.Icon;
-        icons[i].GetComponent<InventorySlotUI>().ID = item.ID;
-        icons[i].transform.SetParent(transform);
+        slotUI.ItemName = item.Name;
+        slotUI.Icon.sprite = item.Icon;
+        slotUI.ID = item.ID;
+
+        // Set parent and trigger animation
+        newSlot.transform.SetParent(transform);
         anim.SetTrigger("In");
+
+        // Add the new slot to the dictionary
+        iconDictionary[item.ID] = newSlot;
     }
 
     public void RemoveUISlot(Item item)
     {
-        if (icons.Count != 0)
+        // Check if the item exists in the dictionary
+        if (iconDictionary.TryGetValue(item.ID, out GameObject icon))
         {
-            foreach (GameObject icon in icons)
-            {
-                if (icon.GetComponent<InventorySlotUI>().ID == item.ID)
-                {
-                    Destroy(icon);
-                }
-            }
+            Destroy(icon);
+            iconDictionary.Remove(item.ID); // Remove from dictionary after destroying
         }
     }
 }
