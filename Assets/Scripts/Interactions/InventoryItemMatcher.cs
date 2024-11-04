@@ -4,8 +4,8 @@ using UnityEngine.Events;
 public class InventoryItemMatcher : MonoBehaviour
 {
     private PlayerInventory playerInventory;
-    public UnityEvent onHasItem;
-    public UnityEvent onDontHaveItem;
+    public UnityEvent<Item> onHasItem;
+    public UnityEvent<Item> onDontHaveItem;
 
     private void Start()
     {
@@ -16,8 +16,8 @@ public class InventoryItemMatcher : MonoBehaviour
     {
         if (playerInventory.HasItem(item))
         {
-            onHasItem.Invoke();
+            onHasItem.Invoke(item);
         }
-        else onDontHaveItem.Invoke();
+        else onDontHaveItem.Invoke(item);
     }
 }

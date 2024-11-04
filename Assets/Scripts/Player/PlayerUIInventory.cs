@@ -22,12 +22,6 @@ public class PlayerUIInventory : MonoBehaviour
 
     public void AddSlotToUI(Item item)
     {
-        if (item == null)
-        {
-            Debug.LogError("Item is null!");
-            return;
-        }
-
         if (icons.Count != 0)
         {
             foreach (GameObject icon in icons)
@@ -44,5 +38,19 @@ public class PlayerUIInventory : MonoBehaviour
         icons[i].GetComponent<InventorySlotUI>().ID = item.ID;
         icons[i].transform.SetParent(transform);
         anim.SetTrigger("In");
+    }
+
+    public void RemoveUISlot(Item item)
+    {
+        if (icons.Count != 0)
+        {
+            foreach (GameObject icon in icons)
+            {
+                if (icon.GetComponent<InventorySlotUI>().ID == item.ID)
+                {
+                    Destroy(icon);
+                }
+            }
+        }
     }
 }

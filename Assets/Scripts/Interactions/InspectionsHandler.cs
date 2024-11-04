@@ -5,7 +5,10 @@ using UnityEngine.Events;
 public class InspectionsHandler : MonoBehaviour
 {
     public UnityEvent onInspectionStarted;
-    public UnityEvent onInspectionEnded;
+
+    // Returns true if the item was added to inventory.
+    public UnityEvent<bool> onInspectionEnded;
+    public UnityEvent<Item> onItemAddedToInventory;
 
     PlayerInputs playerInputs;
     [SerializeField] private Transform objectContainer;
@@ -71,11 +74,12 @@ public class InspectionsHandler : MonoBehaviour
                 PlayerInventory playerInventory = FindFirstObjectByType<PlayerInventory>();
                 playerInventory.AddItemToInventory(currentItem);
 
+                onItemAddedToInventory.Invoke(currentItem);
                 currentItem = null;
                 Destroy(inspectingObject);
 
                 GetComponent<Camera>().enabled = false;
-                onInspectionEnded.Invoke();
+                onInspectionEnded.Invoke(true);
                 yield break;
             }
             if (playerInputs.ReturnButtonDown)
@@ -84,11 +88,11 @@ public class InspectionsHandler : MonoBehaviour
                 Destroy(inspectingObject);
 
                 GetComponent<Camera>().enabled = false;
-                onInspectionEnded.Invoke();
+                onInspectionEnded.Invoke(false);
                 yield break;
             }
             yield return null;
         }
-        onInspectionEnded.Invoke();
+        onInspectionEnded.Invoke(false);
     }
 }

@@ -213,6 +213,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &220181293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 220181294}
+  m_Layer: 3
+  m_Name: ItemDisplayerPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &220181294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220181293}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 866047965}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &286668617
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +466,19 @@ MonoBehaviour:
         m_CallState: 2
   onItemRemoved:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 841231815}
+        m_TargetAssemblyTypeName: PlayerUIInventory, Assembly-CSharp
+        m_MethodName: RemoveUISlot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &361693678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,7 +902,8 @@ GameObject:
   - component: {fileID: 866047964}
   - component: {fileID: 866047963}
   - component: {fileID: 866047962}
-  - component: {fileID: 866047967}
+  - component: {fileID: 866047968}
+  - component: {fileID: 866047969}
   - component: {fileID: 866047966}
   m_Layer: 3
   m_Name: PlaceItem Test
@@ -954,7 +998,8 @@ Transform:
   m_LocalPosition: {x: 2.663, y: 0.822, z: 0.905}
   m_LocalScale: {x: 0.41824827, y: -0.054773796, z: 0.41824827}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 220181294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &866047966
@@ -966,16 +1011,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 866047961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d7520a5259037a46975f63522bba6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onHasItem:
+  onItemDisplayed:
     m_PersistentCalls:
-      m_Calls: []
-  onDontHaveItem:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &866047967
+      m_Calls:
+      - m_Target: {fileID: 361693677}
+        m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
+        m_MethodName: RemoveItemFromInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  displayPos: {fileID: 220181294}
+--- !u!114 &866047968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -990,7 +1045,7 @@ MonoBehaviour:
   InteractEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 866047966}
+      - m_Target: {fileID: 866047969}
         m_TargetAssemblyTypeName: InventoryItemMatcher, Assembly-CSharp
         m_MethodName: CheckItem
         m_Mode: 2
@@ -1002,6 +1057,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &866047969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866047961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHasItem:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 866047966}
+        m_TargetAssemblyTypeName: ItemDisplayer, Assembly-CSharp
+        m_MethodName: DisplayItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDontHaveItem:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &906352767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,6 +1431,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4590266502306576511, guid: ee00722e23661034e9c34f35c09feaa8, type: 3}
   m_PrefabInstance: {fileID: 3690508682414074108}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1248800093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248800089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052d4b38a43b7c242879ccccc6994d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInspectionEnded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1248800089}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1496996857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,9 +1912,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2109044276}
+  - component: {fileID: 2109044279}
   - component: {fileID: 2109044278}
   - component: {fileID: 2109044277}
-  - component: {fileID: 2109044279}
   m_Layer: 3
   m_Name: InspectCamera
   m_TagString: Untagged
@@ -1901,9 +2013,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.01
+  far clip plane: 1.5
+  field of view: 55
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2011,6 +2123,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onItemAddedToInventory:
+    m_PersistentCalls:
+      m_Calls: []
   objectContainer: {fileID: 1164841681}
 --- !u!1001 &3690508682414074108
 PrefabInstance:
@@ -2031,7 +2146,7 @@ PrefabInstance:
     - target: {fileID: 1853403893153171448, guid: ee00722e23661034e9c34f35c09feaa8, type: 3}
       propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2109044279}
+      objectReference: {fileID: 1248800093}
     - target: {fileID: 1853403893153171448, guid: ee00722e23661034e9c34f35c09feaa8, type: 3}
       propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2043,6 +2158,10 @@ PrefabInstance:
     - target: {fileID: 1853403893153171448, guid: ee00722e23661034e9c34f35c09feaa8, type: 3}
       propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853403893153171448, guid: ee00722e23661034e9c34f35c09feaa8, type: 3}
+      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Inspectable, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1853403893153171448, guid: ee00722e23661034e9c34f35c09feaa8, type: 3}
       propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -2103,7 +2222,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4590266502306576511, guid: ee00722e23661034e9c34f35c09feaa8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1248800093}
   m_SourcePrefab: {fileID: 100100000, guid: ee00722e23661034e9c34f35c09feaa8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
