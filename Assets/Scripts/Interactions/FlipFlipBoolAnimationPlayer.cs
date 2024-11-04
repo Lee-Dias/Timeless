@@ -1,18 +1,20 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class FlipFlipBoolAnimationPlayer : MonoBehaviour
 {
-    public bool value = true;
+    private bool value = true;
     private Animator anim;
 
     private void Awake()
     {
-        anim = FindFirstObjectByType<Animator>();    
+        anim = GetComponent<Animator>();
+        
     }
 
     public void PlayAnimation(string animation)
     {
+        value = !anim.GetBool(animation);
         anim.SetBool(animation, value);
-        value = !value;
     }
 }
