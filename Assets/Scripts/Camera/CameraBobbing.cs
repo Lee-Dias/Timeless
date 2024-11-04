@@ -37,9 +37,6 @@ public class CameraBobbing : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         startPos = cameraBobber.localPosition;
     }
-    private void Start()
-    {
-    }
 
     // Updates the camera bobbing effect on each fixed frame.
     // Checks motion to trigger bobbing, resets position if required,
@@ -48,8 +45,9 @@ public class CameraBobbing : MonoBehaviour
     {
         if (!enable) return;
 
-        CheckMotion();
-        ResetPosition();
+        
+        if (rb.linearVelocity.magnitude > 1e-5) CheckMotion();
+        else ResetPosition();
         cameraBobber.LookAt(FocusTarget());
     }
 
@@ -111,7 +109,7 @@ public class CameraBobbing : MonoBehaviour
     {
         if (cameraBobber.localPosition == startPos) return;
 
-        cameraBobber.localPosition = Vector3.Lerp(cameraBobber.localPosition, startPos, 1 * Time.deltaTime);
+        cameraBobber.localPosition = Vector3.Lerp(cameraBobber.localPosition, startPos, 10 * Time.deltaTime);
     }
 
     public void SetEnabled(bool b)
