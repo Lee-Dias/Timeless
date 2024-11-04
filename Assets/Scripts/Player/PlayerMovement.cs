@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private PlayerInputs playerInputs;
-    InteractionEventsHandler interactionEventsHandler;
 
     private void Awake()
     {
@@ -30,9 +29,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         playerInputs = FindFirstObjectByType<PlayerInputs>();
-        interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
-        interactionEventsHandler.InspectObject += InspectObject;
-        interactionEventsHandler.FinishInspect += FinishInspect;
     }
 
 
@@ -144,14 +140,5 @@ public class PlayerMovement : MonoBehaviour
     public void SetCanMove(bool b)
     {
         CanMove = b;
-    }
-
-    private void InspectObject(GameObject gameObject)
-    {
-        SetCanMove(false);
-    }
-    private void FinishInspect()
-    {
-        SetCanMove(true);
     }
 }

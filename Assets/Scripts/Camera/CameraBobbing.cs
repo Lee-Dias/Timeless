@@ -31,7 +31,6 @@ public class CameraBobbing : MonoBehaviour
     private Vector3 startPos;
 
     private Rigidbody rb;
-    InteractionEventsHandler interactionEventsHandler;
 
     private void Awake()
     {
@@ -40,9 +39,6 @@ public class CameraBobbing : MonoBehaviour
     }
     private void Start()
     {
-        interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
-        interactionEventsHandler.InspectObject += InspectObject;
-        interactionEventsHandler.FinishInspect += FinishInspect;
     }
 
     // Updates the camera bobbing effect on each fixed frame.
@@ -118,13 +114,8 @@ public class CameraBobbing : MonoBehaviour
         cameraBobber.localPosition = Vector3.Lerp(cameraBobber.localPosition, startPos, 1 * Time.deltaTime);
     }
 
-    private void InspectObject(GameObject gameObject)
+    public void SetEnabled(bool b)
     {
-        enabled = false;
-    }
-    
-    private void FinishInspect()
-    {
-        enabled = true;
+        enabled = b;
     }
 }

@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PlayerCameraRotation : MonoBehaviour
 {
-    InteractionEventsHandler interactionEventsHandler;
-
     private PlayerInputs playerInputs;
 
     [Header("Camera")]
@@ -27,10 +25,6 @@ public class PlayerCameraRotation : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         playerInputs = FindFirstObjectByType<PlayerInputs>();
-
-        interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
-        interactionEventsHandler.InspectObject += InspectObject;
-        interactionEventsHandler.FinishInspect += FinishInspect;
     }
 
     private void Update()
@@ -95,14 +89,5 @@ public class PlayerCameraRotation : MonoBehaviour
     public void SetCanLookAround(bool b)
     {
         CanLookAround = b;
-    }
-
-    private void InspectObject(GameObject gameObject)
-    {
-        SetCanLookAround(false);
-    }
-    private void FinishInspect()
-    {
-        SetCanLookAround(true);
     }
 }

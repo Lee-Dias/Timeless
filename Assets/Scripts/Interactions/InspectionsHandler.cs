@@ -1,13 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InspectionsHandler : MonoBehaviour
 {
+    public UnityEvent onInspectionStarted;
+    public UnityEvent onInspectionEnded;
+
     PlayerInputs playerInputs;
-    InteractionEventsHandler interactionEventsHandler;
     [SerializeField] private Transform objectContainer;
     private GameObject inspectingObject;
-    private Interactable currenctInteractable;
+    private Item currentItem;
 
     private float maxDistance = 0f;
     private float minDistance = -.25f;
@@ -16,22 +19,19 @@ public class InspectionsHandler : MonoBehaviour
     {
         GetComponent<Camera>().enabled = false;
         playerInputs = FindFirstObjectByType<PlayerInputs>();
-
-        interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
-        interactionEventsHandler.InspectObject += InspectObject;
     }
 
-    private void InspectObject(GameObject gameObject)
+    public void StartInspection(Item item)
     {
-        if (inspectingObject == null && currenctInteractable == null)
+        if (inspectingObject == null && currentItem == null)
         {
-            currenctInteractable = gameObject.GetComponent<Interactable>();
-            if (currenctInteractable != null)
+            currentItem = item;
+            if (currentItem != null)
             {
-                inspectingObject = Instantiate(gameObject, objectContainer.position, GetComponentInParent<Transform>().rotation);
+                inspectingObject = Instantiate(item.Prefab, objectContainer.position, Quaternion.identity);
                 inspectingObject.transform.SetParent(objectContainer);
-                gameObject.SetActive(false);
                 StartCoroutine(InspectionCoroutine());
+                onInspectionStarted.Invoke();
             }
         }
     }
@@ -45,7 +45,7 @@ public class InspectionsHandler : MonoBehaviour
         float pitch = 0;
         float yaw = 0;
 
-        while (currenctInteractable != null)
+        while (currentItem != null)
         {
 
             if (playerInputs.ZoomInput != Vector2.zero)
@@ -68,28 +68,27 @@ public class InspectionsHandler : MonoBehaviour
 
             if (playerInputs.GrabButtonDown)
             {
-                interactionEventsHandler.TriggerItemPickedUp(currenctInteractable);
+                PlayerInventory playerInventory = FindFirstObjectByType<PlayerInventory>();
+                playerInventory.AddItemToInventory(currentItem);
 
-                currenctInteractable = null;
+                currentItem = null;
                 Destroy(inspectingObject);
 
-                interactionEventsHandler.TriggerFinishInspect();
-
                 GetComponent<Camera>().enabled = false;
+                onInspectionEnded.Invoke();
                 yield break;
             }
             if (playerInputs.ReturnButtonDown)
             {
-                currenctInteractable.gameObject.SetActive(true);
-                currenctInteractable = null;
+                currentItem = null;
                 Destroy(inspectingObject);
 
-                interactionEventsHandler.TriggerFinishInspect();
-
                 GetComponent<Camera>().enabled = false;
+                onInspectionEnded.Invoke();
                 yield break;
             }
             yield return null;
         }
+        onInspectionEnded.Invoke();
     }
 }

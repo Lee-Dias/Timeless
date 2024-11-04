@@ -1,36 +1,55 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerInventory : MonoBehaviour
 {
-    InteractionEventsHandler interactionEventsHandler;
-    public Dictionary<string, Interactable> Inventory { get; private set; }
-
-    private Interactable selectedItem;
+    [Header("Events")]
+    public UnityEvent<Item> onItemAdded;
+    public UnityEvent<Item> onItemRemoved;
+    private Dictionary<int, Item> inventory;
 
     private void Awake()
     {
-        Inventory = new Dictionary<string, Interactable>();
+        inventory = new Dictionary<int, Item>();
     }
-
-    private void Start()
+    public void AddItemToInventory(Item item)
     {
-        interactionEventsHandler = FindFirstObjectByType<InteractionEventsHandler>();
-        interactionEventsHandler.ItemPickedUp += OnItemPickedUp;
-    }
-
-    public void OnItemPickedUp(Interactable interactable)
-    {
-        if (!Inventory.ContainsKey(interactable.Name))
+        if (!HasItem(item))
         {
-            Debug.Log("Item picked up: " + interactable.Name);
-            Inventory.Add(interactable.Name, interactable);
-            interactable.gameObject.SetActive(false);
+            inventory.Add(item.ID, item);
+            Debug.Log($"{item.ID} | {item.Name} has been added to the inventory");
+
+            onItemAdded.Invoke(item);
         }
     }
 
-    public Interactable GetSelected(){
-        return selectedItem;
-        
+    public void RemoveItemFromInventory(Item item)
+    {
+        if (HasItem(item))
+        {
+            inventory.Remove(item.ID);
+            Debug.Log($"{item.ID} | {item.Name} has been removed from the inventory");
+
+            onItemRemoved.Invoke(item);
+        }
+    }
+
+    public bool HasItem(Item item)
+    {
+        if (inventory.ContainsValue(item))
+        {
+            return true;
+        }
+        else return false;
+    }
+
+    public bool HasItem(int id)
+    {
+        if (inventory.ContainsKey(id))
+        {
+            return true;
+        }
+        else return false;
     }
 }
