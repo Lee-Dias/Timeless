@@ -121,7 +121,9 @@ public class PlayerInputs : Singleton<PlayerInputs>
     private void OnInteractPerformed(InputAction.CallbackContext context) { InteractButtonDown = true; IsInteracting = true; }
     private void OnMovePerformed(InputAction.CallbackContext context) { MoveInput = context.ReadValue<Vector2>(); }
     private void OnMoveCanceled(InputAction.CallbackContext context) { MoveInput = Vector2.zero; }
-    private void OnLookPerformed(InputAction.CallbackContext context) { LookInput = context.ReadValue<Vector2>() * (currentDeviceType == DeviceType.Gamepad ? gamepadSensitivity : mouseSensitivity); }
+    private void OnLookPerformed(InputAction.CallbackContext context) { LookInput = context.ReadValue<Vector2>() *
+                                                                        (currentDeviceType == DeviceType.Gamepad ?
+                                                                        gamepadSensitivity : mouseSensitivity); }
     private void OnLookCanceled(InputAction.CallbackContext context) { LookInput = Vector2.zero; }
     private void OnZoomPerformed(InputAction.CallbackContext context) { ZoomInput = context.ReadValue<Vector2>(); }
     private void OnZoomCanceled(InputAction.CallbackContext context) { ZoomInput = Vector2.zero; }
