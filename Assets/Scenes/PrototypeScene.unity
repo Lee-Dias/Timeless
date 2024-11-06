@@ -772,6 +772,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onSelectedItemChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &361693678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1513,12 +1516,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 866047969}
-        m_TargetAssemblyTypeName: InventoryItemMatcher, Assembly-CSharp
-        m_MethodName: CheckItem
-        m_Mode: 2
+        m_TargetAssemblyTypeName: SelectedItemGrabber, Assembly-CSharp
+        m_MethodName: GrabSelectedItem
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: c267dc9c775487c4a91a5ad313e34dde, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1533,31 +1536,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 866047961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
+  m_Script: {fileID: 11500000, guid: f2d6661953dd00c4bbc3dbec3519f845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onHasItem:
+  selectedItem:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 866047966}
         m_TargetAssemblyTypeName: ItemDisplayer, Assembly-CSharp
         m_MethodName: DisplayItem
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDontHaveItem:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 866047966}
-        m_TargetAssemblyTypeName: ItemDisplayer, Assembly-CSharp
-        m_MethodName: TakeItem
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2221,6 +2209,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1744824035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1824126394691906381, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+  m_PrefabInstance: {fileID: 1674726657557597289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1744824037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744824035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf70e10b86694a44b7557585a2a2863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 361693677}
+        m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
+        m_MethodName: AddItemToInventory
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 15d2946a20357404aa0ccb7c630a5a3f, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1744824035}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2061643805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,6 +2556,66 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   objectContainer: {fileID: 1164841681}
+--- !u!1001 &1674726657557597289
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.692
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.86512744
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.50155205
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.205
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304717769508794871, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824126394691906381, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      propertyPath: m_Name
+      value: Key
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1824126394691906381, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1744824037}
+  m_SourcePrefab: {fileID: 100100000, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
 --- !u!1001 &3690508682414074108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2643,6 +2735,7 @@ SceneRoots:
   - {fileID: 1015910890}
   - {fileID: 1563302450}
   - {fileID: 3690508682414074108}
+  - {fileID: 1674726657557597289}
   - {fileID: 71020630}
   - {fileID: 866047965}
   - {fileID: 266181522}
