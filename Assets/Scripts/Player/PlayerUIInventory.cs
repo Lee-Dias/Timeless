@@ -36,9 +36,7 @@ public class PlayerUIInventory : MonoBehaviour
             return;
         }
 
-        slotUI.ItemName = item.Name;
-        slotUI.Icon.sprite = item.Icon;
-        slotUI.ID = item.ID;
+        slotUI.SetItemUI(item);
 
         // Set parent and trigger animation
         newSlot.transform.SetParent(transform);
