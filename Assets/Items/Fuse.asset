@@ -15,4 +15,5 @@ MonoBehaviour:
   ID: 0
   Icon: {fileID: 21300000, guid: 2ccdd07603da7b94e80d4517a7a70901, type: 3}
   Name: Fuse
+  era: 0
   Prefab: {fileID: 4590266502306576511, guid: ee00722e23661034e9c34f35c09feaa8, type: 3}
