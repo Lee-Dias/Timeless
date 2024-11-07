@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: 1
   Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   Name: Key
-  era: 0
+  era: 1
   Prefab: {fileID: 1824126394691906381, guid: fc3e0800dd1b778408d1b6ffb08034c7, type: 3}
