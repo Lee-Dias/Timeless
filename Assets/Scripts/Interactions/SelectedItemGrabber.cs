@@ -14,7 +14,7 @@ public class SelectedItemGrabber : MonoBehaviour
     public void GrabSelectedItem()
     {
         Item selected = playerInventory.GetSelectedItem();
-        if (selected != null)
-            selectedItem?.Invoke(selected);
+        if (selected != null)   
+            selectedItem.Invoke(selected);
     }
 }

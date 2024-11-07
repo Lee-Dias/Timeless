@@ -4,20 +4,17 @@ using UnityEngine.Events;
 public class InventoryItemMatcher : MonoBehaviour
 {
     private PlayerInventory playerInventory;
-    public UnityEvent<Item> onHasItem;
-    public UnityEvent<Item> onDontHaveItem;
+    public UnityEvent<Item> selectedItem;
 
     private void Start()
     {
         playerInventory = FindFirstObjectByType<PlayerInventory>();
     }
 
-    public void CheckItem(Item item)
+    public void CheckItem()
     {
-        if (playerInventory.HasItem(item))
-        {
-            onHasItem.Invoke(item);
-        }
-        else onDontHaveItem.Invoke(item);
+        Item selected = playerInventory.GetSelectedItem();
+        if (selected != null)   
+            selectedItem.Invoke(selected);
     }
 }

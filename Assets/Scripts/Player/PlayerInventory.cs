@@ -91,9 +91,7 @@ public class PlayerInventory : MonoBehaviour
         {
             inventory.Remove(item);
             Debug.Log($"{item.ID} | {item.Name} has been removed from the inventory");
-
             onItemRemoved?.Invoke(item);
-
             // Adjust the selected item index if it exceeds the inventory count
             if (selectedItemIndex >= inventory.Count)
             {
