@@ -1359,7 +1359,7 @@ GameObject:
   - component: {fileID: 866047962}
   - component: {fileID: 866047968}
   - component: {fileID: 866047970}
-  - component: {fileID: 866047969}
+  - component: {fileID: 866047971}
   m_Layer: 3
   m_Name: PlaceItem Test
   m_TagString: Untagged
@@ -1484,33 +1484,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &866047969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866047961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d6661953dd00c4bbc3dbec3519f845, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedItem:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 866047970}
-        m_TargetAssemblyTypeName: ItemDisplayer, Assembly-CSharp
-        m_MethodName: DisplayItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &866047970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,11 +1501,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 361693677}
         m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
-        m_MethodName: AddItemToInventory
-        m_Mode: 2
+        m_MethodName: RemoveItemFromInventory
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1543,11 +1516,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 361693677}
         m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
-        m_MethodName: RemoveItemFromInventory
-        m_Mode: 2
+        m_MethodName: AddItemToInventory
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1556,9 +1529,9 @@ MonoBehaviour:
   onHasItem:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 866047969}
-        m_TargetAssemblyTypeName: SelectedItemGrabber, Assembly-CSharp
-        m_MethodName: GrabSelectedItem
+      - m_Target: {fileID: 866047971}
+        m_TargetAssemblyTypeName: InventoryItemMatcher, Assembly-CSharp
+        m_MethodName: CheckItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1569,6 +1542,35 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   displayPos: {fileID: 220181294}
+--- !u!114 &866047971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866047961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94e3dc73d7bf9d4db9dbfd65279bd9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedItem:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 866047970}
+        m_TargetAssemblyTypeName: ItemDisplayer, Assembly-CSharp
+        m_MethodName: DisplayItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  era: 0
+  rightItem: {fileID: 11400000, guid: c267dc9c775487c4a91a5ad313e34dde, type: 2}
 --- !u!1 &906352767
 GameObject:
   m_ObjectHideFlags: 0

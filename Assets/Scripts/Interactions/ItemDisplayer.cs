@@ -12,12 +12,15 @@ public class ItemDisplayer : MonoBehaviour
     private Item displayedItem;
 
     private void Start(){
+        //gets players inventory
         playerInventory = FindFirstObjectByType<PlayerInventory>();
     }
 
     public void HasItem(){
+        //sees if there is an item on the displayer 
         if (displayedObject != null && displayedItem != null)
         {
+            //takes item from displayer
             onTakeItem.Invoke(displayedItem);
             displayedItem = null;
             Destroy(displayedObject);
@@ -30,8 +33,10 @@ public class ItemDisplayer : MonoBehaviour
     public void DisplayItem()
     {
         Item item = playerInventory.GetSelectedItem();
+        //sees if there is an item on the displayer 
         if (displayedObject == null && displayedItem == null)
         {
+            //displays item
             displayedObject = Instantiate(item.Prefab, displayPos.position, Quaternion.identity);
             displayedObject.transform.SetParent(displayPos);
             displayedItem = item;
