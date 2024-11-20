@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 moveInput = playerInputs.MoveInput;
 
         // Check if there is no movement input
-        if (Mathf.Abs(moveInput.x) <= 1e-5 && Mathf.Abs(moveInput.y) <= 1e-5)
+        if ((Mathf.Abs(moveInput.x) <= 1e-5 && Mathf.Abs(moveInput.y) <= 1e-5) || !CanMove)
         {
             // Get the current linear velocity of the Rigidbody
             Vector3 velocity = rb.linearVelocity;
