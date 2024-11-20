@@ -72,11 +72,14 @@ public class InspectionsHandler : MonoBehaviour
 
             if (playerInputs.RotateButton)
             {
-                yaw -= playerInputs.LookInput.x;
-                pitch += playerInputs.LookInput.y;
+                // Calculate the rotation values based on player input
+                yaw = -playerInputs.LookInput.x;
+                pitch = -playerInputs.LookInput.y;
 
-                inspectingObject.transform.localRotation = Quaternion.Euler(0, yaw, pitch);
+                // Apply rotation to the object in global space
+                inspectingObject.transform.Rotate(new Vector3(0, yaw, pitch), Space.World);
             }
+
 
             if (playerInputs.GrabButtonDown && canBeAddedToInv)
             {
