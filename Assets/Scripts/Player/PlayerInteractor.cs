@@ -37,12 +37,16 @@ public class PlayerInteractor : MonoBehaviour
 
             if (interactable != null)
             {
-                crosshair.Grow();
-                if (playerInputs.InteractButtonDown)
+                if (interactable.CanInteract)
                 {
-                    interactable.Interact();
-                    crosshair.Shrink();
+                    crosshair.Grow();
+                    if (playerInputs.InteractButtonDown)
+                    {
+                        interactable.Interact();
+                        crosshair.Shrink();
+                    }
                 }
+                else crosshair.Shrink();
             }
             else crosshair.Shrink();
         }
