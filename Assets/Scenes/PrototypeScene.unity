@@ -329,6 +329,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls:
@@ -985,6 +986,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1307,6 +1309,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1754,6 +1757,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1998,6 +2002,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2494,6 +2499,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2514,6 +2520,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2534,6 +2541,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2554,6 +2562,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2574,6 +2583,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3341,6 +3351,7 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOne: 0
+  CanInteract: 1
   InteractEvent:
     m_PersistentCalls:
       m_Calls:

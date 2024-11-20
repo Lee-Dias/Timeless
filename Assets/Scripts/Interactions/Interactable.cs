@@ -9,19 +9,14 @@ public class Interactable : MonoBehaviour
     [SerializeField, ShowIf(nameof(addToInv))] private Item item;
     [SerializeField] private bool interactOne = false;
 
-    private bool canInteract = true;
-    public bool CanInteract => canInteract;
+    public bool CanInteract = true;
 
     public UnityEvent InteractEvent;
 
-    public void SetCanInteract(bool value)
-    {
-        canInteract = value;
-    }
 
     public void Interact()
     {
-        if (canInteract)
+        if (CanInteract)
         {
             InteractEvent?.Invoke();
             if (addToInv)
@@ -29,7 +24,7 @@ public class Interactable : MonoBehaviour
                 FindFirstObjectByType<PlayerInventory>()?.AddItemToInventory(item);
                 gameObject.SetActive(false);
             }
-            if (interactOne) canInteract = false;
+            if (interactOne) CanInteract = false;
         }
     }
 }

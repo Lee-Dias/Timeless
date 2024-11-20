@@ -23,7 +23,7 @@ public class CheckAllPuzzles : MonoBehaviour
             foreach (Transform child in this.transform)
             {
                 Interactable interactable = child.GetComponent<Interactable>();             
-                interactable.SetCanInteract(false);
+                interactable.CanInteract = false;
             }      
         }
     }

@@ -57,6 +57,6 @@ public class TabletButton : Interactable
 
     public void OnPuzzleEnd()
     {
-        SetCanInteract(false);
+        CanInteract = false;
     }
 }
