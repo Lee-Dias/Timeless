@@ -7,7 +7,7 @@ public class InventoryItemMatcher : MonoBehaviour
     public UnityEvent<Item> selectedItem;
     [SerializeField]private Item.Era era;
     [SerializeField]private Item rightItem;
-    private bool isRightItem = false;
+    public bool isRightItem = false;
 
     private void Start()
     {
