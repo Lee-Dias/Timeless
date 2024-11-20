@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
-  m_Name: Bonfire
+  m_Name: Cristal
   m_EditorClassIdentifier: 
-  ID: 1
-  Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  Name: Bonfire
-  era: 0
-  Prefab: {fileID: 428129914576196653, guid: 9e93f2ca60868a94484ad88082df86c9, type: 3}
+  ID: 5
+  Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Name: Cristal
+  era: 3
+  Prefab: {fileID: 3116374237301904229, guid: 7d30d3abccf9771479c187523db7f36e, type: 3}
