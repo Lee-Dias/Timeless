@@ -2,6 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Provides a stylized camera bobbing effect to simulate natural movement during walking.
+/// </summary>
+/// <remarks>
+/// This class enhances player immersion by applying sinusoidal vertical and horizontal 
+/// motion to the camera. The bobbing effect is dynamic, activating only when the player's 
+/// movement exceeds a speed threshold. If the player stops, the camera smoothly returns 
+/// to its original position. Also keeps the camera focused on a target point in front of the player.
+/// 
+/// <para><b>Dependencies:</b></para>
+/// <list type="bullet">
+/// <item>
+/// <description>A Rigidbody component on the same GameObject to track velocity.</description>
+/// </item>
+/// <item>
+/// <description>A Transform reference for the camera bobbing object (<c>cameraBobber</c>).</description>
+/// </item>
+/// <item>
+/// <description>A Transform reference for the pivot point of the camera (<c>cameraPivot</c>).</description>
+/// </item>
+/// </list>
+/// </remarks>
 [RequireComponent(typeof(Rigidbody))]
 public class CameraBobbing : MonoBehaviour
 {
@@ -35,28 +57,50 @@ public class CameraBobbing : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        startPos = cameraBobber.localPosition;
+
+        Debug.Assert(cameraBobber != null, $"{nameof(cameraBobber)} is not assigned. Please assign it in the Inspector.");
+        Debug.Assert(cameraPivot != null, $"{nameof(cameraPivot)} is not assigned. Please assign it in the Inspector.");
+
+        if (cameraBobber != null)
+        {
+            startPos = cameraBobber.localPosition;
+        }
     }
+    private void OnValidate()
+    {
+        if (cameraBobber == null)
+        {
+            Debug.LogWarning($"{nameof(cameraBobber)} is missing, please assign it in the Inspector.");
+        }
+
+        if (cameraPivot == null)
+        {
+            Debug.LogWarning($"{nameof(cameraPivot)} is missing, please assign it in the Inspector.");
+        }
+    }
+
 
     // Updates the camera bobbing effect on each fixed frame.
     // Checks motion to trigger bobbing, resets position if required,
     // and ensures the camera looks at the target.
     private void Update()
     {
-        if (!enable) return;
+        if (!enable || rb == null || cameraBobber == null || cameraPivot == null) return;
 
-        
-        if (rb.linearVelocity.magnitude > 1e-5) CheckMotion();
+        if (rb.linearVelocity.magnitude > 1e-5)
+        {
+            CheckMotion();
+        }
         else ResetPosition();
+
         cameraBobber.LookAt(FocusTarget());
     }
+
 
     /// <summary>
     /// Calculates the bobbing motion to simulate footsteps.
     /// </summary>
-    /// <returns>
-    /// Returns a Vector3 representing the bobbing position adjustment.
-    /// </returns>
+    /// <returns> Returns a Vector3 representing the bobbing position adjustment. </returns>
     private Vector3 FootStepMotion()
     {
         Vector3 pos = Vector3.zero;
@@ -88,8 +132,8 @@ public class CameraBobbing : MonoBehaviour
     }
 
     /// <summary>
-    /// Determines the target focus point for the camera to look at.
-    /// Uses the camera pivot as a reference for position.
+    /// <br>Determines the target focus point for the camera to look at.</br>
+    /// <br>Uses the camera pivot as a reference for position.</br>
     /// </summary>
     /// <returns>
     /// Returns a Vector3 representing the focus point in front of the player.
@@ -102,8 +146,8 @@ public class CameraBobbing : MonoBehaviour
     }
 
     /// <summary>
-    /// Resets the camera position smoothly back to the starting position.
-    /// This maintains a stable base when bobbing is disabled or motion stops.
+    /// <br>Resets the camera position smoothly back to the starting position.</br>
+    /// <br>This maintains a stable base when bobbing is disabled or motion stops.</br>
     /// </summary>
     private void ResetPosition()
     {

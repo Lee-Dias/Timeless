@@ -1,5 +1,47 @@
 using UnityEngine;
 
+/// <summary>
+/// Provides a dynamic camera sway effect to simulate subtle rotational motion based on player input.
+/// </summary>
+/// <remarks>
+/// This class enhances immersion by applying a rotation effect to the camera
+/// in response to mouse movement. The sway effect adds realism by 
+/// mimicking the natural tilt that occurs when turning or looking around.
+/// 
+/// <para><b>Key Features:</b></para>
+/// <list type="bullet">
+/// <item>
+/// <description>Applies a smooth sway effect based on mouse input.</description>
+/// </item>
+/// <item>
+/// <description>Customizable sensitivity and smoothing to tailor the effect.</description>
+/// </item>
+/// <item>
+/// <description>Clamp angles to prevent excessive or unnatural rotations.</description>
+/// </item>
+/// <item>
+/// <description>Enable/disable functionality for toggling the effect dynamically.</description>
+/// </item>
+/// </list>
+/// 
+/// <para><b>How It Works:</b></para>
+/// The script captures the player's mouse movement and calculates a rotational offset 
+/// for the specified <c>swayObject</c>. This offset is interpolated over time using 
+/// a smoothing factor to create fluid transitions. The rotation is clamped between 
+/// configurable minimum and maximum angles to maintain realism.
+/// 
+/// <para><b>Dependencies:</b></para>
+/// <list type="bullet">
+/// <item>
+/// <description>Requires a <c>PlayerInputs</c> script to provide mouse input data.</description>
+/// </item>
+/// <item>
+/// <description>Requires a reference to the <c>Transform</c> that will be rotated (<c>swayObject</c>).</description>
+/// </item>
+/// </list>
+/// 
+/// </remarks>
+
 public class CameraSway : MonoBehaviour
 {
     public bool enable = true;
@@ -18,11 +60,23 @@ public class CameraSway : MonoBehaviour
 
     private void Start()
     {
+        // Try to find the PlayerInputs object in the scene
         playerInputs = FindFirstObjectByType<PlayerInputs>();
+
+        // Check if playerInputs was found, and handle accordingly
+        if (playerInputs == null)
+        {
+            // Log a warning if it's not found, then instantiate a new one
+            Debug.LogWarning($"{nameof(CameraSway)} requires a {nameof(PlayerInputs)} object in the scene. Instantiating a new one.");
+
+            // Instantiate the PlayerInputs if not found
+            playerInputs = Instantiate(new PlayerInputs());
+        }
     }
 
+
     /// <summary>
-    /// Will rotate the <see cref="swayObject"/> based on mouse input.
+    /// <br>Will rotate the <see cref="swayObject"/> based on mouse input.</br>
     /// </summary>
     void Update()
     {

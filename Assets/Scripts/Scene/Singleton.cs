@@ -1,10 +1,12 @@
 using UnityEngine;
 
 /// <summary>
-/// A generic Singleton base class to create single-instance MonoBehaviours.
-/// Ensures only one instance of the specified type <typeparamref name="T"/> exists in the scene.
+/// A generic base class for implementing a Singleton pattern in Unity.
+/// Ensures that only one instance of a specific MonoBehaviour type <typeparamref name="T"/> exists in the scene at any time.
+/// This class provides global access to that single instance and handles its lifecycle, including automatic creation if the instance is missing.
+/// It also prevents the singleton instance from being destroyed on scene load, ensuring it persists throughout the game session.
 /// </summary>
-/// <typeparam name="T">The MonoBehaviour type to create a Singleton of.</typeparam>
+/// <typeparam name="T">The MonoBehaviour type that this Singleton will manag where only one instance should exist.</typeparam>
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     // The single instance of the singleton.
