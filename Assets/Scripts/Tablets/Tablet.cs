@@ -146,9 +146,9 @@ public class Tablet : MonoBehaviour
         if (showDebugMessages)
         {
             if (identifyObject)
-                Debug.Log($"message", this);  // Logs message with object name.
+                Debug.Log(message, this);  // Logs message with object name.
             else
-                Debug.Log($"message");  // Logs message without object name.
+                Debug.Log(message);  // Logs message without object name.
         }
     }
 }

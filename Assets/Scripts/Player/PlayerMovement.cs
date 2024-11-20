@@ -104,14 +104,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // Lock the cursor and attempt to find PlayerInputs in the scene.
         Cursor.lockState = CursorLockMode.Locked;
-        try
-        {
-            playerInputs = FindFirstObjectByType<PlayerInputs>();
-        }
-        catch
+
+        playerInputs = FindFirstObjectByType<PlayerInputs>();
+
+        if (playerInputs == null)
         {
             Debug.LogWarning("PlayerInputs component not found in the scene! Instantiating one...");
-            Instantiate(new PlayerInputs());
+            playerInputs = Instantiate(new PlayerInputs());
         }
 
         Log("Player movement initialized successfully.");
@@ -168,24 +167,34 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void UpdateDeceleration()
     {
+        // Get the movement input from the player
         Vector2 moveInput = playerInputs.MoveInput;
 
-        // If no movement input, apply deceleration.
+        // Check if there is no movement input
         if (Mathf.Abs(moveInput.x) <= 1e-5 && Mathf.Abs(moveInput.y) <= 1e-5)
         {
+            // Get the current linear velocity of the Rigidbody
             Vector3 velocity = rb.linearVelocity;
 
-            // Reduce velocity over time.
+            // Gradually reduce the velocity to create a deceleration effect
             velocity -= velocity.normalized * decelerateSpeed * Time.fixedDeltaTime;
 
-            // Stop velocity once it is below a threshold.
-            if (velocity.sqrMagnitude < 1e-4f)
+            // Ensure that the velocity does not reverse direction
+            if ((velocity.x < 0 && rb.linearVelocity.x > 0) || (velocity.x > 0 && rb.linearVelocity.x < 0))
             {
-                velocity = Vector3.zero;
+                velocity.x = 0;
+            }
+            if ((velocity.y < 0 && rb.linearVelocity.y > 0) || (velocity.y > 0 && rb.linearVelocity.y < 0))
+            {
+                velocity.y = 0;
+            }
+            if ((velocity.z < 0 && rb.linearVelocity.z > 0) || (velocity.z > 0 && rb.linearVelocity.z < 0))
+            {
+                velocity.z = 0;
             }
 
+            // Apply the updated velocity back to the Rigidbody
             rb.linearVelocity = velocity;
-            Log($"Decelerating. Current velocity: {velocity}");
         }
     }
 
