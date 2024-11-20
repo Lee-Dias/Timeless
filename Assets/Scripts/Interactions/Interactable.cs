@@ -6,6 +6,7 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] private Item item;
     [SerializeField] private bool addToInv = false;
+    [SerializeField] private bool interactOne = false;
     private bool canInteract = true;
     public bool CanInteract => canInteract;
 
@@ -26,6 +27,7 @@ public class Interactable : MonoBehaviour
                 FindFirstObjectByType<PlayerInventory>()?.AddItemToInventory(item);
                 gameObject.SetActive(false);
             }
+            if (interactOne) canInteract = false;
         }
     }
 }

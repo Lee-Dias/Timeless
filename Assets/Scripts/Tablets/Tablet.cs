@@ -52,14 +52,6 @@ public class Tablet : MonoBehaviour
         if (!activeButtons.Contains(buttonIndex))
             activeButtons.Add(buttonIndex);
 
-        string buttonIndexes = "";
-        foreach (int b in activeButtons)
-        {
-            buttonIndexes += $"{b}, ";
-        }
-
-        Debug.Log(buttonIndexes.ToString());
-
         if (!rightButtons.Contains(buttonIndex))
             return;
 
@@ -83,16 +75,8 @@ public class Tablet : MonoBehaviour
 
     private void OnDeActivateButton(int buttonIndex)
     {
-        if (activeButtons.Contains(buttonIndex))
-        {
-            activeButtons.Remove(buttonIndex);
-            string buttonIndexes = "";
-            foreach (int b in activeButtons)
-            {
-                buttonIndexes += $"{b}, ";
-            }
-            Debug.Log(buttonIndex);
-        }
+        if (activeButtons.Contains(buttonIndex)) activeButtons.Remove(buttonIndex);
+
         // Check if all rightButtons are activated
         if (activeButtons.Count == rightButtons.Length &&
             rightButtons.All(activeButtons.Contains))
