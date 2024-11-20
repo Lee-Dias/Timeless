@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using NaughtyAttributes;
 
 /// <summary>
 /// Manages and validates a collection of items to ensure all required conditions are met.
@@ -41,6 +42,14 @@ using UnityEngine.Events;
 /// </remarks>
 public class MultipleItemChecker : MonoBehaviour
 {
+    [Header("Debugging")]
+
+    [SerializeField, Tooltip("Enable this to display debug messages from this script in the Console.")]
+    private bool showDebugMessages = false;
+
+    [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
+    private bool identifyObject = true;
+
     private int totalPlacableItems;
     private int totalcorrect;
 
@@ -48,24 +57,67 @@ public class MultipleItemChecker : MonoBehaviour
     {
         totalPlacableItems = 0;
         totalcorrect = 0;
+
+        Log("Starting the item check...");
+
         foreach (Transform child in transform)
         {
             totalPlacableItems += 1;
             InventoryItemMatcher inventoryItemMatcher = child.GetComponent<InventoryItemMatcher>();
 
-            if (inventoryItemMatcher.HasRightItem() == true)
+            if (inventoryItemMatcher != null)
             {
-                totalcorrect += 1;
+                if (inventoryItemMatcher.HasRightItem())
+                {
+                    totalcorrect += 1;
+                    Log($"Child {child.name} is correct.");
+                }
+                else
+                {
+                    Log($"Child {child.name} is incorrect.");
+                }
+            }
+            else
+            {
+                Debug.LogError($"Child {child.name} does not have an InventoryItemMatcher.");
             }
         }
+        Log($"Total correct items: {totalcorrect}");
+
         if (totalcorrect == totalPlacableItems)
         {
-
+            Log("All items are correct. Disabling interactions...");
             foreach (Transform child in transform)
             {
                 Interactable interactable = child.GetComponent<Interactable>();
-                interactable.CanInteract = false;
+                if (interactable != null)
+                {
+                    interactable.CanInteract = false;
+                    Log($"Interaction disabled for {child.name}.");
+                }
+                else
+                {
+                    Log($"Child {child.name} does not have an Interactable component.");
+                }
             }
+        }
+        else
+        {
+            Log("Not all items are correct. Interaction remains enabled.");
+        }
+    }
+
+    /// <summary>
+    /// Logs a debug message to the Console if debugging is enabled.
+    /// Includes the object's name as an identifier if 'identifyObject' is true.
+    /// </summary>
+    /// <param name="message">The debug message to log.</param>
+    private void Log(string message)
+    {
+        if (showDebugMessages)
+        {
+            if (identifyObject) Debug.Log(message, this); // Includes object's name in the Console
+            else Debug.Log(message); // Logs message without object identifier
         }
     }
 }

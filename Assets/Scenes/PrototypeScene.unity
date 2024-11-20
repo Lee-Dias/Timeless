@@ -679,7 +679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: 25}
   m_SizeDelta: {x: -30, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!95 &188740529
@@ -2158,7 +2158,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -3250,6 +3250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f567f6170e40974f867f99320385040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showDebugMessages: 0
+  identifyObject: 0
 --- !u!1 &1722545064
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,7 +3486,7 @@ Transform:
   m_GameObject: {fileID: 1722545064}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.142, z: 0}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

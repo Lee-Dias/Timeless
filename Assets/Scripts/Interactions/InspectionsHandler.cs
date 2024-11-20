@@ -169,7 +169,6 @@ public class InspectionsHandler : MonoBehaviour
     /// <item><description>Ends the inspection and invokes the corresponding event when the player either adds or returns the item.</description></item>
     /// </list>
     /// </remarks>
-
     private IEnumerator InspectionCoroutine()
     {
         // Wait one frame to ensure initialization is complete.
