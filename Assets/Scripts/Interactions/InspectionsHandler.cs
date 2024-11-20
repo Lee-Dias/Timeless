@@ -19,13 +19,15 @@ public class InspectionsHandler : MonoBehaviour
     private float maxDistance = 0f;
     private float minDistance = -.25f;
 
+    private bool canBeAddedToInv;
+
     private void Start()
     {
         GetComponent<Camera>().enabled = false;
         playerInputs = FindFirstObjectByType<PlayerInputs>();
     }
 
-    public void StartInspection(Item item)
+    public void StartInspection(Item item, bool canBeAddedToInv)
     {
         if (inspectingObject == null && currentItem == null)
         {
@@ -34,10 +36,11 @@ public class InspectionsHandler : MonoBehaviour
                 Debug.LogError("Inspection Handler is missing an object container!", this);
                 return;
             }
-            
+
             currentItem = item;
             if (currentItem != null)
             {
+                this.canBeAddedToInv = canBeAddedToInv;
                 inspectingObject = Instantiate(item.Prefab, objectContainer.position, Quaternion.identity, objectContainer);
                 StartCoroutine(InspectionCoroutine());
                 onInspectionStarted.Invoke();
@@ -75,7 +78,7 @@ public class InspectionsHandler : MonoBehaviour
                 inspectingObject.transform.localRotation = Quaternion.Euler(0, yaw, pitch);
             }
 
-            if (playerInputs.GrabButtonDown)
+            if (playerInputs.GrabButtonDown && canBeAddedToInv)
             {
                 PlayerInventory playerInventory = FindFirstObjectByType<PlayerInventory>();
                 playerInventory.AddItemToInventory(currentItem);
