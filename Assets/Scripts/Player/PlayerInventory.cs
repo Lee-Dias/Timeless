@@ -13,7 +13,7 @@ public class PlayerInventory : MonoBehaviour
 
     private List<Item> inventory;
 
-    private int selectedItemIndex = 0;
+    private int selectedItemIndex = 50;
 
     private void Awake()
     {

@@ -5,11 +5,11 @@ public class PlayerUIInventory : MonoBehaviour
 {
     private Animator anim;
     [SerializeField] private GameObject inventorySlotPrefab;
-    private Dictionary<int, GameObject> iconDictionary;
+    private Dictionary<int, InventorySlotUI> iconDictionary;
 
     private void Awake()
     {
-        iconDictionary = new Dictionary<int, GameObject>();
+        iconDictionary = new Dictionary<int, InventorySlotUI>();
 
         anim = GetComponent<Animator>();
 
@@ -19,6 +19,20 @@ public class PlayerUIInventory : MonoBehaviour
             return;
         }
     }
+    public void ChangeSelectedItem(Item item)
+    {
+        foreach (InventorySlotUI slot in iconDictionary.Values)
+        {
+            if (slot.ID != item.ID)
+            {
+                slot.GetComponent<Animator>().SetBool("Selected", false);
+            }
+            else
+            {
+                slot.GetComponent<Animator>().SetBool("Selected", true);
+            }
+        }
+    }
 
     public void AddSlotToUI(Item item)
     {
@@ -26,7 +40,7 @@ public class PlayerUIInventory : MonoBehaviour
         if (iconDictionary.ContainsKey(item.ID)) return;
 
         // Instantiate new slot, assign properties, and add to dictionary
-        GameObject newSlot = Instantiate(inventorySlotPrefab);
+        InventorySlotUI newSlot = Instantiate(inventorySlotPrefab).GetComponent<InventorySlotUI>();
         InventorySlotUI slotUI = newSlot.GetComponent<InventorySlotUI>();
 
         if (slotUI == null)
@@ -49,9 +63,9 @@ public class PlayerUIInventory : MonoBehaviour
     public void RemoveUISlot(Item item)
     {
         // Check if the item exists in the dictionary
-        if (iconDictionary.TryGetValue(item.ID, out GameObject icon))
+        if (iconDictionary.TryGetValue(item.ID, out InventorySlotUI icon))
         {
-            Destroy(icon);
+            Destroy(icon.gameObject);
             iconDictionary.Remove(item.ID); // Remove from dictionary after destroying
         }
     }

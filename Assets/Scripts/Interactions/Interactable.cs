@@ -1,12 +1,14 @@
+using NaughtyAttributes;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] private Item item;
     [SerializeField] private bool addToInv = false;
+    [SerializeField, ShowIf(nameof(addToInv))] private Item item;
     [SerializeField] private bool interactOne = false;
+
     private bool canInteract = true;
     public bool CanInteract => canInteract;
 

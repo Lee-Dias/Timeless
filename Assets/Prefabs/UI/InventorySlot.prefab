@@ -237,6 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6083276232109515369}
   - component: {fileID: 9201385424449264410}
+  - component: {fileID: 1638372719821618653}
   m_Layer: 5
   m_Name: InventorySlot
   m_TagString: Untagged
@@ -280,3 +281,25 @@ MonoBehaviour:
   Outline: {fileID: 5103400800539737233}
   ID: 0
   ItemName: 
+--- !u!95 &1638372719821618653
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057015660486453048}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6b8e1aa074e0c94c85cf26e226e0cbd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
