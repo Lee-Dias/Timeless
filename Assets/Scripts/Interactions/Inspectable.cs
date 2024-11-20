@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class Inspectable : MonoBehaviour
 {
     public UnityEvent<bool> onInspectionEnded;
-
+    [SerializeField] private bool canBeAddedToInv = true;
     InspectionsHandler inspectionsHandler;
 
     private void Start()
@@ -16,7 +16,7 @@ public class Inspectable : MonoBehaviour
     public void StartInspection(Item item)
     {
         if (inspectionsHandler == null) FindFirstObjectByType<InspectionsHandler>();
-        inspectionsHandler.StartInspection(item);
+        inspectionsHandler.StartInspection(item, canBeAddedToInv);
         inspectionsHandler.onInspectionStarted.AddListener(OnInspectionStarted);
         inspectionsHandler.onInspectionEnded.AddListener(OnInspectionEnded);
     }
