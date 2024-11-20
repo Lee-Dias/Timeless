@@ -19,7 +19,12 @@ public class CheckAllPuzzles : MonoBehaviour
             }
         }
         if(totalcorrect == totalPlacableItems){
-            Debug.Log("Completou o puzzle");
+            
+            foreach (Transform child in this.transform)
+            {
+                Interactable interactable = child.GetComponent<Interactable>();             
+                interactable.SetCanInteract(false);
+            }      
         }
     }
 }
