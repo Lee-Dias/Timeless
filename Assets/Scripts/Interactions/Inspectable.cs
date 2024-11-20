@@ -15,6 +15,7 @@ public class Inspectable : MonoBehaviour
 
     public void StartInspection(Item item)
     {
+        if (inspectionsHandler == null) FindFirstObjectByType<InspectionsHandler>();
         inspectionsHandler.StartInspection(item);
         inspectionsHandler.onInspectionStarted.AddListener(OnInspectionStarted);
         inspectionsHandler.onInspectionEnded.AddListener(OnInspectionEnded);

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -28,11 +29,16 @@ public class InspectionsHandler : MonoBehaviour
     {
         if (inspectingObject == null && currentItem == null)
         {
+            if (objectContainer == null)
+            {
+                Debug.LogError("Inspection Handler is missing an object container!", this);
+                return;
+            }
+            
             currentItem = item;
             if (currentItem != null)
             {
-                inspectingObject = Instantiate(item.Prefab, objectContainer.position, Quaternion.identity);
-                inspectingObject.transform.SetParent(objectContainer);
+                inspectingObject = Instantiate(item.Prefab, objectContainer.position, Quaternion.identity, objectContainer);
                 StartCoroutine(InspectionCoroutine());
                 onInspectionStarted.Invoke();
             }
