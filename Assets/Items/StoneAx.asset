@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StoneAx
   m_EditorClassIdentifier: 
   ID: 4
-  Icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  Icon: {fileID: 21300000, guid: 7e0a39e13b786424cb83a2c31b0f8390, type: 3}
   Name: StoneAx
   era: 0
   Prefab: {fileID: 8415753377968127777, guid: ca9c15c0556820a40b2352040ec11ef2, type: 3}
