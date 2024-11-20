@@ -359,8 +359,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1697434259}
-        m_TargetAssemblyTypeName: CheckAllPuzzles, Assembly-CSharp
-        m_MethodName: AllCorrectItems
+        m_TargetAssemblyTypeName: MultipleItemChecker, Assembly-CSharp
+        m_MethodName: CheckChildItems
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1258,8 +1258,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1697434259}
-        m_TargetAssemblyTypeName: CheckAllPuzzles, Assembly-CSharp
-        m_MethodName: AllCorrectItems
+        m_TargetAssemblyTypeName: MultipleItemChecker, Assembly-CSharp
+        m_MethodName: CheckChildItems
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1519,8 +1519,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1697434259}
-        m_TargetAssemblyTypeName: CheckAllPuzzles, Assembly-CSharp
-        m_MethodName: AllCorrectItems
+        m_TargetAssemblyTypeName: MultipleItemChecker, Assembly-CSharp
+        m_MethodName: CheckChildItems
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2408,8 +2408,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1697434259}
-        m_TargetAssemblyTypeName: CheckAllPuzzles, Assembly-CSharp
-        m_MethodName: AllCorrectItems
+        m_TargetAssemblyTypeName: MultipleItemChecker, Assembly-CSharp
+        m_MethodName: CheckChildItems
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4233,7 +4233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1728405797920142042, guid: 8189c20d2b68ed240822841deb13fe00, type: 3}
       propertyPath: showDebugMessages
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5497640862647817081, guid: 8189c20d2b68ed240822841deb13fe00, type: 3}
       propertyPath: m_LocalPosition.x
