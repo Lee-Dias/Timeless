@@ -30,6 +30,9 @@ public class InventorySlotUI : MonoBehaviour
     [HideInInspector]
     public string ItemName;
 
+    [SerializeField]
+    public Image Background;
+
     /// <summary>
     /// Sets the UI elements for the item in this inventory slot based on the given item.
     /// </summary>
@@ -44,5 +47,12 @@ public class InventorySlotUI : MonoBehaviour
 
         // Set the name of the item in the slot.
         ItemName = item.name;
+    }
+
+    public void SetActive(bool b)
+    {
+        Outline.gameObject.SetActive(b);
+        Icon.gameObject.SetActive(b);
+        Background.gameObject.SetActive(b);
     }
 }

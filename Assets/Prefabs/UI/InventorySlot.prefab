@@ -281,6 +281,7 @@ MonoBehaviour:
   Outline: {fileID: 5103400800539737233}
   ID: 0
   ItemName: 
+  Background: {fileID: 6255543233985399789}
 --- !u!95 &1638372719821618653
 Animator:
   serializedVersion: 7

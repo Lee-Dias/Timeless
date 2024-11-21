@@ -133,6 +133,14 @@ public class PlayerUIInventory : MonoBehaviour
         }
     }
 
+    public void SetActive(bool b)
+    {
+        foreach (InventorySlotUI inventorySlotUI in iconDictionary.Values)
+        {
+            inventorySlotUI.SetActive(b);
+        }
+    }
+
     /// <summary>
     /// Logs a debug message to the Console if debugging is enabled.
     /// Includes the object's name as an identifier if 'identifyObject' is true.

@@ -13,6 +13,7 @@ public class Pedestal : Interactable
 
     private PlayerInputs playerInputs;
     private CrosshairUI crosshairUI;
+    private PlayerUIInventory playerUIInventory;
     private bool puzzleDone = false;
     private bool coroutineEnded = true;
     private float timeOnCristal = 0;
@@ -21,7 +22,6 @@ public class Pedestal : Interactable
     {
         // Attempt to find essential components once, for better performance and clarity.
         playerInputs = FindFirstObjectByType<PlayerInputs>();
-        crosshairUI = FindFirstObjectByType<CrosshairUI>();
 
         if (!playerInputs)
         {
@@ -40,6 +40,9 @@ public class Pedestal : Interactable
     {
         // Ensure the pedestal's camera is initially disabled.
         pedestalCamera.gameObject.SetActive(false);
+
+        crosshairUI = FindFirstObjectByType<CrosshairUI>();
+        playerUIInventory = FindFirstObjectByType<PlayerUIInventory>();
     }
 
     /// <summary>
@@ -162,9 +165,12 @@ public class Pedestal : Interactable
     {
         pedestalCamera.gameObject.SetActive(true);
         lineRenderer.gameObject.SetActive(true);
-        crosshairUI.gameObject.SetActive(false);
         glowLight.gameObject.SetActive(true);
         pedestalInstructions.gameObject.SetActive(true);
+
+        crosshairUI = FindFirstObjectByType<CrosshairUI>();
+        crosshairUI.gameObject.SetActive(false);
+        playerUIInventory.SetActive(false);
     }
 
     private void DeactivatePedestal()
@@ -173,6 +179,7 @@ public class Pedestal : Interactable
         crosshairUI.gameObject.SetActive(true);
         glowLight.gameObject.SetActive(false);
         pedestalInstructions.gameObject.SetActive(false);
+        playerUIInventory.SetActive(true);
 
         EnablePlayerControls();
     }

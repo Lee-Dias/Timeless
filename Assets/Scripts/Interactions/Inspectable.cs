@@ -78,16 +78,12 @@ public class Inspectable : MonoBehaviour
     [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
     private bool identifyObject = true;
 
+    private CrosshairUI crosshairUI;
+
     private void Start()
     {
-        try
-        {
-            inspectionsHandler = FindFirstObjectByType<InspectionsHandler>();
-        }
-        catch
-        {
-            Debug.LogWarning($"{nameof(InspectionsHandler)} needs to be in the scene.");
-        }
+        inspectionsHandler = FindFirstObjectByType<InspectionsHandler>();
+        if (inspectionsHandler == null) Debug.LogError($"{nameof(InspectionsHandler)} needs to be in the scene.");
     }
 
 
@@ -97,8 +93,9 @@ public class Inspectable : MonoBehaviour
         inspectionsHandler.StartInspection(item, canBeAddedToInv);
         inspectionsHandler.onInspectionStarted.AddListener(OnInspectionStarted);
         inspectionsHandler.onInspectionEnded.AddListener(OnInspectionEnded);
+        crosshairUI = FindFirstObjectByType<CrosshairUI>();
+        crosshairUI?.gameObject.SetActive(false);
     }
-
 
     private void OnInspectionStarted()
     {
@@ -107,6 +104,7 @@ public class Inspectable : MonoBehaviour
 
     private void OnInspectionEnded(bool wasAddedToInventory)
     {
+        crosshairUI?.gameObject.SetActive(true);
         inspectionsHandler.onInspectionStarted.RemoveListener(OnInspectionStarted);
         inspectionsHandler.onInspectionEnded.RemoveListener(OnInspectionEnded);
         onInspectionEnded.Invoke(!wasAddedToInventory);
