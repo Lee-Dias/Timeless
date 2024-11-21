@@ -128,9 +128,8 @@ public class Pedestal : Interactable
             if (sarcophagusCristal)
             {
                 HandleSarcophagusHit(sarcophagusCristal);
-                return;
             }
-            timeOnCristal = 0;
+            else timeOnCristal = 0;
             UpdateLaserPosition(hit.point);
         }
         else

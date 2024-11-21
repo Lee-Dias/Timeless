@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
-using UnityEditor.EditorTools;
 
 /// <summary>
 /// Handles the matching of items in the player's inventory with a specified correct item, 
