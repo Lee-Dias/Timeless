@@ -121,6 +121,14 @@ public class Tablet : MonoBehaviour
             activeButtons.Remove(buttonIndex);
             Log($"Button {buttonIndex} deactivated. Active buttons: {string.Join(", ", activeButtons)}");
         }
+
+        // Check if all correct buttons have been activated.
+        if (activeButtons.Count == rightButtons.Length &&
+            rightButtons.All(activeButtons.Contains))
+        {
+            Log("All correct buttons activated. Puzzle solved!");
+            EndPuzzle();
+        }
     }
 
     /// <summary>

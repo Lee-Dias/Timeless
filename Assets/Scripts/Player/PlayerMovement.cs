@@ -180,15 +180,15 @@ public class PlayerMovement : MonoBehaviour
             velocity -= velocity.normalized * decelerateSpeed * Time.fixedDeltaTime;
 
             // Ensure that the velocity does not reverse direction
-            if ((velocity.x < 0 && rb.linearVelocity.x > 0) || (velocity.x > 0 && rb.linearVelocity.x < 0))
+            if ((velocity.x < 1e-5 && rb.linearVelocity.x > 1e-5) || (velocity.x > 1e-5 && rb.linearVelocity.x < 1e-5))
             {
                 velocity.x = 0;
             }
-            if ((velocity.y < 0 && rb.linearVelocity.y > 0) || (velocity.y > 0 && rb.linearVelocity.y < 0))
+            if ((velocity.y < 1e-5 && rb.linearVelocity.y > 1e-5) || (velocity.y > 1e-5 && rb.linearVelocity.y < 1e-5))
             {
                 velocity.y = 0;
             }
-            if ((velocity.z < 0 && rb.linearVelocity.z > 0) || (velocity.z > 0 && rb.linearVelocity.z < 0))
+            if ((velocity.z < 1e-5 && rb.linearVelocity.z > 1e-5) || (velocity.z > 1e-5 && rb.linearVelocity.z < 1e-5))
             {
                 velocity.z = 0;
             }
