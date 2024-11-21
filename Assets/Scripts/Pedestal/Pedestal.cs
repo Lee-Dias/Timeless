@@ -168,7 +168,6 @@ public class Pedestal : Interactable
         glowLight.gameObject.SetActive(true);
         pedestalInstructions.gameObject.SetActive(true);
 
-        crosshairUI = FindFirstObjectByType<CrosshairUI>();
         crosshairUI.gameObject.SetActive(false);
         playerUIInventory.SetActive(false);
     }
@@ -176,10 +175,10 @@ public class Pedestal : Interactable
     private void DeactivatePedestal()
     {
         pedestalCamera.gameObject.SetActive(false);
-        crosshairUI.gameObject.SetActive(true);
         glowLight.gameObject.SetActive(false);
         pedestalInstructions.gameObject.SetActive(false);
         playerUIInventory.SetActive(true);
+        crosshairUI.gameObject.SetActive(true);
 
         EnablePlayerControls();
     }
