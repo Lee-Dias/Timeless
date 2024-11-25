@@ -94,6 +94,8 @@ public class ItemDisplayer : MonoBehaviour
         // Check if there is no item currently displayed.
         if (displayedObject == null && displayedItem == null)
         {
+            //puts it on default layer so it is not an interactable and doesnt bug
+            item.Prefab.layer = 0;
             // Instantiate the item prefab and place it at the display position.
             displayedObject = Instantiate(item.Prefab, displayPos.position, Quaternion.identity);
             displayedObject.transform.SetParent(displayPos);
