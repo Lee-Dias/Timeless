@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.Events;
 
 /// <summary>
 /// Manages a puzzle mechanism involving a set of buttons on a tablet.
@@ -11,7 +12,7 @@ using NaughtyAttributes;
 /// </summary>
 public class Tablet : MonoBehaviour
 {
-    private Action puzzleDone;  // Action to trigger when the puzzle is completed.
+    public UnityEvent puzzleEnded;  // Action to trigger when the puzzle is completed.
     private TabletButton[] buttons;  // Array to hold all button references on the tablet.
 
     [SerializeField, Tooltip("Correct button indices for solving the puzzle.")]
@@ -140,8 +141,8 @@ public class Tablet : MonoBehaviour
         {
             button.OnPuzzleEnd();
         }
-        Log("Puzzle ended. Crystal spawned.");
-        Instantiate(cristalPrefab, cristalSpawnPosition.position, Quaternion.identity);
+        puzzleEnded?.Invoke();
+        Log("Puzzle ended.");
     }
 
     /// <summary>
