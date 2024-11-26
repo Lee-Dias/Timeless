@@ -255,7 +255,6 @@ public class InspectionsHandler : MonoBehaviour
                 inspectionInstructions.SetActive(false);
                 onInspectionEndedFromInv.Invoke();
                 crosshairUI?.gameObject.SetActive(true);
-                onInspectionEnded.Invoke(false);
                 inspecting = false;
                 yield break;
             }
