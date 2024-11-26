@@ -10,6 +10,9 @@ public class Pedestal : Interactable
     [SerializeField] private Camera pedestalCamera;
     [SerializeField] private Light glowLight;
     [SerializeField] private Canvas pedestalInstructions;
+    [SerializeField] private Renderer sarcophagusRenderer;
+    [SerializeField] private Material cristalMaterial;
+    private Material originalSarcophagusMaterial;
 
     private PlayerInputs playerInputs;
     private CrosshairUI crosshairUI;
@@ -43,6 +46,8 @@ public class Pedestal : Interactable
 
         crosshairUI = FindFirstObjectByType<CrosshairUI>();
         playerUIInventory = FindFirstObjectByType<PlayerUIInventory>();
+
+        originalSarcophagusMaterial = sarcophagusRenderer.material;
     }
 
     /// <summary>
@@ -131,8 +136,13 @@ public class Pedestal : Interactable
             if (sarcophagusCristal)
             {
                 HandleSarcophagusHit(sarcophagusCristal);
+                sarcophagusRenderer.material = cristalMaterial;
             }
-            else timeOnCristal = 0;
+            else
+            {
+                timeOnCristal = 0;
+                sarcophagusRenderer.material = originalSarcophagusMaterial;
+            }
             UpdateLaserPosition(hit.point);
         }
         else

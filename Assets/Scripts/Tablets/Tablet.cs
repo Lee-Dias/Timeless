@@ -21,11 +21,7 @@ public class Tablet : MonoBehaviour
     [SerializeField, Tooltip("List of currently activated buttons.")]
     private List<int> activeButtons;  // List of currently activated buttons.
 
-    [SerializeField, Tooltip("The crystal prefab to spawn when the puzzle is solved.")]
-    private GameObject cristalPrefab;  // The crystal prefab to spawn when the puzzle is solved.
-
-    [SerializeField, Tooltip("The position where the crystal will spawn.")]
-    private Transform cristalSpawnPosition;  // The position where the crystal will spawn.
+    [SerializeField] private Interactable cristal;  // The crystal prefab to spawn when the puzzle is solved.
 
     [Header("Debugging")]
     [SerializeField, Tooltip("Enable this to display debug messages from this script in the Console.")]
@@ -48,6 +44,7 @@ public class Tablet : MonoBehaviour
         {
             Log("Tablet buttons initialized successfully.");
         }
+        cristal.CanInteract = false;
     }
 
     /// <summary>
@@ -141,6 +138,7 @@ public class Tablet : MonoBehaviour
         {
             button.OnPuzzleEnd();
         }
+        cristal.CanInteract = true;
         puzzleEnded?.Invoke();
         Log("Puzzle ended.");
     }
