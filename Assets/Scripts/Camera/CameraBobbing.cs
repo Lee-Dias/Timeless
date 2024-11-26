@@ -137,7 +137,7 @@ public class CameraBobbing : MonoBehaviour
         cameraBobber.localPosition += motion;
         if (lastMotion.y > motion.y && playerSounds != null && !playedSound)
         {
-            playerSounds.PlayFootStepSound();
+            playerSounds?.PlayFootStepSound();
             playedSound = true;
         }
         if (playedSound && lastMotion.y < motion.y) playedSound = false;
