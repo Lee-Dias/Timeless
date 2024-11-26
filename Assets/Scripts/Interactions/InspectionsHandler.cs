@@ -75,11 +75,12 @@ public class InspectionsHandler : MonoBehaviour
     public UnityEvent<bool> onInspectionEnded;
     public UnityEvent onInspectionEndedFromInv;
 
-    [Tooltip("Event triggered when an item is added to the player's inventory.\nProvides the added Item as a parameter.")]
+    // Event triggered when an item is added to the player's inventory.\nProvides the added Item as a parameter.
     public UnityEvent<Item> onItemAddedToInventory;
 
-    private PlayerInputs playerInputs; // Reference to player input handling.
     [SerializeField] private Transform objectContainer; // The container to hold the inspected object.
+    [SerializeField] private GameObject inspectionInstructions;
+    private PlayerInputs playerInputs; // Reference to player input handling.
     private GameObject inspectingObject; // The currently inspected object.
     private Item currentItem; // The item being inspected.
 
@@ -93,7 +94,7 @@ public class InspectionsHandler : MonoBehaviour
 
     private CrosshairUI crosshairUI;
 
-    [HideInInspector]public bool inspecting;
+    [HideInInspector] public bool inspecting;
     private Inspectable inspectable;
 
     /// <summary>
@@ -134,7 +135,7 @@ public class InspectionsHandler : MonoBehaviour
     /// </summary>
     /// <param name="item">The item to be inspected.</param>
     /// <param name="canBeAddedToInv">Indicates if the item can be added to the inventory.</param>
-    public void StartInspection(Item item, bool canBeAddedToInv, bool isInspectingFromInv )
+    public void StartInspection(Item item, bool canBeAddedToInv, bool isInspectingFromInv)
     {
         inspecting = true;
         inspectingFromInv = isInspectingFromInv;
@@ -189,6 +190,7 @@ public class InspectionsHandler : MonoBehaviour
 
         // Enable the inspection camera.
         GetComponent<Camera>().enabled = true;
+        inspectionInstructions.SetActive(true);
 
         float pitch = 0; // Rotation around the X-axis.
         float yaw = 0; // Rotation around the Y-axis.
@@ -229,6 +231,7 @@ public class InspectionsHandler : MonoBehaviour
                 GetComponent<Camera>().enabled = false;
                 onInspectionEnded.Invoke(true);
                 inspecting = false;
+                inspectionInstructions.SetActive(false);
                 yield break;
             }
 
@@ -239,6 +242,7 @@ public class InspectionsHandler : MonoBehaviour
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
                 onInspectionEnded.Invoke(false);
+                inspectionInstructions.SetActive(false);
                 inspecting = false;
                 yield break;
             }
@@ -248,8 +252,10 @@ public class InspectionsHandler : MonoBehaviour
                 currentItem = null;
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
+                inspectionInstructions.SetActive(false);
                 onInspectionEndedFromInv.Invoke();
                 crosshairUI?.gameObject.SetActive(true);
+                onInspectionEnded.Invoke(false);
                 inspecting = false;
                 yield break;
             }
@@ -259,9 +265,10 @@ public class InspectionsHandler : MonoBehaviour
             // Wait for the next frame.
             yield return null;
         }
-        
+
         // If inspection ends without adding the item, trigger the event with false.
         onInspectionEnded.Invoke(false);
+        inspectionInstructions.SetActive(false);
         onInspectionEndedFromInv.Invoke();
     }
 }
