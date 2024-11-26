@@ -131,6 +131,21 @@ public class PlayerInputs : Singleton<PlayerInputs>
     public bool RotateButtonUp { get; private set; } // Flag set when the rotate button is released.
 
     /// <summary>
+    /// Indicates whether the player is currently interacting (e.g., pressing the interact button).
+    /// </summary>
+    public bool IsInspecting { get; private set; } // Indicates whether the player is inspecting.
+
+    /// <summary>
+    /// Flag that is set when the interact button is pressed.
+    /// </summary>
+    public bool InspectButtonDown { get; private set; } // Flag set when the inspect button is pressed.
+
+    /// <summary>
+    /// Flag that is set when the interact button is released.
+    /// </summary>
+    public bool InspectButtonUp { get; private set; } // Flag set when the inspect button is released.
+
+    /// <summary>
     /// Enum representing the type of input device currently being used by the player.
     /// Can be <see cref="DeviceType.KeyboardMouse"/>, <see cref="DeviceType.Gamepad"/>, or <see cref="DeviceType.Touch"/>.
     /// </summary>
@@ -183,6 +198,8 @@ public class PlayerInputs : Singleton<PlayerInputs>
         GrabButtonUp = false;
         RotateButtonDown = false;
         RotateButtonUp = false;
+        InspectButtonDown = false;
+        InspectButtonUp = false;
     }
 
     /// <summary>
@@ -215,6 +232,8 @@ public class PlayerInputs : Singleton<PlayerInputs>
         BindAction(inputActions.Player.Return, OnReturnPerformed, OnReturnCanceled);
         BindAction(inputActions.Player.Grab, OnGrabPerformed, OnGrabCanceled);
         BindAction(inputActions.Player.Rotate, OnRotatePerformed, OnRotateCanceled);
+        BindAction(inputActions.Player.Inspect, OnInspectPerformed, OnInspectCanceled);
+        
 
         InputSystem.onActionChange += OnActionChange; // Subscribes to input action changes.
     }
@@ -231,6 +250,7 @@ public class PlayerInputs : Singleton<PlayerInputs>
         UnbindAction(inputActions.Player.Return, OnReturnPerformed, OnReturnCanceled);
         UnbindAction(inputActions.Player.Grab, OnGrabPerformed, OnGrabCanceled);
         UnbindAction(inputActions.Player.Rotate, OnRotatePerformed, OnRotateCanceled);
+        UnbindAction(inputActions.Player.Inspect, OnInspectPerformed, OnInspectCanceled);
 
         InputSystem.onActionChange -= OnActionChange; // Unsubscribes from input action changes.
     }
@@ -253,4 +273,6 @@ public class PlayerInputs : Singleton<PlayerInputs>
     private void OnGrabCanceled(InputAction.CallbackContext context) { GrabButtonUp = true; GrabButton = false; }
     private void OnRotatePerformed(InputAction.CallbackContext context) { RotateButtonDown = true; RotateButton = true; }
     private void OnRotateCanceled(InputAction.CallbackContext context) { RotateButtonUp = true; RotateButton = false; }
+    private void OnInspectCanceled(InputAction.CallbackContext context) { InspectButtonUp = true; IsInspecting = false; }
+    private void OnInspectPerformed(InputAction.CallbackContext context) { InspectButtonDown = true; IsInspecting = true; }
 }

@@ -100,16 +100,19 @@ public class Interactable : MonoBehaviour
 
     [Tooltip("Event triggered when the object is interacted with.")]
     public UnityEvent InteractEvent;
-
+    //gets inspectionhandler so it can check if the player is inspecting
+    private InspectionsHandler inspectionsHandler;
     /// <summary>
     /// Handles the interaction with the object.
     /// Triggers the <see cref="InteractEvent"/> and manages inventory addition or single-use behavior.
     /// </summary>
     public void Interact()
     {
-        // Only proceed if the object is marked as interactable.
-        if (CanInteract)
+        inspectionsHandler = FindFirstObjectByType<InspectionsHandler>();
+        // Only proceed if the object is marked as interactable and the player isnt inspecting.
+        if (CanInteract && !inspectionsHandler.inspecting)
         {
+
             // Invoke any assigned interaction events.
             InteractEvent?.Invoke();
 
@@ -120,7 +123,6 @@ public class Interactable : MonoBehaviour
                 // Disable the game object after adding to the inventory.
                 gameObject.SetActive(false);
             }
-
             // Disable future interactions if it is a single-use interaction.
             if (interactOne) CanInteract = false;
         }

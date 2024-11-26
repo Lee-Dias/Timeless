@@ -80,6 +80,9 @@ public class Inspectable : MonoBehaviour
 
     private CrosshairUI crosshairUI;
 
+    [HideInInspector]public bool inspectingFromInv;
+
+
     private void Start()
     {
         inspectionsHandler = FindFirstObjectByType<InspectionsHandler>();
@@ -89,8 +92,9 @@ public class Inspectable : MonoBehaviour
 
     public void StartInspection(Item item)
     {
+        
         if (inspectionsHandler == null) FindFirstObjectByType<InspectionsHandler>();
-        inspectionsHandler.StartInspection(item, canBeAddedToInv);
+        inspectionsHandler.StartInspection(item, canBeAddedToInv, inspectingFromInv);
         inspectionsHandler.onInspectionStarted.AddListener(OnInspectionStarted);
         inspectionsHandler.onInspectionEnded.AddListener(OnInspectionEnded);
         crosshairUI = FindFirstObjectByType<CrosshairUI>();
@@ -103,14 +107,23 @@ public class Inspectable : MonoBehaviour
     }
 
     private void OnInspectionEnded(bool wasAddedToInventory)
-    {
+    {  
+        inspectingFromInv = false;
         crosshairUI?.gameObject.SetActive(true);
         inspectionsHandler.onInspectionStarted.RemoveListener(OnInspectionStarted);
         inspectionsHandler.onInspectionEnded.RemoveListener(OnInspectionEnded);
         onInspectionEnded.Invoke(!wasAddedToInventory);
-
         if (wasAddedToInventory) Log("Inspection ended with item was added to the inventory");
         else Log("Inspection ended");
+
+    }
+    public void OnInspectionEndedFromInv()
+    {  
+        inspectingFromInv = false;
+        crosshairUI?.gameObject.SetActive(true);
+        inspectionsHandler.onInspectionStarted.RemoveListener(OnInspectionStarted);
+        inspectionsHandler.onInspectionEnded.RemoveListener(OnInspectionEnded);
+
     }
 
     /// <summary>

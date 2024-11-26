@@ -73,6 +73,7 @@ public class InspectionsHandler : MonoBehaviour
 
     //Event triggered when an inspection ends.\nThe boolean parameter indicates whether the item was added to the inventory (true) or not (false).
     public UnityEvent<bool> onInspectionEnded;
+    public UnityEvent onInspectionEndedFromInv;
 
     [Tooltip("Event triggered when an item is added to the player's inventory.\nProvides the added Item as a parameter.")]
     public UnityEvent<Item> onItemAddedToInventory;
@@ -88,12 +89,22 @@ public class InspectionsHandler : MonoBehaviour
 
     private bool canBeAddedToInv; // Determines if the item can be added to the inventory.
 
+    private bool inspectingFromInv = false;
+
+    private CrosshairUI crosshairUI;
+
+    [HideInInspector]public bool inspecting;
+    private Inspectable inspectable;
+
     /// <summary>
     /// Initializes the InspectionsHandler, ensuring the camera is disabled initially.
     /// Also locates the <see cref="PlayerInputs"/> component.
     /// </summary>
     private void Start()
     {
+        inspecting = false;
+        crosshairUI = FindFirstObjectByType<CrosshairUI>();
+        crosshairUI?.gameObject.SetActive(true);
         // Check for the Camera component and disable it if present.
         Camera camera = GetComponent<Camera>();
         if (camera != null)
@@ -123,8 +134,10 @@ public class InspectionsHandler : MonoBehaviour
     /// </summary>
     /// <param name="item">The item to be inspected.</param>
     /// <param name="canBeAddedToInv">Indicates if the item can be added to the inventory.</param>
-    public void StartInspection(Item item, bool canBeAddedToInv)
+    public void StartInspection(Item item, bool canBeAddedToInv, bool isInspectingFromInv )
     {
+        inspecting = true;
+        inspectingFromInv = isInspectingFromInv;
         // Ensure no other object is currently being inspected.
         if (inspectingObject == null && currentItem == null)
         {
@@ -203,7 +216,7 @@ public class InspectionsHandler : MonoBehaviour
             }
 
             // Handle adding the item to the inventory.
-            if (playerInputs.GrabButtonDown && canBeAddedToInv)
+            if (playerInputs.GrabButtonDown && canBeAddedToInv && !inspectingFromInv)
             {
                 // Add the item to the player's inventory.
                 PlayerInventory playerInventory = FindFirstObjectByType<PlayerInventory>();
@@ -215,24 +228,40 @@ public class InspectionsHandler : MonoBehaviour
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
                 onInspectionEnded.Invoke(true);
+                inspecting = false;
                 yield break;
             }
 
             // Handle returning the item without adding it to the inventory.
-            if (playerInputs.ReturnButtonDown)
+            if (playerInputs.ReturnButtonDown && !inspectingFromInv)
             {
                 currentItem = null;
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
                 onInspectionEnded.Invoke(false);
+                inspecting = false;
                 yield break;
             }
+
+            if (playerInputs.InspectButtonDown && inspectingFromInv)
+            {
+                currentItem = null;
+                Destroy(inspectingObject);
+                GetComponent<Camera>().enabled = false;
+                onInspectionEndedFromInv.Invoke();
+                crosshairUI?.gameObject.SetActive(true);
+                inspecting = false;
+                yield break;
+            }
+
+
 
             // Wait for the next frame.
             yield return null;
         }
-
+        
         // If inspection ends without adding the item, trigger the event with false.
         onInspectionEnded.Invoke(false);
+        onInspectionEndedFromInv.Invoke();
     }
 }
