@@ -247,7 +247,7 @@ public class InspectionsHandler : MonoBehaviour
                 yield break;
             }
 
-            if (playerInputs.InspectButtonDown && inspectingFromInv)
+            if (playerInputs.GrabButtonDown && inspectingFromInv)
             {
                 currentItem = null;
                 Destroy(inspectingObject);
