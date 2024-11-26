@@ -2964,6 +2964,11 @@ MonoBehaviour:
   maxBounceCount: 0
   maxReverbWetness: 0.5
   wallLowpassCutoffAmount: 600
+--- !u!1 &372559724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3399117842005735417, guid: a897aee46b4ea5946b7a6a5ac6a24dda, type: 3}
+  m_PrefabInstance: {fileID: 7054173807607496816}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &378836450
 GameObject:
   m_ObjectHideFlags: 0
@@ -13388,6 +13393,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f567f6170e40974f867f99320385040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Completedpuzzle:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 372559724}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   showDebugMessages: 0
   identifyObject: 0
 --- !u!1 &1722545064
@@ -17054,7 +17074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3399117842005735417, guid: a897aee46b4ea5946b7a6a5ac6a24dda, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3807715412594464159, guid: a897aee46b4ea5946b7a6a5ac6a24dda, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

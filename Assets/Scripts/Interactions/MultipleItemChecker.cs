@@ -44,6 +44,8 @@ public class MultipleItemChecker : MonoBehaviour
 {
     [Header("Debugging")]
 
+    public UnityEvent Completedpuzzle;
+
     [SerializeField, Tooltip("Enable this to display debug messages from this script in the Console.")]
     private bool showDebugMessages = false;
 
@@ -100,6 +102,7 @@ public class MultipleItemChecker : MonoBehaviour
                     Log($"Child {child.name} does not have an Interactable component.");
                 }
             }
+            Completedpuzzle?.Invoke();
         }
         else
         {
