@@ -15,7 +15,7 @@ public class SpatialSoundContextualizer : MonoBehaviour
 
     private float[] distanceArray;
     private float lastUpdateTime = 0.0f;
-    private bool updateDistances = true;
+    // private bool updateDistances = true;
 
     private AudioReverbFilter reverbFilter;
     private AudioLowPassFilter lowPassFilter;

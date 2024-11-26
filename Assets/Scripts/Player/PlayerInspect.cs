@@ -6,6 +6,7 @@ public class PlayerInspect : MonoBehaviour
     private PlayerInventory playerInventory; // Reference to the PlayerInventory script to get player inventory.
     private Inspectable inspectable; // Reference to the Inspectable script to get inspectable.
     private InspectionsHandler inspectionsHandler; // Reference to the InspectionsHandler script to get inspectionsHandler.
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
