@@ -57,6 +57,7 @@ public class Pedestal : Interactable
     {
         GameObject spawnedCristal = Instantiate(cristal.Prefab, cristalSpawnPos.position, Quaternion.identity, cristalSpawnPos);
         spawnedCristal.GetComponent<Interactable>().CanInteract = false;
+        OnCristalInteracted();
         InteractEvent.AddListener(OnCristalInteracted);
         InteractEvent.RemoveListener(GetComponent<InventoryItemMatcher>().CheckItem);
         FindFirstObjectByType<PlayerInventory>().RemoveItemFromInventory(cristal);
