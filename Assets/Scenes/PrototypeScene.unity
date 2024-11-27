@@ -3627,7 +3627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &372391791
 Transform:
   m_ObjectHideFlags: 0
@@ -3766,6 +3766,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 90836d0f853b5a542be739a21f1487bb, type: 3}
     - {fileID: 8300000, guid: 27f2ea743669fcc42b2748bf7057f7ac, type: 3}
     - {fileID: 8300000, guid: 1f7fcb67db95e2a4b908ef83b7de2e51, type: 3}
+  cameraBoober: {fileID: 1005643096}
 --- !u!114 &372391794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16930,7 +16931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enable: 1
   swayObject: {fileID: 2043373542}
-  sensibility: 5
+  sensibility: 3
   swaySmoothness: 7
   clampMin: -7.5
   clampMax: 7.5
@@ -21430,6 +21431,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1889769474}
     m_Modifications:
+    - target: {fileID: 4309762802663834301, guid: 95c10af4f148dbe4c90ce2b46986dddf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.436
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309762802663834301, guid: 95c10af4f148dbe4c90ce2b46986dddf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.057
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309762802663834301, guid: 95c10af4f148dbe4c90ce2b46986dddf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.779
+      objectReference: {fileID: 0}
     - target: {fileID: 6821391140334441223, guid: 95c10af4f148dbe4c90ce2b46986dddf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.727

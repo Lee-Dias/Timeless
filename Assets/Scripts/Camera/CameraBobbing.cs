@@ -53,9 +53,6 @@ public class CameraBobbing : MonoBehaviour
     private Vector3 startPos;
 
     private Rigidbody rb;
-    private PlayerSounds playerSounds;
-    private Vector3 lastMotion;
-    private bool playedSound;
 
     private void Awake()
     {
@@ -63,9 +60,6 @@ public class CameraBobbing : MonoBehaviour
 
         Debug.Assert(cameraBobber != null, $"{nameof(cameraBobber)} is not assigned. Please assign it in the Inspector.");
         Debug.Assert(cameraPivot != null, $"{nameof(cameraPivot)} is not assigned. Please assign it in the Inspector.");
-
-        playerSounds = GetComponentInChildren<PlayerSounds>();
-        if (playerSounds == null) Debug.LogWarning($"{nameof(playerSounds)} is null.");
 
         if (cameraBobber != null)
         {
@@ -120,7 +114,7 @@ public class CameraBobbing : MonoBehaviour
     /// </summary>
     private void CheckMotion()
     {
-        float speed = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).magnitude;
+        float speed = rb.linearVelocity.magnitude;
 
         // Only apply bobbing if speed exceeds the toggle threshold
         if (speed < toggleSpeed) return;
@@ -135,13 +129,6 @@ public class CameraBobbing : MonoBehaviour
     private void PlayMotion(Vector3 motion)
     {
         cameraBobber.localPosition += motion;
-        if (lastMotion.y > motion.y && playerSounds != null && !playedSound)
-        {
-            playerSounds?.PlayFootStepSound();
-            playedSound = true;
-        }
-        if (playedSound && lastMotion.y < motion.y) playedSound = false;
-        lastMotion = motion;
     }
 
     /// <summary>
