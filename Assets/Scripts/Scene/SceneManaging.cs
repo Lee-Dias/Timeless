@@ -10,4 +10,9 @@ public class SceneManagemening : Singleton<SceneManagemening>
             SceneManager.LoadScene("PrototypeScene");
         }
     }
+
+    public void ChangeScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }
