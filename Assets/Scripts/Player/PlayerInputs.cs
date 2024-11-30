@@ -159,7 +159,10 @@ public class PlayerInputs : Singleton<PlayerInputs>
     protected override void Awake()
     {
         base.Awake();
-        inputActions = new InputSystem_Actions(); // Initializes the input actions for the player.
+        if (inputActions == null)
+        {
+            inputActions = new InputSystem_Actions();
+        }
     }
 
     /// <summary>
@@ -222,38 +225,45 @@ public class PlayerInputs : Singleton<PlayerInputs>
 
     private void OnEnable()
     {
-        inputActions.Player.Enable(); // Enables the input actions.
+        if (inputActions != null)
+        {
+            inputActions.Player.Enable(); // Enables the input actions.
 
-        // Bind input actions to the respective methods.
-        BindAction(inputActions.Player.Move, OnMovePerformed, OnMoveCanceled);
-        BindAction(inputActions.Player.Look, OnLookPerformed, OnLookCanceled);
-        BindAction(inputActions.Player.Interact, OnInteractPerformed, OnInteractCanceled);
-        BindAction(inputActions.Player.Zoom, OnZoomPerformed, OnZoomCanceled);
-        BindAction(inputActions.Player.Return, OnReturnPerformed, OnReturnCanceled);
-        BindAction(inputActions.Player.Grab, OnGrabPerformed, OnGrabCanceled);
-        BindAction(inputActions.Player.Rotate, OnRotatePerformed, OnRotateCanceled);
-        BindAction(inputActions.Player.Inspect, OnInspectPerformed, OnInspectCanceled);
-        
+            // Bind input actions to the respective methods.
+            BindAction(inputActions.Player.Move, OnMovePerformed, OnMoveCanceled);
+            BindAction(inputActions.Player.Look, OnLookPerformed, OnLookCanceled);
+            BindAction(inputActions.Player.Interact, OnInteractPerformed, OnInteractCanceled);
+            BindAction(inputActions.Player.Zoom, OnZoomPerformed, OnZoomCanceled);
+            BindAction(inputActions.Player.Return, OnReturnPerformed, OnReturnCanceled);
+            BindAction(inputActions.Player.Grab, OnGrabPerformed, OnGrabCanceled);
+            BindAction(inputActions.Player.Rotate, OnRotatePerformed, OnRotateCanceled);
+            BindAction(inputActions.Player.Inspect, OnInspectPerformed, OnInspectCanceled);
 
-        InputSystem.onActionChange += OnActionChange; // Subscribes to input action changes.
+
+            InputSystem.onActionChange += OnActionChange; // Subscribes to input action changes.
+        }
     }
 
     private void OnDisable()
     {
-        inputActions.Player.Disable(); // Disables the input actions.
+        if (inputActions != null)
+        {
+            inputActions.Player.Disable(); // Disable the input actions.
 
-        // Unbind input actions.
-        UnbindAction(inputActions.Player.Move, OnMovePerformed, OnMoveCanceled);
-        UnbindAction(inputActions.Player.Look, OnLookPerformed, OnLookCanceled);
-        UnbindAction(inputActions.Player.Interact, OnInteractPerformed, OnInteractCanceled);
-        UnbindAction(inputActions.Player.Zoom, OnZoomPerformed, OnZoomCanceled);
-        UnbindAction(inputActions.Player.Return, OnReturnPerformed, OnReturnCanceled);
-        UnbindAction(inputActions.Player.Grab, OnGrabPerformed, OnGrabCanceled);
-        UnbindAction(inputActions.Player.Rotate, OnRotatePerformed, OnRotateCanceled);
-        UnbindAction(inputActions.Player.Inspect, OnInspectPerformed, OnInspectCanceled);
-
-        InputSystem.onActionChange -= OnActionChange; // Unsubscribes from input action changes.
+            // Unbind input actions.
+            UnbindAction(inputActions.Player.Move, OnMovePerformed, OnMoveCanceled);
+            UnbindAction(inputActions.Player.Look, OnLookPerformed, OnLookCanceled);
+            UnbindAction(inputActions.Player.Interact, OnInteractPerformed, OnInteractCanceled);
+            UnbindAction(inputActions.Player.Zoom, OnZoomPerformed, OnZoomCanceled);
+            UnbindAction(inputActions.Player.Return, OnReturnPerformed, OnReturnCanceled);
+            UnbindAction(inputActions.Player.Grab, OnGrabPerformed, OnGrabCanceled);
+            UnbindAction(inputActions.Player.Rotate, OnRotatePerformed, OnRotateCanceled);
+            UnbindAction(inputActions.Player.Inspect, OnInspectPerformed, OnInspectCanceled);
+        }
+        
+        InputSystem.onActionChange -= OnActionChange; // Unsubscribe from input action changes.
     }
+
 
     // The following methods handle specific actions like move, look, interact, etc.
 
@@ -261,9 +271,12 @@ public class PlayerInputs : Singleton<PlayerInputs>
     private void OnInteractPerformed(InputAction.CallbackContext context) { InteractButtonDown = true; IsInteracting = true; }
     private void OnMovePerformed(InputAction.CallbackContext context) { MoveInput = context.ReadValue<Vector2>(); }
     private void OnMoveCanceled(InputAction.CallbackContext context) { MoveInput = Vector2.zero; }
-    private void OnLookPerformed(InputAction.CallbackContext context){ LookInput = context.ReadValue<Vector2>() *
+    private void OnLookPerformed(InputAction.CallbackContext context)
+    {
+        LookInput = context.ReadValue<Vector2>() *
                                                                         (CurrentDeviceType == DeviceType.Gamepad ?
-                                                                        gamepadSensitivity : mouseSensitivity);}
+                                                                        gamepadSensitivity : mouseSensitivity);
+    }
     private void OnLookCanceled(InputAction.CallbackContext context) { LookInput = Vector2.zero; }
     private void OnZoomPerformed(InputAction.CallbackContext context) { ZoomInput = context.ReadValue<Vector2>(); }
     private void OnZoomCanceled(InputAction.CallbackContext context) { ZoomInput = Vector2.zero; }
