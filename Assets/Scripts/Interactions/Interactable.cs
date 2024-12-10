@@ -1,5 +1,4 @@
 using NaughtyAttributes;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -44,7 +43,7 @@ using UnityEngine.Events;
 /// and the object is deactivated.</description>
 /// </item>
 /// <item>
-/// <description>If the <c>interactOne</c> property is true, the object becomes non-interactable after the first use.</description>
+/// <description>If the <c>interactOnce</c> property is true, the object becomes non-interactable after the first use.</description>
 /// </item>
 /// </list>
 /// 
@@ -92,7 +91,7 @@ public class Interactable : MonoBehaviour
 
     // If true, interaction will be disabled after the first use.
     [SerializeField, Tooltip("Determines whether the object can only be interacted with once.")]
-    private bool interactOne = false;
+    private bool interactOnce = false;
 
     // Indicates if the object is currently available for interaction.
     // Set to false to disable interaction.
@@ -100,8 +99,10 @@ public class Interactable : MonoBehaviour
 
     [Tooltip("Event triggered when the object is interacted with.")]
     public UnityEvent InteractEvent;
+
     //gets inspectionhandler so it can check if the player is inspecting
     private InspectionsHandler inspectionsHandler;
+    
     /// <summary>
     /// Handles the interaction with the object.
     /// Triggers the <see cref="InteractEvent"/> and manages inventory addition or single-use behavior.
@@ -109,6 +110,7 @@ public class Interactable : MonoBehaviour
     public void Interact()
     {
         inspectionsHandler = FindFirstObjectByType<InspectionsHandler>();
+
         // Only proceed if the object is marked as interactable and the player isnt inspecting.
         if (CanInteract && !inspectionsHandler.inspecting)
         {
@@ -124,7 +126,7 @@ public class Interactable : MonoBehaviour
                 gameObject.SetActive(false);
             }
             // Disable future interactions if it is a single-use interaction.
-            if (interactOne) CanInteract = false;
+            if (interactOnce) CanInteract = false;
         }
     }
 }
