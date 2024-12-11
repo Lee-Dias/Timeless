@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class TabletButton : Interactable
@@ -17,7 +18,7 @@ public class TabletButton : Interactable
 
     private Animator anim;  // Animator to handle button animations.
     [SerializeField] private Material glowMaterial;  // Material for button's emission (glowing effect).
-    private Material[] originalMaterials;
+    private Material originalMaterial;
 
     private void Awake()
     {
@@ -34,7 +35,7 @@ public class TabletButton : Interactable
         }
         else
         {
-            originalMaterials = BackBrick.materials;
+            originalMaterial = BackBrick.material;
         }
     }
 
@@ -86,19 +87,20 @@ public class TabletButton : Interactable
 
     /// <summary>
     /// Sets the glow effect on the button by modifying the emission color and light.
-    /// </summary>
+    /// </summary>s
     /// <param name="isActive">If true, activate the glow; otherwise, reset it.</param>
     private void SetGlowEffect(bool isActive)
     {
         if (isActive)
         {
-            List<Material> materials = originalMaterials.ToList();
-            if (BackBrick.materials[1] != null) materials.Remove(BackBrick.materials[1]);
-            materials.Add(glowMaterial);
-            BackBrick.SetMaterials(materials);
+            BackBrick.SetMaterials(new List<Material>() { glowMaterial });
         }
-        else BackBrick.SetMaterials(originalMaterials.ToList());
+        else
+        {
+            BackBrick.SetMaterials(new List<Material>() { originalMaterial });
+        }
     }
+
 
     /// <summary>
     /// Disables interaction with the button when the puzzle is completed.
