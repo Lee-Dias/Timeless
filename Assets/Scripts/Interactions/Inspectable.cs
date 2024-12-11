@@ -82,23 +82,31 @@ public class Inspectable : MonoBehaviour
 
     [HideInInspector]public bool inspectingFromInv;
 
+    private PauseManager pauseManager;
+
 
     private void Start()
     {
         inspectionsHandler = FindFirstObjectByType<InspectionsHandler>();
         if (inspectionsHandler == null) Debug.LogError($"{nameof(InspectionsHandler)} needs to be in the scene.");
+        // Try to find the pauseManager object in the scene.
+        pauseManager = FindFirstObjectByType<PauseManager>();
     }
 
 
     public void StartInspection(Item item)
     {
-        
-        if (inspectionsHandler == null) FindFirstObjectByType<InspectionsHandler>();
-        inspectionsHandler.StartInspection(item, canBeAddedToInv, inspectingFromInv);
-        inspectionsHandler.onInspectionStarted.AddListener(OnInspectionStarted);
-        inspectionsHandler.onInspectionEnded.AddListener(OnInspectionEnded);
-        crosshairUI = FindFirstObjectByType<CrosshairUI>();
-        crosshairUI?.gameObject.SetActive(false);
+        if(pauseManager.IsPaused == false){
+            if (inspectionsHandler == null) FindFirstObjectByType<InspectionsHandler>();
+            inspectionsHandler.StartInspection(item, canBeAddedToInv, inspectingFromInv);
+            inspectionsHandler.onInspectionStarted.AddListener(OnInspectionStarted);
+            inspectionsHandler.onInspectionEnded.AddListener(OnInspectionEnded);
+            crosshairUI = FindFirstObjectByType<CrosshairUI>();
+            crosshairUI?.gameObject.SetActive(false);
+        }else{
+            this.gameObject.SetActive(true);
+        }
+
     }
 
     private void OnInspectionStarted()

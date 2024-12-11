@@ -97,6 +97,9 @@ public class InspectionsHandler : MonoBehaviour
     [HideInInspector] public bool inspecting;
     private Inspectable inspectable;
 
+
+    
+
     /// <summary>
     /// Initializes the InspectionsHandler, ensuring the camera is disabled initially.
     /// Also locates the <see cref="PlayerInputs"/> component.
@@ -121,6 +124,7 @@ public class InspectionsHandler : MonoBehaviour
         // Try to find the PlayerInputs object in the scene.
         playerInputs = FindFirstObjectByType<PlayerInputs>();
 
+
         // If PlayerInputs is missing, instantiate it and log a warning.
         if (playerInputs == null)
         {
@@ -137,11 +141,12 @@ public class InspectionsHandler : MonoBehaviour
     /// <param name="canBeAddedToInv">Indicates if the item can be added to the inventory.</param>
     public void StartInspection(Item item, bool canBeAddedToInv, bool isInspectingFromInv)
     {
-        inspecting = true;
-        inspectingFromInv = isInspectingFromInv;
+
         // Ensure no other object is currently being inspected.
-        if (inspectingObject == null && currentItem == null)
+        if ((inspectingObject == null) && (currentItem == null))
         {
+            inspecting = true;
+            inspectingFromInv = isInspectingFromInv;
             // Check if the object container is set.
             if (objectContainer == null)
             {
@@ -247,7 +252,7 @@ public class InspectionsHandler : MonoBehaviour
                 yield break;
             }
 
-            if (playerInputs.GrabButtonDown && inspectingFromInv)
+            if (playerInputs.GrabButtonDown && inspectingFromInv )
             {
                 currentItem = null;
                 Destroy(inspectingObject);
