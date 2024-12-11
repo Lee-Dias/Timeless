@@ -18,7 +18,6 @@ public class Tablet : MonoBehaviour
     [SerializeField, Tooltip("Correct button indices for solving the puzzle.")]
     private int[] rightButtons;  // Correct button indices for solving the puzzle.
 
-    [SerializeField, Tooltip("List of currently activated buttons.")]
     private List<int> activeButtons;  // List of currently activated buttons.
 
     [SerializeField] private Interactable cristal;  // The crystal prefab to spawn when the puzzle is solved.
@@ -29,6 +28,11 @@ public class Tablet : MonoBehaviour
 
     [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
     private bool identifyObject = true;
+
+    private void Awake()
+    {
+        activeButtons = new List<int>();
+    }
 
     /// <summary>
     /// Initializes button references and checks for necessary child components.

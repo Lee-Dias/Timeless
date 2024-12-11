@@ -114,7 +114,6 @@ public class Interactable : MonoBehaviour
         // Only proceed if the object is marked as interactable and the player isnt inspecting.
         if (CanInteract && !inspectionsHandler.inspecting)
         {
-
             // Invoke any assigned interaction events.
             InteractEvent?.Invoke();
 

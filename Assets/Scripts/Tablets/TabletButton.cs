@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TabletButton : Interactable
 {
+    [SerializeField] private Renderer BackBrick;
+
     [SerializeField, Tooltip("The unique index for this button to identify it in the puzzle.")]
     private int buttonIndex;  // The unique index for this button to identify it in the puzzle.
 
@@ -15,7 +17,6 @@ public class TabletButton : Interactable
 
     private Animator anim;  // Animator to handle button animations.
     [SerializeField] private Material glowMaterial;  // Material for button's emission (glowing effect).
-    private Renderer render;
     private Material[] originalMaterials;
 
     private void Awake()
@@ -27,14 +28,13 @@ public class TabletButton : Interactable
             Debug.LogError("Animator component missing from TabletButton.", this);
         }
 
-        render = GetComponent<Renderer>();
-        if (render == null)
+        if (BackBrick == null)
         {
             Debug.LogError("Overlay material for glow effect missing or incorrectly configured.", this);
         }
         else
         {
-            originalMaterials = render.materials;
+            originalMaterials = BackBrick.materials;
         }
     }
 
@@ -63,7 +63,7 @@ public class TabletButton : Interactable
         }
 
         IsActive = !IsActive;  // Toggle the button's active state.
-        anim.SetTrigger("Press");  // Play the button press animation.
+        anim?.SetTrigger("Press");  // Play the button press animation.
     }
 
     /// <summary>
@@ -93,11 +93,11 @@ public class TabletButton : Interactable
         if (isActive)
         {
             List<Material> materials = originalMaterials.ToList();
-            materials.Remove(render.materials[1]);
+            if (BackBrick.materials[1] != null) materials.Remove(BackBrick.materials[1]);
             materials.Add(glowMaterial);
-            render.SetMaterials(materials);
+            BackBrick.SetMaterials(materials);
         }
-        else render.SetMaterials(originalMaterials.ToList());
+        else BackBrick.SetMaterials(originalMaterials.ToList());
     }
 
     /// <summary>
