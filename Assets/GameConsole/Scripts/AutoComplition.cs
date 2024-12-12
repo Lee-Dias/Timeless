@@ -131,8 +131,7 @@ namespace GameConsole
         {
             if (activeSuggestions.Count == 0)
                 return;
-
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.DownArrow) || currentIndex < 0)
             {
                 NavigateSuggestions(1); // Navigate down in the suggestion list
             }

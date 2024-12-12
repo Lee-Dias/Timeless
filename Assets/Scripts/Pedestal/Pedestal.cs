@@ -161,6 +161,7 @@ public class Pedestal : Interactable
             sarcophagusCristal.Hit();
             InteractEvent.RemoveListener(OnCristalInteracted);
             puzzleDone = true;
+            CanInteract = false;
             coroutineEnded = true;
         }
     }

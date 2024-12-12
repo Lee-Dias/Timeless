@@ -113,7 +113,7 @@ namespace GameConsole
                         caretPosition = text.Length; // Move caret to end of preview text
                         isPreviewing = false;
                     }
-                    else if (!string.IsNullOrEmpty(text))
+                    if (!string.IsNullOrEmpty(text))
                     {
                         onSubmit?.Invoke(text); // Submit the current text
                         ClearText();
@@ -163,9 +163,7 @@ namespace GameConsole
                         {
                             if (isPreviewing)
                             {
-                                text = previewText;
-                                caretPosition = text.Length; // Move caret to end of preview text
-                                isPreviewing = false;
+                                ClearPreview();
                             }
 
                             // Check if the char before caret is a space
@@ -264,9 +262,7 @@ namespace GameConsole
 
                         if (isPreviewing)
                         {
-                            text = previewText + " ";
-                            caretPosition = text.Length; // Move caret to end of preview text
-                            isPreviewing = false;
+                            ClearPreview();
                         }
 
                         foreach (char c in inputText)

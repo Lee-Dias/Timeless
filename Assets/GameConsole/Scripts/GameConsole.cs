@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace GameConsole
 {
@@ -43,11 +45,39 @@ namespace GameConsole
         {
             // Initialize the commands dictionary with placeholder commands.
             commands = new Dictionary<string, CommandDefinition>
-        {
-            // Example 'help' command which lists all available commands.
-            { "help", new CommandDefinition(ShowHelp) },
-            { "restart_scene", new CommandDefinition(RestartScene)}
-        };
+            {
+                // Example 'help' command which lists all available commands
+                {
+                    "help",
+                    new CommandDefinition(
+                        action: args => ShowHelp() // Action to show help
+                    )
+                },
+                // Command to restart the current scene
+                {
+                    "restart_scene",
+                    new CommandDefinition(
+                        action: args => RestartScene() // Action to restart the scene
+                    )
+                },
+                // Command to start the game with a specific scene ID
+                {
+                    "start_game",
+                    new CommandDefinition(
+                        action: args => StartGame((int)args[0]), // Pass the scene ID to the action
+                        arguments: new List<CommandArgument>
+                        {
+                            new CommandArgument("scene", typeof(int), 0) // Default scene ID is 0
+                        }
+                    )
+                },
+                {
+                    "home",
+                    new CommandDefinition(
+                        action: args => Home()
+                    )
+                },
+            };
 
             // Check if references are properly assigned.
             if (commandInputField == null || logText == null)
@@ -158,9 +188,20 @@ namespace GameConsole
             }
         }
 
+        private void StartGame(params object[] args)
+        {
+            if ((int)args[0] == 0) SceneManager.LoadScene("FirstCutscene");
+            else if ((int)args[0] == 1) SceneManager.LoadScene("PrototypeScene");
+        }
+
         private void RestartScene(params object[] args)
         {
-            SceneManagemening.Instance.ChangeScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        private void Home(params object[] args)
+        {
+            SceneManager.LoadScene("MainMenu");
         }
 
         /// <summary>
