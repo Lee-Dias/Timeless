@@ -12,6 +12,7 @@ public class Pedestal : Interactable
     [SerializeField] private Canvas pedestalInstructions;
     [SerializeField] private Renderer sarcophagusRenderer;
     [SerializeField] private Material cristalMaterial;
+    [SerializeField] private float maxRotationX = 45;
     private Material originalSarcophagusMaterial;
 
     private PlayerInputs playerInputs;
@@ -106,16 +107,35 @@ public class Pedestal : Interactable
         // Rotation handling for cristal and laser
         if (Mathf.Abs(playerInputs.MoveInput.x) > 1e-5f)
         {
-            float xRotation = playerInputs.MoveInput.x * rotationSpeed * Time.deltaTime;
-            targetRotation *= Quaternion.Euler(0, xRotation, 0);
+            float yRotation = playerInputs.MoveInput.x * rotationSpeed * Time.deltaTime;
+            targetRotation *= Quaternion.Euler(0, yRotation, 0);
             cristalSpawnPos.localRotation = Quaternion.Slerp(cristalSpawnPos.localRotation, targetRotation, smoothingFactor);
         }
 
         if (Mathf.Abs(playerInputs.MoveInput.y) > 1e-5f)
         {
-            float yRotation = playerInputs.MoveInput.y * rotationSpeed * Time.deltaTime;
-            lineRendererTargetRotation *= Quaternion.Euler(yRotation, 0, 0);
+            // Calculate rotation increment from input
+            float xRotation = playerInputs.MoveInput.y * rotationSpeed * Time.deltaTime;
+
+            // Apply the rotation increment
+            lineRendererTargetRotation *= Quaternion.Euler(xRotation, 0, 0);
+
+            // Convert target rotation to Euler angles
+            Vector3 targetEulerAngles = lineRendererTargetRotation.eulerAngles;
+
+            // Normalize X rotation to handle values over 180 degrees
+            if (targetEulerAngles.x > 180)
+                targetEulerAngles.x -= 360;
+
+            // Clamp the X rotation
+            targetEulerAngles.x = Mathf.Clamp(targetEulerAngles.x, -maxRotationX, maxRotationX);
+
+            // Reconstruct the quaternion with clamped values
+            lineRendererTargetRotation = Quaternion.Euler(targetEulerAngles.x, 180, 0);
+
+            // Smoothly interpolate to the new rotation
             lineRenderer.transform.localRotation = Quaternion.Slerp(lineRenderer.transform.localRotation, lineRendererTargetRotation, smoothingFactor);
+
         }
 
         // Stop the coroutine if the return button is pressed
