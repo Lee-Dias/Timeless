@@ -7773,7 +7773,7 @@ MonoBehaviour:
   pedestalInstructions: {fileID: 596544418}
   sarcophagusRenderer: {fileID: 999919511}
   cristalMaterial: {fileID: 2100000, guid: 43824a305e9acee469dac7ab29a4f8ca, type: 2}
-  maxRotationX: 15
+  maxRotationX: 25
 --- !u!1 &255999001
 GameObject:
   m_ObjectHideFlags: 0
