@@ -26,10 +26,12 @@ public class RotateObject : MonoBehaviour
     public IEnumerator RotateOverTime()
     {
         float totalRotation = 0f; // Tracks the total rotation
-        while (totalRotation < maxRotation)
+        
+        while (Mathf.Abs(totalRotation) < Mathf.Abs(maxRotation))
         {
-            // Calculate the rotation for this step
-            float rotationThisStep = Mathf.Min(rotationStep, maxRotation - totalRotation);
+            // Calculate the rotation step for this iteration
+            float remainingRotation = maxRotation - totalRotation;
+            float rotationThisStep = Mathf.Clamp(rotationStep, -Mathf.Abs(remainingRotation), Mathf.Abs(remainingRotation));
 
             // Apply the rotation
             if (axisToRotate == "X")
@@ -48,8 +50,9 @@ public class RotateObject : MonoBehaviour
             yield return new WaitForSeconds(timeStep);
         }
 
-        CheckRotations checkRotations = transform.parent.GetComponent<CheckRotations>();    
-        checkRotations.CheckChilds();
+        CheckRotations checkRotations = transform.parent.GetComponent<CheckRotations>();   
+        if (checkRotations != null)
+            checkRotations.CheckChilds();
     }
     // Example: Start the rotation when the game starts
     public void Rotate()

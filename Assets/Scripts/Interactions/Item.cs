@@ -48,5 +48,10 @@ public class Item : ScriptableObject
     /// The prefab for inspection purposes.
     /// </summary>
     public GameObject Prefab;
+
+    /// <summary>
+    /// in case the item is being misspositioned when placed.
+    /// </summary>
+    public float heightWhenPlacedY = 0f;
 }
 

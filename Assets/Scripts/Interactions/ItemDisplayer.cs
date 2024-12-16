@@ -97,11 +97,16 @@ public class ItemDisplayer : MonoBehaviour
             //puts it on default layer so it is not an interactable and doesnt bug
             item.Prefab.layer = 0;
             // Instantiate the item prefab and place it at the display position.
-            displayedObject = Instantiate(item.Prefab, displayPos.position, Quaternion.identity);
+            displayedObject = Instantiate(item.Prefab, displayPos.position, displayPos.rotation);      
             displayedObject.transform.SetParent(displayPos);
-
+        
             // Set the current item as the displayed item.
             displayedItem = item;
+
+            // Set the Y position to 1, while keeping X and Z unchanged
+            Vector3 currentPosition = displayedObject.transform.position;
+            currentPosition.y += item.heightWhenPlacedY;
+            displayedObject.transform.position = currentPosition;
 
             // Invoke the onItemDisplayed event, passing the displayed item.
             onItemDisplayed.Invoke(item);

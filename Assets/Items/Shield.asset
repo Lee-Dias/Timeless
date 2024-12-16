@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
-  m_Name: VenusFigurine
+  m_Name: Shield
   m_EditorClassIdentifier: 
-  ID: 3
+  ID: 14
   Icon: {fileID: 21300000, guid: 10a21d23f21c85149bb91f2eb2e6233b, type: 3}
-  Name: VenusFigurine
-  era: 0
-  Prefab: {fileID: 5368328605875936316, guid: 91925637d63abab43a230d085bc5e852, type: 3}
-  heightWhenPlacedY: 0.1
+  Name: Shield
+  era: 2
+  Prefab: {fileID: 4010908288372042828, guid: e6c86669e12699b4ca93129356bd712c, type: 3}
+  heightWhenPlacedY: 0

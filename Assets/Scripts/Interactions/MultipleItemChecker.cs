@@ -64,11 +64,12 @@ public class MultipleItemChecker : MonoBehaviour
 
         foreach (Transform child in transform)
         {
-            totalPlacableItems += 1;
+           
             InventoryItemMatcher inventoryItemMatcher = child.GetComponent<InventoryItemMatcher>();
 
             if (inventoryItemMatcher != null)
             {
+                totalPlacableItems += 1;
                 if (inventoryItemMatcher.HasRightItem())
                 {
                     totalcorrect += 1;
@@ -81,7 +82,7 @@ public class MultipleItemChecker : MonoBehaviour
             }
             else
             {
-                Debug.LogError($"Child {child.name} does not have an InventoryItemMatcher.");
+                Debug.Log($"Child {child.name} does not have an InventoryItemMatcher.");
             }
         }
         Log($"Total correct items: {totalcorrect}");
