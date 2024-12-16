@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
-  m_Name: Bonfire
+  m_Name: Berries
   m_EditorClassIdentifier: 
   ID: 1
   Icon: {fileID: 21300000, guid: fe2e2c1ba52f89b4498bb835f02f6fe0, type: 3}
-  Name: Bonfire
+  Name: Berries
   era: 0
-  Prefab: {fileID: 3245731650182280474, guid: d5ff548f6e6ca9c49b831f66131f60ae, type: 3}
+  Prefab: {fileID: 1255207086948147670, guid: 6d1e5ea4755ccf246b63de4e4ef14c52, type: 3}
