@@ -12,5 +12,6 @@ public enum Key
     A,
     As, // A#
     B,
-    NonFunctional,
+    NonFunctionalWhite,
+    NonFunctionalBlack,
 }

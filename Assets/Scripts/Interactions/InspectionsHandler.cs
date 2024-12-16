@@ -98,8 +98,6 @@ public class InspectionsHandler : MonoBehaviour
     private Inspectable inspectable;
 
 
-    
-
     /// <summary>
     /// Initializes the InspectionsHandler, ensuring the camera is disabled initially.
     /// Also locates the <see cref="PlayerInputs"/> component.
@@ -193,6 +191,8 @@ public class InspectionsHandler : MonoBehaviour
         // Wait one frame to ensure initialization is complete.
         yield return null;
 
+        inspectingObject.transform.localRotation = Quaternion.identity;
+
         // Enable the inspection camera.
         GetComponent<Camera>().enabled = true;
         inspectionInstructions.SetActive(true);
@@ -252,7 +252,7 @@ public class InspectionsHandler : MonoBehaviour
                 yield break;
             }
 
-            if (playerInputs.GrabButtonDown && inspectingFromInv )
+            if (playerInputs.GrabButtonDown && inspectingFromInv)
             {
                 currentItem = null;
                 Destroy(inspectingObject);
