@@ -31,9 +31,12 @@ public class PauseManager : MonoBehaviour
         }
         private void Update(){
             if (playerInputs.PauseButtonDown){
-                IsPaused = !IsPaused;
-                PauseSystem();
+                ButtonPressed();
             }
+        }
+        public void ButtonPressed(){
+            IsPaused = !IsPaused;
+            PauseSystem();
         }
 
         private void PauseSystem(){

@@ -59,8 +59,9 @@ public class PianoPuzzle : MonoBehaviour
         {
             pianoKey.CanInteract = false;
         }
-        safe?.SetTrigger("Open");
         onCompleted?.Invoke();
+        safe?.SetTrigger("Open");
+        
     }
 
     /// <summary>

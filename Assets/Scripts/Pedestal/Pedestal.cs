@@ -1,8 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Pedestal : Interactable
 {
+    public UnityEvent Temp;
     [Header("Pedestal Setup")]
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private Transform cristalSpawnPos;
@@ -179,7 +181,8 @@ public class Pedestal : Interactable
         {
             lineRenderer.gameObject.SetActive(false);
             sarcophagusCristal.Hit();
-            InteractEvent.RemoveListener(OnCristalInteracted);
+            InteractEvent.RemoveListener(OnCristalInteracted);           
+            Temp?.Invoke();//temporario
             puzzleDone = true;
             CanInteract = false;
             coroutineEnded = true;
