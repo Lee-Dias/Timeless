@@ -20,7 +20,7 @@ public class Item : ScriptableObject
     /// The different eras in which the item can belong. 
     /// This enum is used to categorize items based on their historical era.
     /// </summary>
-    public enum Era { PreHistoric, WildWest, Medieval, Egypt }
+    public enum Era { PreHistoric, WildWest, Medieval, Egypt , Present}
 
     /// <summary>
     /// <br>The unique identifier for the item.</br>
