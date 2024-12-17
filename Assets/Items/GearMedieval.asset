@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
-  m_Name: StoneAx
+  m_Name: GearMedieval
   m_EditorClassIdentifier: 
-  ID: 4
-  Icon: {fileID: 21300000, guid: 7e0a39e13b786424cb83a2c31b0f8390, type: 3}
-  Name: StoneAx
-  era: 0
-  Prefab: {fileID: 8415753377968127777, guid: ca9c15c0556820a40b2352040ec11ef2, type: 3}
+  ID: 19
+  Icon: {fileID: 21300000, guid: c20eb21b416264d4fac6c2861e5b0252, type: 3}
+  Name: GearMedieval
+  era: 2
+  Prefab: {fileID: 1543351886037890776, guid: 4781c348279346942b6ebd9c411f73b3, type: 3}
   heightWhenPlacedY: 0
-  Puzzlenumber: 1
+  Puzzlenumber: 0

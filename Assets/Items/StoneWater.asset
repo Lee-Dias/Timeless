@@ -17,3 +17,5 @@ MonoBehaviour:
   Name: StoneWater
   era: 0
   Prefab: {fileID: 333239676798071423, guid: 8dd7f0ebd43bb3d4085385859877b773, type: 3}
+  heightWhenPlacedY: 0
+  Puzzlenumber: 2

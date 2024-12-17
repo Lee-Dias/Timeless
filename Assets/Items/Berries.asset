@@ -17,3 +17,5 @@ MonoBehaviour:
   Name: Berries
   era: 0
   Prefab: {fileID: 1255207086948147670, guid: 6d1e5ea4755ccf246b63de4e4ef14c52, type: 3}
+  heightWhenPlacedY: 0
+  Puzzlenumber: 1

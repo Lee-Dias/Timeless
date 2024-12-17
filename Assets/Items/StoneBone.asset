@@ -17,3 +17,5 @@ MonoBehaviour:
   Name: StoneBone
   era: 0
   Prefab: {fileID: 2605289064486095381, guid: acbf85ffd10f86e42a91472090dc8574, type: 3}
+  heightWhenPlacedY: 0
+  Puzzlenumber: 2

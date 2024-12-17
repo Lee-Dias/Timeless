@@ -47,6 +47,12 @@ public class InventoryItemMatcher : MonoBehaviour
     [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
     private bool identifyObject = true;
 
+    [SerializeField]
+    private bool acceptEra = true;
+
+    [SerializeField, ShowIf(nameof(acceptEra))]
+    private bool acceptOnlyRightPuzzle = true;
+
     //"The player's inventory, used to access the selected item.
     private PlayerInventory playerInventory;
 
@@ -84,22 +90,57 @@ public class InventoryItemMatcher : MonoBehaviour
         // Confirm that an item is selected.
         if (selected != null)
         {
-            // Check if the item's era matches the required era.
-            if (era == selected.era)
-            {
-                // Check if the selected item is the correct one.
-                if (rightItem == selected)
+            if (acceptEra == true){
+                // Check if the item's era matches the required era.
+                if (era == selected.era)
                 {
-                    Log("Right item checked!");
-                    isRightItem = true; // Set the flag to true if it's the correct item.
-                }
+                    //checks if its only supposed to accepth the right puzzle
+                    if(acceptOnlyRightPuzzle ){
+                        //checks if the item is the right puzzlenumber
+                        if(rightItem.Puzzlenumber == selected.Puzzlenumber){
+                            // Check if the selected item is the correct one.
+                            if (rightItem == selected)
+                            {
+                                Log("Right item checked!");
+                                // Set the flag to true if it's the correct item.
+                                isRightItem = true; 
+                            }
+                            // Invoke the event to notify that the item has been selected, passing the selected item.
+                            selectedItem.Invoke(selected);
+                        }else{
+                            Log("Item checked is from the right era but wrong puzzle.");
+                        }
+                    }else{
+                        // Check if the selected item is the correct one.
+                        if (rightItem == selected)
+                        {
+                            Log("Right item checked!");
+                            // Set the flag to true if it's the correct item.
+                            isRightItem = true; 
+                        }
+                        // Invoke the event to notify that the item has been selected, passing the selected item.
+                        selectedItem.Invoke(selected);
+                    }
 
-                // Invoke the event to notify that the item has been selected, passing the selected item.
-                selectedItem.Invoke(selected);
+                }
+                else
+                {
+                    Log("Item checked is from the wrong era.");
+                }
             }
-            else
-            {
-                Log("Item checked is from the wrong era.");
+            else{
+                    // Check if the selected item is the correct one.
+                    if (rightItem == selected)
+                    {    
+                        // Invoke the event to notify that the item has been selected, passing the selected item.
+                        selectedItem.Invoke(selected);
+                        Log("Right item checked!");
+                        isRightItem = true; // Set the flag to true if it's the correct item.
+                    }
+                    else
+                    {
+                    Log("Item checked is wrong.");
+                    }
             }
         }
     }

@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using NaughtyAttributes;
 using System.Linq;
 
 public class PianoPuzzle : MonoBehaviour
 {
+
+    public UnityEvent onCompleted;
     [SerializeField] private Animator safe;
 
     [Header("Debugging")]
@@ -56,8 +59,8 @@ public class PianoPuzzle : MonoBehaviour
         {
             pianoKey.CanInteract = false;
         }
-        
         safe?.SetTrigger("Open");
+        onCompleted?.Invoke();
     }
 
     /// <summary>

@@ -29,8 +29,9 @@ public class CheckRotations : MonoBehaviour
                     interactable.CanInteract = false;
                 }
             }
+            Completedpuzzle?.Invoke();
         }
-        Completedpuzzle?.Invoke();
+       
 
     }
 }

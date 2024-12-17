@@ -17,3 +17,5 @@ MonoBehaviour:
   Name: StoneLeaf
   era: 0
   Prefab: {fileID: 2075339051001174427, guid: 03bc9782da9684d4b8dfbd79dff35af9, type: 3}
+  heightWhenPlacedY: 0
+  Puzzlenumber: 2

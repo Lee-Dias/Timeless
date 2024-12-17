@@ -53,5 +53,7 @@ public class Item : ScriptableObject
     /// in case the item is being misspositioned when placed.
     /// </summary>
     public float heightWhenPlacedY = 0f;
+
+    public int Puzzlenumber = 0;
 }
 

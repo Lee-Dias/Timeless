@@ -17,3 +17,5 @@ MonoBehaviour:
   Name: StonePyramid
   era: 0
   Prefab: {fileID: 8229728747287806259, guid: 95c10af4f148dbe4c90ce2b46986dddf, type: 3}
+  heightWhenPlacedY: 0
+  Puzzlenumber: 2

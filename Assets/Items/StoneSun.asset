@@ -17,3 +17,5 @@ MonoBehaviour:
   Name: StoneSun
   era: 0
   Prefab: {fileID: 6187184792054386646, guid: 6efc926985765fd49b3d2853e74b15aa, type: 3}
+  heightWhenPlacedY: 0
+  Puzzlenumber: 2

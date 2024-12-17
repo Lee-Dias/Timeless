@@ -17,3 +17,5 @@ MonoBehaviour:
   Name: Bone
   era: 0
   Prefab: {fileID: 3344483027887653616, guid: c257bd56f3728a441ba3b0fa21b7a8bd, type: 3}
+  heightWhenPlacedY: 0
+  Puzzlenumber: 1
