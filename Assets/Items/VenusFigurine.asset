@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: VenusFigurine
   m_EditorClassIdentifier: 
   ID: 3
-  Icon: {fileID: 21300000, guid: 10a21d23f21c85149bb91f2eb2e6233b, type: 3}
+  Icon: {fileID: 21300000, guid: 70dc99e56c0004d4e8e2b3359ad6a971, type: 3}
   Name: VenusFigurine
   era: 0
-  Prefab: {fileID: 5368328605875936316, guid: 91925637d63abab43a230d085bc5e852, type: 3}
+  Prefab: {fileID: 3456436447002934860, guid: 1b5b792b50833524e9d94cbce02b55c9, type: 3}
   heightWhenPlacedY: 0.1
   Puzzlenumber: 1
