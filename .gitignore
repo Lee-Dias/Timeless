@@ -72,10 +72,5 @@ crashlytics-build.properties
 
 # Unity meshes and materials
 Assets/Models
-Assets/Models.meta
 Assets/Textures
-Assets/Textures.meta
 Assets/Sounds
-Assets/Sounds.meta
-Assets/Scenes/FirstCutscene
-Asset/Scenes/FirstCutscene.meta

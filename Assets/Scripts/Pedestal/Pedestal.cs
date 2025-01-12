@@ -31,8 +31,7 @@ public class Pedestal : Interactable
 
         if (!playerInputs)
         {
-            Debug.LogWarning("PlayerInputs not found, instantiating new one.");
-            playerInputs = Instantiate(new PlayerInputs());
+            Debug.LogWarning("PlayerInputs not found.");
         }
         if (lineRenderer == null) Debug.LogError("LineRenderer is not assigned!");
         if (cristalSpawnPos == null) Debug.LogError("CristalSpawnPos is not assigned!");
@@ -58,8 +57,11 @@ public class Pedestal : Interactable
     /// </summary>
     public void HasCristal()
     {
-        GameObject spawnedCristal = Instantiate(cristal.Prefab, cristalSpawnPos.position, Quaternion.identity, cristalSpawnPos);
+        GameObject spawnedCristal = Instantiate(cristal.Prefab, cristalSpawnPos.position, Quaternion.identity);
         spawnedCristal.GetComponent<Interactable>().CanInteract = false;
+        AudioSource aS = GetComponent<AudioSource>();
+        if (aS != null) aS.Play();
+
         OnCristalInteracted();
         InteractEvent.AddListener(OnCristalInteracted);
         InteractEvent.RemoveListener(GetComponent<InventoryItemMatcher>().CheckItem);

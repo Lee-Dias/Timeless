@@ -6,6 +6,6 @@ public class SarcophagusCristal : MonoBehaviour
 
     public void Hit()
     {
-        anim.SetTrigger("Open");
+        if (anim != null) anim.SetTrigger("Open");
     }
 }

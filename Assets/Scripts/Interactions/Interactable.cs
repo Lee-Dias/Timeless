@@ -93,6 +93,10 @@ public class Interactable : MonoBehaviour
     [SerializeField, Tooltip("Determines whether the object can only be interacted with once.")]
     private bool interactOnce = false;
 
+    [SerializeField] private AudioClip pickUpSound;
+
+    [SerializeField] private AudioSource audioPrefab;
+
     // Indicates if the object is currently available for interaction.
     // Set to false to disable interaction.
     [HideInInspector] public bool CanInteract = true;
@@ -126,6 +130,8 @@ public class Interactable : MonoBehaviour
             }
             // Disable future interactions if it is a single-use interaction.
             if (interactOnce) CanInteract = false;
+
+            Instantiate(audioPrefab, transform.position, Quaternion.identity).PlayOneShot(pickUpSound);
         }
     }
 }
