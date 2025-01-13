@@ -16,6 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: a2f7db2a33e681e4bbf283dd094532ab, type: 3}
   Name: GearWildWest
   era: 4
-  Prefab: {fileID: 1492249899392240576, guid: 0b6ee2dfc843deb4e883c5caf7a49c88, type: 3}
+  Prefab: {fileID: 6629158432022273226, guid: b342019b1c8916f428a76e5d4b84ce3d, type: 3}
   heightWhenPlacedY: 0
   Puzzlenumber: 0
