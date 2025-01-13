@@ -16,4 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 0}
   Name: Bootle1
   era: 1
-  Prefab: {fileID: 1277608306759239653, guid: d4bd71258327494409bc7095ace8f8d3, type: 3}
+  Prefab: {fileID: 7603791202442153203, guid: d772b43a45694b241a7401b7a51af834, type: 3}
+  heightWhenPlacedY: 0
+  Puzzlenumber: 0

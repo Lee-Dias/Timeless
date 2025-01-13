@@ -131,7 +131,7 @@ public class Interactable : MonoBehaviour
             // Disable future interactions if it is a single-use interaction.
             if (interactOnce) CanInteract = false;
 
-            Instantiate(audioPrefab, transform.position, Quaternion.identity).PlayOneShot(pickUpSound);
+            if (pickUpSound != null) Instantiate(audioPrefab, transform.position, Quaternion.identity).PlayOneShot(pickUpSound);
         }
     }
 }
