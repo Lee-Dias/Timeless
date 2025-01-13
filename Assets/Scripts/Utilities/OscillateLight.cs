@@ -10,10 +10,10 @@ public class OscillateLight : MonoBehaviour
     [SerializeField]
     private Light oscillateLight;
 
-    
+
     [SerializeField]
     private float intensityMin = .5f; // Minimum intensity value.
-    
+
     [SerializeField]
     private float intensityMax = 1f; // Maximum intensity value.
 
@@ -28,14 +28,11 @@ public class OscillateLight : MonoBehaviour
     private float changeSpeed = 1f;
 
     // Random offset for the oscillation time
-    private float intensityOffset;
-    private float rangeOffset;
+    private float offset;
 
     private void Awake()
     {
-        // Initialize random offsets
-        intensityOffset = Random.Range(0f, 2f * Mathf.PI);
-        rangeOffset = Random.Range(0f, 2f * Mathf.PI);
+        offset = Random.Range(0f, 4f);
     }
 
     /// <summary>
@@ -43,6 +40,7 @@ public class OscillateLight : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (offset <= 1e-15) offset = Random.Range(0f, 4f);
         if (oscillateLight == null) return;
 
         // Oscillate the light's intensity and range every frame
@@ -56,7 +54,7 @@ public class OscillateLight : MonoBehaviour
     private void OscillateLightIntensity()
     {
         // Calculate new intensity with offset
-        float intensity = Mathf.Lerp(intensityMin, intensityMax, (Mathf.Sin(Time.time * changeSpeed + intensityOffset) + 1f) / 2f);
+        float intensity = Mathf.Lerp(intensityMin, intensityMax, (Mathf.Sin(Time.time * changeSpeed + offset) + 1f) / 2f);
         oscillateLight.intensity = intensity;
     }
 
@@ -66,7 +64,7 @@ public class OscillateLight : MonoBehaviour
     private void OscillateLightRange()
     {
         // Calculate new range with offset
-        float range = Mathf.Lerp(rangeMin, rangeMax, (Mathf.Sin(Time.time * changeSpeed + rangeOffset) + 1f) / 2f);
+        float range = Mathf.Lerp(rangeMin, rangeMax, (Mathf.Sin(Time.time * changeSpeed + offset) + 1f) / 2f);
         oscillateLight.range = range;
     }
 
