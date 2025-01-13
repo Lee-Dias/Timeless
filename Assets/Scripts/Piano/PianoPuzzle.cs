@@ -60,8 +60,12 @@ public class PianoPuzzle : MonoBehaviour
             pianoKey.CanInteract = false;
         }
         onCompleted?.Invoke();
-        safe?.SetTrigger("Open");
-        
+        if (safe != null)
+        {
+            safe.SetTrigger("Open");
+            safe.GetComponent<AudioSource>()?.Play();
+        }
+
     }
 
     /// <summary>

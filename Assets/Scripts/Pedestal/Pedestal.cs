@@ -155,7 +155,9 @@ public class Pedestal : Interactable
         RaycastHit hit;
         Vector3 direction = lineRenderer.transform.forward * -1;
 
-        if (Physics.Raycast(lineRenderer.transform.position, direction, out hit, 50))
+        int layerMask = ~LayerMask.GetMask("Player");
+
+        if (Physics.Raycast(lineRenderer.transform.position, direction, out hit, 50, layerMask))
         {
             SarcophagusCristal sarcophagusCristal = hit.collider.GetComponent<SarcophagusCristal>();
             if (sarcophagusCristal)

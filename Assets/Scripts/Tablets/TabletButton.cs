@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class TabletButton : Interactable
@@ -15,22 +14,28 @@ public class TabletButton : Interactable
 
     public bool IsActive { get; private set; } = false;  // Flag to track the button's state.
 
+    private AudioSource audioSource;  // Audio source to play button press sound.
     private Animator anim;  // Animator to handle button animations.
     [SerializeField] private Material glowMaterial;  // Material for button's emission (glowing effect).
     private Material originalMaterial;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogWarning("AudioSource component missing from TabletButton.", this);
+        }
         // Ensure necessary components are present
         anim = GetComponent<Animator>();
         if (anim == null)
         {
-            Debug.LogError("Animator component missing from TabletButton.", this);
+            Debug.LogWarning("Animator component missing from TabletButton.", this);
         }
 
         if (BackBrick == null)
         {
-            Debug.LogError("Overlay material for glow effect missing or incorrectly configured.", this);
+            Debug.LogWarning("BackBrick Renderer missing or incorrectly configured.", this);
         }
         else
         {
@@ -64,6 +69,11 @@ public class TabletButton : Interactable
 
         IsActive = !IsActive;  // Toggle the button's active state.
         anim?.SetTrigger("Press");  // Play the button press animation.
+        if (audioSource != null)
+        {
+            audioSource.pitch = UnityEngine.Random.Range(0.9f, 1f);  // Randomize the pitch.
+            audioSource.Play();  // Play the button press sound.
+        }
     }
 
     /// <summary>
