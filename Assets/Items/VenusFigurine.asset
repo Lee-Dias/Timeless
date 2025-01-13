@@ -16,6 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 70dc99e56c0004d4e8e2b3359ad6a971, type: 3}
   Name: VenusFigurine
   era: 0
-  Prefab: {fileID: 3456436447002934860, guid: 1b5b792b50833524e9d94cbce02b55c9, type: 3}
+  Prefab: {fileID: 7160117404180365471, guid: 2074bfc86c46d2b4493124b8808e9e04, type: 3}
   heightWhenPlacedY: 0.1
   Puzzlenumber: 1

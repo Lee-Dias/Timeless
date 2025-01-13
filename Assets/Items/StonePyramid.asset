@@ -16,6 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 142d2ebf1f1f66f44931a90124e3fc63, type: 3}
   Name: StonePyramid
   era: 0
-  Prefab: {fileID: 8229728747287806259, guid: 95c10af4f148dbe4c90ce2b46986dddf, type: 3}
+  Prefab: {fileID: 4283179298707800354, guid: af0acb802a938864587b92edad431275, type: 3}
   heightWhenPlacedY: 0
   Puzzlenumber: 2

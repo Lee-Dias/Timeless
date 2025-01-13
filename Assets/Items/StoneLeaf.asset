@@ -16,6 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 5e580a92bac72bf449f3669126c50b3c, type: 3}
   Name: StoneLeaf
   era: 0
-  Prefab: {fileID: 2075339051001174427, guid: 03bc9782da9684d4b8dfbd79dff35af9, type: 3}
+  Prefab: {fileID: 3825034919085205055, guid: bc2521b941760c84bb5c5f6eec5e4236, type: 3}
   heightWhenPlacedY: 0
   Puzzlenumber: 2

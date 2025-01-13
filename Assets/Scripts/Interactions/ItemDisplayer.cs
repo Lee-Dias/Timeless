@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -94,20 +95,19 @@ public class ItemDisplayer : MonoBehaviour
         // Check if there is no item currently displayed.
         if (displayedObject == null && displayedItem == null)
         {
-            //puts it on default layer so it is not an interactable and doesnt bug
-            item.Prefab.layer = 0;
             // Instantiate the item prefab and place it at the display position.
-            displayedObject = Instantiate(item.Prefab, displayPos.position, displayPos.rotation);      
+            displayedObject = Instantiate(item.Prefab, displayPos.position, item.Prefab.transform.rotation);      
             displayedObject.transform.SetParent(displayPos);
+            
         
             // Set the current item as the displayed item.
             displayedItem = item;
-
             // Set the Y position to 1, while keeping X and Z unchanged
             Vector3 currentPosition = displayedObject.transform.position;
             currentPosition.y += item.heightWhenPlacedY;
             displayedObject.transform.position = currentPosition;
-
+            //makes so the object cant be interacted with only the container
+            displayedObject.layer = 0;
             // Invoke the onItemDisplayed event, passing the displayed item.
             onItemDisplayed.Invoke(item);
         }

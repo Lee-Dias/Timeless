@@ -16,6 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 849ead7fe867575429aefcb1712e92a1, type: 3}
   Name: StoneWater
   era: 0
-  Prefab: {fileID: 333239676798071423, guid: 8dd7f0ebd43bb3d4085385859877b773, type: 3}
+  Prefab: {fileID: 7254978728143264126, guid: 15f18bed5bbe3cc4abbf9e8fbdeb5460, type: 3}
   heightWhenPlacedY: 0
   Puzzlenumber: 2

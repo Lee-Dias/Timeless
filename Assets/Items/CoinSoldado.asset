@@ -16,6 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: e1a7725068ba5de4f930baf1d8e8b998, type: 3}
   Name: CoinSoldado
   era: 2
-  Prefab: {fileID: 2834813052949032582, guid: ef726eaf8d8a5da43867d96ebc603f08, type: 3}
+  Prefab: {fileID: 7619165579242379393, guid: 0d8b71c4ec7f2a845a2efbcbc48d3dda, type: 3}
   heightWhenPlacedY: 0
   Puzzlenumber: 3

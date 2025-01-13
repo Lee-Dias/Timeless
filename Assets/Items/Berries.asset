@@ -16,6 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: dc15d2cf3627cf54bb928343b404b0d6, type: 3}
   Name: Berries
   era: 0
-  Prefab: {fileID: 955926536494756905, guid: 319a44c7520f651419be8b14d7d8805e, type: 3}
+  Prefab: {fileID: 8734415776421872286, guid: 15a3f4523a4c75c4fb9504ee6447b31e, type: 3}
   heightWhenPlacedY: 0
   Puzzlenumber: 1
