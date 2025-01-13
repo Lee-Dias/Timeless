@@ -27,14 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7603791202442153203}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -5.8061423, y: 2.1616166, z: -3.4828975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 678836391113829626}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &878542031355840947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71,7 +71,11 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds:
+  - {fileID: 8300000, guid: be068b2861d9b7c4dba55d71f9501f49, type: 3}
+  - {fileID: 8300000, guid: 83646bf40449e26478521d439478403e, type: 3}
+  - {fileID: 8300000, guid: 2fcb26219fc81254281add5ac68ca0e6, type: 3}
+  - {fileID: 8300000, guid: a302938d585019e4ebe136510a0f4aeb, type: 3}
   audioPrefab: {fileID: 5713373137800223788, guid: eda8cb2131952264ab050fa597d46da9, type: 3}
   CanInteract: 1
   InteractEvent:

@@ -522,7 +522,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -634,11 +635,6 @@ Transform:
   - {fileID: 1574872865}
   m_Father: {fileID: 1998521387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &12291447 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2667123762677865891, guid: ef8104b480301134d84e708b5cebd834, type: 3}
-  m_PrefabInstance: {fileID: 904866231819993025}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &12291448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2865806167365656264, guid: ef8104b480301134d84e708b5cebd834, type: 3}
@@ -724,7 +720,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -1097,8 +1094,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.7075472, g: 0.5322082, b: 0.2236116, a: 1}
-  m_Intensity: 0.25335813
-  m_Range: 1.1964998
+  m_Intensity: 0.41034055
+  m_Range: 1.1093113
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1753,7 +1750,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -1995,7 +1993,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -3221,7 +3220,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -4418,7 +4418,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -4558,7 +4559,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -4702,7 +4704,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -10235,7 +10238,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -10545,7 +10549,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -11102,7 +11107,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -11379,7 +11385,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -11731,7 +11738,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -11907,7 +11915,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -12947,7 +12956,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -13175,7 +13185,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -13916,7 +13927,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -14113,11 +14125,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281784033}
   m_Mesh: {fileID: 855131390749405241, guid: 4ff4ad1a23508c74fb9a5403175d4337, type: 3}
---- !u!1 &284653699 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 393371015249759979, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
-  m_PrefabInstance: {fileID: 9009068113126140188}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &284653700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7221130419878869000, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
@@ -14383,7 +14390,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -14660,7 +14668,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -15023,7 +15032,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -15770,7 +15780,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -16047,7 +16058,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -16836,7 +16848,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -17113,7 +17126,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -17476,7 +17490,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -17893,7 +17908,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -18496,17 +18512,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7656217419925452872, guid: d772b43a45694b241a7401b7a51af834, type: 3}
   m_PrefabInstance: {fileID: 2203779548182635454}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &417503095 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1732966143035786149, guid: d772b43a45694b241a7401b7a51af834, type: 3}
-  m_PrefabInstance: {fileID: 2203779548182635454}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 052d4b38a43b7c242879ccccc6994d30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &422440382
 GameObject:
   m_ObjectHideFlags: 0
@@ -19053,7 +19058,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -19578,7 +19584,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -20179,7 +20186,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -20643,7 +20651,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -20697,7 +20706,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -21132,7 +21142,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -21409,7 +21420,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -21794,7 +21806,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -22245,7 +22258,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -22991,7 +23005,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -23656,7 +23671,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -24047,7 +24063,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -24413,7 +24430,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -24797,7 +24815,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -25074,7 +25093,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -25487,7 +25507,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -25839,7 +25860,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -26015,7 +26037,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -26292,7 +26315,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -26835,7 +26859,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -27423,7 +27448,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -28035,7 +28061,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -28450,7 +28477,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -29073,7 +29101,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -29350,7 +29379,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -29880,7 +29910,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -30321,7 +30352,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -30656,7 +30688,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -30887,7 +30920,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -31177,7 +31211,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -32056,7 +32091,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -32869,7 +32905,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -33036,7 +33073,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -33887,7 +33925,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -34561,7 +34600,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -34826,8 +34866,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.8693877
-  m_Range: 1.2434593
+  m_Intensity: 0.2501553
+  m_Range: 1.0374795
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -35246,7 +35286,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -40728,7 +40769,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -41074,7 +41116,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -41250,7 +41293,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -41759,7 +41803,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -42111,7 +42156,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -42838,7 +42884,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -43219,11 +43266,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!1 &1150910622 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9007518024709194651, guid: 1dac2297163f05e448b2899813c5e93b, type: 3}
-  m_PrefabInstance: {fileID: 240929599624899645}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1150910623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6265286090776723302, guid: 1dac2297163f05e448b2899813c5e93b, type: 3}
@@ -43435,7 +43477,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -43618,7 +43661,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -44021,7 +44065,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -45027,7 +45072,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -45304,7 +45350,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -46317,7 +46364,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -46792,7 +46840,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -47058,7 +47107,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -47790,7 +47840,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -48070,7 +48121,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -48349,7 +48401,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -48818,8 +48871,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 0.9365495
-  m_Range: 1.1265893
+  m_Intensity: 0.96215177
+  m_Range: 1.1485459
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -49061,7 +49114,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -49273,7 +49327,8 @@ MonoBehaviour:
   addToInv: 1
   item: {fileID: 11400000, guid: d978e79cf6cd2de4a9f35bd7baf6d20f, type: 2}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -49476,7 +49531,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -50096,7 +50152,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -50459,7 +50516,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -50736,7 +50794,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -51013,7 +51072,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -51481,7 +51541,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -52221,7 +52282,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -52737,7 +52799,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -53463,7 +53526,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -54209,7 +54273,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -54583,7 +54648,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -54988,7 +55054,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -55391,7 +55458,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -55436,7 +55504,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -55612,7 +55681,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -56244,7 +56314,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -56521,7 +56592,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -56990,7 +57062,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -57157,7 +57230,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -60245,7 +60319,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 1
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -60566,7 +60641,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -60918,7 +60994,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -62004,7 +62081,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -62569,7 +62647,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -63046,7 +63125,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -63490,11 +63570,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805054542}
   m_Mesh: {fileID: 9223105254043764183, guid: 8c3c3187b56a0fa46be451ec96b5d046, type: 3}
---- !u!1 &1806291038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7370873266288670990, guid: 0ff321c7f003b8f4583a235fb108c1a1, type: 3}
-  m_PrefabInstance: {fileID: 7677651500494762021}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1806291039 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7525740360403805391, guid: 0ff321c7f003b8f4583a235fb108c1a1, type: 3}
@@ -64202,7 +64277,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -64479,7 +64555,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -65111,7 +65188,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -65540,7 +65618,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -65859,7 +65938,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -66261,7 +66341,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -66847,7 +66928,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -66980,7 +67062,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -68384,8 +68467,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 0.25820288
-  m_Range: 1.0122821
+  m_Intensity: 0.4822994
+  m_Range: 1.2408692
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -68837,8 +68920,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.76659167
-  m_Range: 1.2416139
+  m_Intensity: 0.7707024
+  m_Range: 1.1584723
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -69218,7 +69301,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -69339,8 +69423,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 0.2868239
-  m_Range: 1.0360628
+  m_Intensity: 0.53981376
+  m_Range: 1.0157309
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -70450,7 +70534,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -70474,7 +70559,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -70819,7 +70905,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -70937,7 +71024,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -71271,7 +71359,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -71753,7 +71842,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -72613,7 +72703,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -73398,7 +73489,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -73675,7 +73767,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -74241,7 +74334,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -74546,7 +74640,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -75215,7 +75310,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -75747,7 +75843,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -76077,7 +76174,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -76568,7 +76666,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -77313,7 +77412,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -77679,16 +77779,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 1229649857}
     m_Modifications:
     - target: {fileID: 4903099388064655723, guid: 1dac2297163f05e448b2899813c5e93b, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 417503095}
-    - target: {fileID: 4903099388064655723, guid: 1dac2297163f05e448b2899813c5e93b, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1150910622}
-    - target: {fileID: 4903099388064655723, guid: 1dac2297163f05e448b2899813c5e93b, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      propertyPath: volume
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 6265286090776723302, guid: 1dac2297163f05e448b2899813c5e93b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -78745,16 +78837,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3565106865659873671, guid: ef8104b480301134d84e708b5cebd834, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 417503095}
-    - target: {fileID: 3565106865659873671, guid: ef8104b480301134d84e708b5cebd834, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 12291447}
-    - target: {fileID: 3565106865659873671, guid: ef8104b480301134d84e708b5cebd834, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      propertyPath: volume
+      value: 0.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -79344,7 +79428,8 @@ MonoBehaviour:
   addToInv: 1
   item: {fileID: 11400000, guid: 7490656f7c2ee5c4c9172f4d8a56716e, type: 2}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -79748,7 +79833,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -81140,7 +81226,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -81476,7 +81563,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -81580,25 +81668,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1229649857}
     m_Modifications:
-    - target: {fileID: 678836391113829626, guid: d772b43a45694b241a7401b7a51af834, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678836391113829626, guid: d772b43a45694b241a7401b7a51af834, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678836391113829626, guid: d772b43a45694b241a7401b7a51af834, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 678836391113829626, guid: d772b43a45694b241a7401b7a51af834, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678836391113829626, guid: d772b43a45694b241a7401b7a51af834, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+    - target: {fileID: 5428708684036474579, guid: d772b43a45694b241a7401b7a51af834, type: 3}
+      propertyPath: volume
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 7603791202442153203, guid: d772b43a45694b241a7401b7a51af834, type: 3}
       propertyPath: m_Name
@@ -81933,7 +82005,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -84830,7 +84903,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -85762,7 +85836,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -86845,7 +86920,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -87156,7 +87232,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -88046,7 +88123,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -89144,7 +89222,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -89679,7 +89758,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -89796,16 +89876,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 1229649857}
     m_Modifications:
     - target: {fileID: 2817309145630645529, guid: 0ff321c7f003b8f4583a235fb108c1a1, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 417503095}
-    - target: {fileID: 2817309145630645529, guid: 0ff321c7f003b8f4583a235fb108c1a1, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1806291038}
-    - target: {fileID: 2817309145630645529, guid: 0ff321c7f003b8f4583a235fb108c1a1, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      propertyPath: volume
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 7370873266288670990, guid: 0ff321c7f003b8f4583a235fb108c1a1, type: 3}
       propertyPath: m_Name
@@ -90440,7 +90512,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -91013,7 +91086,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -91593,7 +91667,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -91978,7 +92053,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -92279,7 +92355,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -92443,7 +92520,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -92641,7 +92719,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:
@@ -92814,21 +92893,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle2
       objectReference: {fileID: 0}
-    - target: {fileID: 1348889649352097292, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
-      propertyPath: m_Size.x
-      value: 0.17412923
-      objectReference: {fileID: 0}
     - target: {fileID: 4089200009414546068, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 417503095}
-    - target: {fileID: 4089200009414546068, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 284653699}
-    - target: {fileID: 4089200009414546068, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
-      propertyPath: InteractEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      propertyPath: volume
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 7221130419878869000, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -92869,18 +92936,6 @@ PrefabInstance:
     - target: {fileID: 7221130419878869000, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7327258423838753104, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7327258423838753104, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7327258423838753104, guid: fb7564ede07f59948980c43aa2533c9e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -93081,7 +93136,8 @@ MonoBehaviour:
   addToInv: 0
   item: {fileID: 0}
   interactOnce: 0
-  pickUpSound: {fileID: 0}
+  pickUpSounds: []
+  volume: 1
   audioPrefab: {fileID: 0}
   CanInteract: 1
   InteractEvent:

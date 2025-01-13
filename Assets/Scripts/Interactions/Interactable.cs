@@ -83,30 +83,27 @@ using UnityEngine.Events;
 /// </remarks>
 public class Interactable : MonoBehaviour
 {
+
     [SerializeField, Tooltip("Determines whether the object should be added to the player's inventory upon interaction.")]
     private bool addToInv = false;
 
     [SerializeField, ShowIf(nameof(addToInv)), Tooltip("The item to be added to the inventory if true.")]
     private Item item;
 
-    // If true, interaction will be disabled after the first use.
     [SerializeField, Tooltip("Determines whether the object can only be interacted with once.")]
     private bool interactOnce = false;
 
-    [SerializeField] private AudioClip pickUpSound;
-
+    [SerializeField] private AudioClip[] pickUpSounds;
+    [SerializeField] private float volume = 1f;
     [SerializeField] private AudioSource audioPrefab;
 
-    // Indicates if the object is currently available for interaction.
-    // Set to false to disable interaction.
     [HideInInspector] public bool CanInteract = true;
 
     [Tooltip("Event triggered when the object is interacted with.")]
     public UnityEvent InteractEvent;
 
-    //gets inspectionhandler so it can check if the player is inspecting
     private InspectionsHandler inspectionsHandler;
-    
+
     /// <summary>
     /// Handles the interaction with the object.
     /// Triggers the <see cref="InteractEvent"/> and manages inventory addition or single-use behavior.
@@ -131,7 +128,11 @@ public class Interactable : MonoBehaviour
             // Disable future interactions if it is a single-use interaction.
             if (interactOnce) CanInteract = false;
 
-            if (pickUpSound != null) Instantiate(audioPrefab, transform.position, Quaternion.identity).PlayOneShot(pickUpSound);
+            if (pickUpSounds != null && pickUpSounds.Length > 0 && audioPrefab != null) 
+            {
+                AudioClip clip = pickUpSounds[Random.Range(0, pickUpSounds.Length)];
+                Instantiate(audioPrefab, transform.position, Quaternion.identity).PlayOneShot(clip, volume);
+            }
         }
     }
 }
