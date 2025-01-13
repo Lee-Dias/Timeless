@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Berries
   m_EditorClassIdentifier: 
   ID: 1
-  Icon: {fileID: 21300000, guid: dc15d2cf3627cf54bb928343b404b0d6, type: 3}
+  Icon: {fileID: 21300000, guid: df0aa18ffe997ec4aac9ae2609d3d773, type: 3}
   Name: Berries
   era: 0
   Prefab: {fileID: 8734415776421872286, guid: 15a3f4523a4c75c4fb9504ee6447b31e, type: 3}

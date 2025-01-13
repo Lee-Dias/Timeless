@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   ID: 14
-  Icon: {fileID: 21300000, guid: a43b6c83515e73947bd5da20363e5f85, type: 3}
+  Icon: {fileID: 21300000, guid: 1e7d8c0e345622e499d48331d0fd08b4, type: 3}
   Name: Shield
   era: 2
   Prefab: {fileID: 5238742843911035402, guid: e69d2f3f1025650469d65cb28ba0af7d, type: 3}

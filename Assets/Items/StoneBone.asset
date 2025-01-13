@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StoneBone
   m_EditorClassIdentifier: 
   ID: 5
-  Icon: {fileID: 21300000, guid: 8386f4dd3d368e74eb03031754a6de2e, type: 3}
+  Icon: {fileID: 21300000, guid: 13df947dbd4794a49be7b88bcf2cc28c, type: 3}
   Name: StoneBone
   era: 0
   Prefab: {fileID: 4220128890653512741, guid: 7bb8cda8795e83a488f30488df6c6d78, type: 3}

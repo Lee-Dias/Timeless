@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StonePyramid
   m_EditorClassIdentifier: 
   ID: 7
-  Icon: {fileID: 21300000, guid: 142d2ebf1f1f66f44931a90124e3fc63, type: 3}
+  Icon: {fileID: 21300000, guid: cb58cc644296c204a81b4cfd5eff19cd, type: 3}
   Name: StonePyramid
   era: 0
   Prefab: {fileID: 4283179298707800354, guid: af0acb802a938864587b92edad431275, type: 3}

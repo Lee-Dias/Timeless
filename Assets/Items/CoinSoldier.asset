@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
-  m_Name: CoinDonzela
+  m_Name: CoinSoldier
   m_EditorClassIdentifier: 
-  ID: 15
-  Icon: {fileID: 21300000, guid: 7774982da90b9c144a810a0c3749fe60, type: 3}
-  Name: CoinDonzela
+  ID: 16
+  Icon: {fileID: 21300000, guid: c9b97747e2e10dc4b83deaeafac58b58, type: 3}
+  Name: CoinSoldier
   era: 2
-  Prefab: {fileID: 5382312175263333337, guid: e78408a4407041f4fa8e594639b89d66, type: 3}
+  Prefab: {fileID: 7619165579242379393, guid: 0d8b71c4ec7f2a845a2efbcbc48d3dda, type: 3}
   heightWhenPlacedY: 0
   Puzzlenumber: 3

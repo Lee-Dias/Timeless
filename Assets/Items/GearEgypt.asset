@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GearEgypt
   m_EditorClassIdentifier: 
   ID: 18
-  Icon: {fileID: 21300000, guid: 31f6daa36707b2b4aabf494ee322d6a1, type: 3}
+  Icon: {fileID: 21300000, guid: ee19c608e518f4145ab4099cbbf81b69, type: 3}
   Name: GearEgypt
   era: 4
   Prefab: {fileID: 7933177685108119443, guid: 60f78855ec16fc54f9645df94e5b397c, type: 3}

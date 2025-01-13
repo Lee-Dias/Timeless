@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Cristal
   m_EditorClassIdentifier: 
   ID: 5
-  Icon: {fileID: 21300000, guid: 3a6e8af571cd10b4898bd11771d81819, type: 3}
+  Icon: {fileID: 21300000, guid: 494e80e1d1d2ba749a0118631ae92696, type: 3}
   Name: Cristal
   era: 3
-  Prefab: {fileID: 8122436245170162950, guid: 701e2080d0cbc8c40908f7ae0c55d51e, type: 3}
+  Prefab: {fileID: 8553774238689004118, guid: a996142de87fc374f84a829b68e42a69, type: 3}
   heightWhenPlacedY: 0
   Puzzlenumber: 0

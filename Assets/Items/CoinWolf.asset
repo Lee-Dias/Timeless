@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
-  m_Name: CoinLobo
+  m_Name: CoinWolf
   m_EditorClassIdentifier: 
   ID: 17
-  Icon: {fileID: 21300000, guid: c20eb21b416264d4fac6c2861e5b0252, type: 3}
-  Name: CoinLobo
+  Icon: {fileID: 21300000, guid: b11204667800053449cdbdacf2508b57, type: 3}
+  Name: CoinWolf
   era: 2
   Prefab: {fileID: 6341547585835302948, guid: b81b3d72f9cf6da4b8c0fddeb89b1280, type: 3}
   heightWhenPlacedY: 0
