@@ -300,8 +300,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.7075472, g: 0.5322082, b: 0.2236116, a: 1}
-  m_Intensity: 1.6561426
-  m_Range: 3.7936857
+  m_Intensity: 1.1383145
+  m_Range: 3.4829888
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -8386,8 +8386,8 @@ GameObject:
   - component: {fileID: 293860131}
   - component: {fileID: 293860130}
   - component: {fileID: 293860129}
-  m_Layer: 0
-  m_Name: InspeectBackground
+  m_Layer: 3
+  m_Name: InspectBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16174,8 +16174,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.37381637
-  m_Range: 1.0412722
+  m_Intensity: 0.5349374
+  m_Range: 1.0949792
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -24851,8 +24851,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 0.7004546
-  m_Range: 1.5007577
+  m_Intensity: 0.8789427
+  m_Range: 1.7982379
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -32096,8 +32096,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.968995
-  m_Range: 3.187598
+  m_Intensity: 1.8487644
+  m_Range: 3.1395059
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -32422,8 +32422,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.6738107
-  m_Range: 1.1412703
+  m_Intensity: 0.2580072
+  m_Range: 1.0026691
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -32906,8 +32906,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.9996867
-  m_Range: 4.9996867
+  m_Intensity: 1.0001816
+  m_Range: 4.0001817
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
