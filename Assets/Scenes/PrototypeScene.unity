@@ -192,8 +192,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.7075472, g: 0.5322082, b: 0.2236116, a: 1}
-  m_Intensity: 1.7560691
-  m_Range: 3.8536415
+  m_Intensity: 1.886818
+  m_Range: 3.9320908
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -16380,6 +16380,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 513740750}
     m_Modifications:
+    - target: {fileID: 770982378494219555, guid: 0d8b71c4ec7f2a845a2efbcbc48d3dda, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 770982378494219555, guid: 0d8b71c4ec7f2a845a2efbcbc48d3dda, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 770982378494219555, guid: 0d8b71c4ec7f2a845a2efbcbc48d3dda, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: efae22f811153af40b23bf4a4bef3cdd, type: 3}
     - target: {fileID: 6808038456284151404, guid: 0d8b71c4ec7f2a845a2efbcbc48d3dda, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0010974854
@@ -17042,8 +17054,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.33228707
-  m_Range: 1.027429
+  m_Intensity: 0.6374712
+  m_Range: 1.1291571
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -26651,8 +26663,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 0.89587146
-  m_Range: 1.8264524
+  m_Intensity: 0.7817416
+  m_Range: 1.636236
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -31030,6 +31042,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -11.455
       objectReference: {fileID: 0}
+    - target: {fileID: 3118754707202446827, guid: e69d2f3f1025650469d65cb28ba0af7d, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 3118754707202446827, guid: e69d2f3f1025650469d65cb28ba0af7d, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118754707202446827, guid: e69d2f3f1025650469d65cb28ba0af7d, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     - target: {fileID: 5238742843911035402, guid: e69d2f3f1025650469d65cb28ba0af7d, type: 3}
       propertyPath: m_Name
       value: Shield
@@ -33973,8 +33997,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.504816
-  m_Range: 3.0019264
+  m_Intensity: 1.9741802
+  m_Range: 3.1896722
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -34219,8 +34243,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.7372549, b: 0.2784314, a: 1}
-  m_Intensity: 0.25218952
-  m_Range: 1.0007298
+  m_Intensity: 0.45595598
+  m_Range: 1.068652
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -34839,8 +34863,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.69228506, b: 0.23375754, a: 1}
-  m_Intensity: 1.958667
-  m_Range: 4.9586673
+  m_Intensity: 1.6891048
+  m_Range: 4.689105
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -36836,6 +36860,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 277580477}
     m_Modifications:
+    - target: {fileID: 3626957583403584347, guid: bc2521b941760c84bb5c5f6eec5e4236, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626957583403584347, guid: bc2521b941760c84bb5c5f6eec5e4236, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     - target: {fileID: 3825034919085205055, guid: bc2521b941760c84bb5c5f6eec5e4236, type: 3}
       propertyPath: m_Name
       value: stoneLeaf
@@ -37207,6 +37239,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7743698252321158527, guid: af0acb802a938864587b92edad431275, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 7743698252321158527, guid: af0acb802a938864587b92edad431275, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743698252321158527, guid: af0acb802a938864587b92edad431275, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37783,6 +37827,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 277580477}
     m_Modifications:
+    - target: {fileID: 483948857798174814, guid: 15f18bed5bbe3cc4abbf9e8fbdeb5460, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 483948857798174814, guid: 15f18bed5bbe3cc4abbf9e8fbdeb5460, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483948857798174814, guid: 15f18bed5bbe3cc4abbf9e8fbdeb5460, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     - target: {fileID: 3178805806790157989, guid: 15f18bed5bbe3cc4abbf9e8fbdeb5460, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.767
@@ -39563,6 +39619,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8228273146722092473, guid: 531ad6271798b974b921c32fe704d935, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 8228273146722092473, guid: 531ad6271798b974b921c32fe704d935, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228273146722092473, guid: 531ad6271798b974b921c32fe704d935, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40680,6 +40748,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1682964045680644572, guid: 836f6416093dd5247b94c9d034fb2226, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 1682964045680644572, guid: 836f6416093dd5247b94c9d034fb2226, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682964045680644572, guid: 836f6416093dd5247b94c9d034fb2226, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     - target: {fileID: 3457939545011627799, guid: 836f6416093dd5247b94c9d034fb2226, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.69000006
@@ -41919,6 +41999,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1800843210}
     m_Modifications:
+    - target: {fileID: 1313995018679966317, guid: 15a3f4523a4c75c4fb9504ee6447b31e, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 1313995018679966317, guid: 15a3f4523a4c75c4fb9504ee6447b31e, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313995018679966317, guid: 15a3f4523a4c75c4fb9504ee6447b31e, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     - target: {fileID: 7456777326389561326, guid: 15a3f4523a4c75c4fb9504ee6447b31e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.9413345
@@ -43224,6 +43316,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 277580477}
     m_Modifications:
+    - target: {fileID: 842261835470576926, guid: 7bb8cda8795e83a488f30488df6c6d78, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 842261835470576926, guid: 7bb8cda8795e83a488f30488df6c6d78, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 842261835470576926, guid: 7bb8cda8795e83a488f30488df6c6d78, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     - target: {fileID: 4220128890653512741, guid: 7bb8cda8795e83a488f30488df6c6d78, type: 3}
       propertyPath: m_Name
       value: stoneBone
@@ -43874,6 +43978,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 722837192}
     m_Modifications:
+    - target: {fileID: 1926977900602132616, guid: b81b3d72f9cf6da4b8c0fddeb89b1280, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 1926977900602132616, guid: b81b3d72f9cf6da4b8c0fddeb89b1280, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926977900602132616, guid: b81b3d72f9cf6da4b8c0fddeb89b1280, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: efae22f811153af40b23bf4a4bef3cdd, type: 3}
     - target: {fileID: 6341547585835302948, guid: b81b3d72f9cf6da4b8c0fddeb89b1280, type: 3}
       propertyPath: m_Name
       value: CoinWolf
@@ -45851,6 +45967,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1800843210}
     m_Modifications:
+    - target: {fileID: 5370700773747887246, guid: 2074bfc86c46d2b4493124b8808e9e04, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 5370700773747887246, guid: 2074bfc86c46d2b4493124b8808e9e04, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370700773747887246, guid: 2074bfc86c46d2b4493124b8808e9e04, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     - target: {fileID: 6100660318241431263, guid: 2074bfc86c46d2b4493124b8808e9e04, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.133
@@ -46428,6 +46556,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7259224907204597475, guid: 8390880840d28994e822bdfc1967af67, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 7259224907204597475, guid: 8390880840d28994e822bdfc1967af67, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259224907204597475, guid: 8390880840d28994e822bdfc1967af67, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -47889,6 +48029,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1800843210}
     m_Modifications:
+    - target: {fileID: 2833408873210733131, guid: 167460d23a360244bb218500c403b45e, type: 3}
+      propertyPath: audioPrefab
+      value: 
+      objectReference: {fileID: 5713373137800223788, guid: 3213fcd6cbd5502409aa087e59d331e4, type: 3}
+    - target: {fileID: 2833408873210733131, guid: 167460d23a360244bb218500c403b45e, type: 3}
+      propertyPath: pickUpSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833408873210733131, guid: 167460d23a360244bb218500c403b45e, type: 3}
+      propertyPath: 'pickUpSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dbd8c96c5d3777846a4ba2aac1731a24, type: 3}
     - target: {fileID: 3394654022111380294, guid: 167460d23a360244bb218500c403b45e, type: 3}
       propertyPath: m_Name
       value: stoneAx

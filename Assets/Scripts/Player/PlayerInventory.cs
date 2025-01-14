@@ -64,7 +64,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        if (inventory.Count == 0 || canChangeSelection) return; // Skip if there are no items in the inventory.
+        if (inventory.Count == 0 || !canChangeSelection) return; // Skip if there are no items in the inventory.
 
         int lastIndex = selectedItemIndex;
 
