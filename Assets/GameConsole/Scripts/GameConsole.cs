@@ -7,6 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using System.Runtime.InteropServices;
+using JetBrains.Annotations;
 
 namespace GameConsole
 {
@@ -33,6 +34,8 @@ namespace GameConsole
 
         [SerializeField] private InputActionReference openConsoleAction;
 
+        [SerializeField] private Item[] gears;
+
         public UnityEvent consoleOpened;
         public UnityEvent consoleClosed;
 
@@ -40,6 +43,10 @@ namespace GameConsole
 
         // Dictionary to store available commands and their corresponding definitions.
         private Dictionary<string, CommandDefinition> commands;
+
+        public Dictionary<string, CommandDefinition> Commands
+            => new(commands);
+
 
         private void Awake()
         {
@@ -77,6 +84,17 @@ namespace GameConsole
                         action: args => Home()
                     )
                 },
+                {
+                    "get_gear",
+                    new CommandDefinition(
+                        GetGear,
+                        new List<CommandArgument>
+                        {
+                            new CommandArgument("gearname", typeof(string))
+                        }
+                    )
+
+                }
             };
 
             // Check if references are properly assigned.
@@ -160,19 +178,10 @@ namespace GameConsole
                 // Invoke the action associated with the command using the parsed arguments.
                 command.Action.Invoke(parsedArgs);
             }
-            catch (Exception ex)
+            catch
             {
-                Log($"Error: {ex.Message}"); // Log errors during command execution.
+                Log("An error occurred."); // Log errors during command execution.
             }
-        }
-
-        /// <summary>
-        /// Logs messages to the console display.
-        /// </summary>
-        /// <param name="message">Message to be logged.</param>
-        private void Log(string message)
-        {
-            logText.text += message + "\n"; // Append the message to the log text.
         }
 
         /// <summary>
@@ -204,12 +213,52 @@ namespace GameConsole
             SceneManager.LoadScene("MainMenu");
         }
 
-        /// <summary>
-        /// Retrieves the list of available commands.
-        /// </summary>
-        public Dictionary<string, CommandDefinition> GetCommands()
+        private void GetGear(params object[] args)
         {
-            return commands;
+            if (SceneManager.GetActiveScene().name != "PrototypeScene")
+            {
+                Log("This command can only be used in game.");
+                return;
+            }
+
+            if (args.Length == 0)
+            {
+                Log("Please provide a gear name.");
+                return;
+            }
+            if (args[0] is string gearName)
+            {
+                if (gearName.ToLower() == "all" || gearName.ToLower() == "*")
+                {
+                    foreach (Item gear in gears)
+                    {
+                        FindFirstObjectByType<PlayerInventory>()?.AddItemToInventory(gear);
+                    }
+                    Log("All gears added to inventory.");
+                }
+                else
+                {
+                    Item gear = gears.FirstOrDefault(g => g.Name.ToLower() == gearName.ToLower());
+                    if (gear != null)
+                    {
+                        Log($"Gear '{gearName}' found. Adding to inventory...");
+                        FindFirstObjectByType<PlayerInventory>()?.AddItemToInventory(gear);
+                    }
+                    else
+                    {
+                        Log($"Gear '{gearName}' not found.");
+                    }
+                }         
+            }
+        }
+
+        /// <summary>
+        /// Logs messages to the console display.
+        /// </summary>
+        /// <param name="message">Message to be logged.</param>
+        private void Log(string message)
+        {
+            logText.text += message + "\n"; // Append the message to the log text.
         }
     }
 }

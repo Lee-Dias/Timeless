@@ -72,7 +72,7 @@ namespace GameConsole
         {
             allSuggestions.Clear(); // Clear any previous suggestions
 
-            foreach (var command in gameConsole.GetCommands())
+            foreach (var command in gameConsole.Commands)
             {
                 var commandName = command.Key; // The command name
                 var parameters = command.Value.Arguments.Select(arg => arg.Name).ToArray(); // Get parameter names
