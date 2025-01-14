@@ -43,7 +43,6 @@ using NaughtyAttributes;
 public class MultipleItemChecker : MonoBehaviour
 {
     [Header("Debugging")]
-
     public UnityEvent Completedpuzzle;
 
     [SerializeField, Tooltip("Enable this to display debug messages from this script in the Console.")]

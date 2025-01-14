@@ -477,16 +477,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06437c1ff663d574d9447842ba0a72e4, type: 3}
   m_Name: ScreenSpaceLensFlare
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 2.5
+    m_Value: 0
   tintColor:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   bloomMip:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   firstFlareIntensity:
     m_OverrideState: 1
     m_Value: 1
@@ -519,13 +519,13 @@ MonoBehaviour:
     m_Value: 0
   streaksLength:
     m_OverrideState: 1
-    m_Value: 0.807
+    m_Value: 0.5
   streaksOrientation:
     m_OverrideState: 1
     m_Value: 0
   streaksThreshold:
     m_OverrideState: 1
-    m_Value: 0.352
+    m_Value: 0.25
   resolution:
     m_OverrideState: 1
     m_Value: 4

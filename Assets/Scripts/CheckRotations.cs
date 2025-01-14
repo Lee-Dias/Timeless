@@ -7,6 +7,9 @@ public class CheckRotations : MonoBehaviour
 
     public UnityEvent Completedpuzzle;
 
+    [SerializeField]
+    private Animator anim;
+
     public void CheckChilds()
     {
         int totalItems = 0; 
@@ -30,6 +33,8 @@ public class CheckRotations : MonoBehaviour
                 }
             }
             Completedpuzzle?.Invoke();
+            if (anim != null)
+                anim.SetTrigger("fall");
         }
        
 
