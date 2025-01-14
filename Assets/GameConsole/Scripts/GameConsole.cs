@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 using System.Runtime.InteropServices;
 using JetBrains.Annotations;
+using UnityEditor.Search;
 
 namespace GameConsole
 {
@@ -35,6 +36,8 @@ namespace GameConsole
         [SerializeField] private InputActionReference openConsoleAction;
 
         [SerializeField] private Item[] gears;
+
+        [SerializeField] private Item[] allItems;
 
         public UnityEvent consoleOpened;
         public UnityEvent consoleClosed;
@@ -85,16 +88,21 @@ namespace GameConsole
                     )
                 },
                 {
-                    "get_gear",
+                    "get_item",
                     new CommandDefinition(
-                        GetGear,
+                        GetItem,
                         new List<CommandArgument>
                         {
-                            new CommandArgument("gearname", typeof(string))
+                            new CommandArgument("item_name", typeof(string))
                         }
                     )
-
-                }
+                },
+                {
+                    "clear_inventory",
+                    new CommandDefinition(
+                        action: args => ClearInventory()
+                    )
+                },
             };
 
             // Check if references are properly assigned.
@@ -213,7 +221,7 @@ namespace GameConsole
             SceneManager.LoadScene("MainMenu");
         }
 
-        private void GetGear(params object[] args)
+        private void GetItem(params object[] args)
         {
             if (SceneManager.GetActiveScene().name != "PrototypeScene")
             {
@@ -226,30 +234,44 @@ namespace GameConsole
                 Log("Please provide a gear name.");
                 return;
             }
-            if (args[0] is string gearName)
+            if (args[0] is string itemName)
             {
-                if (gearName.ToLower() == "all" || gearName.ToLower() == "*")
+                PlayerInventory playerInventory = FindFirstObjectByType<PlayerInventory>();
+                if (itemName.ToLower() == "gearAll" || itemName.ToLower() == "gear*")
                 {
                     foreach (Item gear in gears)
                     {
-                        FindFirstObjectByType<PlayerInventory>()?.AddItemToInventory(gear);
+                        if (playerInventory != null) playerInventory.AddItemToInventory(gear);
                     }
                     Log("All gears added to inventory.");
                 }
                 else
                 {
-                    Item gear = gears.FirstOrDefault(g => g.Name.ToLower() == gearName.ToLower());
-                    if (gear != null)
+                    Item item = allItems.FirstOrDefault(g => g.Name.ToLower() == itemName.ToLower());
+                    if (item != null)
                     {
-                        Log($"Gear '{gearName}' found. Adding to inventory...");
-                        FindFirstObjectByType<PlayerInventory>()?.AddItemToInventory(gear);
+                        if (playerInventory != null)
+                        {
+                            playerInventory.AddItemToInventory(item);
+                            Log($"{item.Name} added to inventory.");
+                        }
                     }
                     else
                     {
-                        Log($"Gear '{gearName}' not found.");
+                        Log($"Item '{itemName}' not found.");
                     }
-                }         
+                }
             }
+        }
+
+        private void ClearInventory(params object[] args)
+        {
+            PlayerInventory playerInventory = FindFirstObjectByType<PlayerInventory>();
+            if (playerInventory != null)
+            {
+                playerInventory.RemoveAllItemsFromInventory();
+            }
+            Log("Inventory cleared.");
         }
 
         /// <summary>

@@ -165,31 +165,9 @@ namespace GameConsole
                             {
                                 ClearPreview();
                             }
-
-                            // Check if the char before caret is a space
-                            if (text[caretPosition - 1] == ' ')
-                            {
-                                int startPos = caretPosition - 1;
-                                while (startPos > 0 && text[startPos - 1] == ' ')
-                                {
-                                    startPos--;
-                                }
-
-                                text = text.Remove(startPos, caretPosition - startPos);
-                                caretPosition = startPos; // Move caret back to the first non-space character or start
-                            }
-                            else
-                            {
-                                int startPos = caretPosition - 1;
-                                while (startPos > 0 && text[startPos - 1] != ' ')
-                                {
-                                    startPos--;
-                                }
-
-                                text = text.Remove(startPos, caretPosition - startPos);
-                                caretPosition = startPos; // Move caret back to the first space or start
-                            }
-
+                            
+                            text = text.Remove(caretPosition - 1, 1);
+                            caretPosition--; // Move caret position back
                             selectionStart = -1; // Reset selection
                         }
                         allTextSelected = false;

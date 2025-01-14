@@ -53,6 +53,9 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
     private bool identifyObject = true;
 
+
+    private bool canChangeSelection = true;
+
     private void Awake()
     {
         // Initialize the inventory as an empty list.
@@ -61,7 +64,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        if (inventory.Count == 0) return; // Skip if there are no items in the inventory.
+        if (inventory.Count == 0 || canChangeSelection) return; // Skip if there are no items in the inventory.
 
         int lastIndex = selectedItemIndex;
 
@@ -106,18 +109,28 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Gets the currently selected item from the inventory.
-    /// </summary>
-    /// <returns>The currently selected item, or null if no item is selected.</returns>
-    public Item GetSelectedItem()
+    public void AddItemsToInventory(IEnumerable<Item> items)
     {
-        // Return the selected item if there is one.
-        if (inventory.Count > 0 && selectedItemIndex >= 0 && selectedItemIndex < inventory.Count)
+        foreach(Item item in items)
         {
-            return inventory[selectedItemIndex];
+            AddItemToInventory(item);
         }
-        return null; // Return null if no item is selected.
+    }
+
+    public void RemoveItemsFromInventory(IEnumerable<Item> items)
+    {
+        foreach(Item item in items)
+        {
+            RemoveItemFromInventory(item);
+        }
+    }
+
+    public void RemoveAllItemsFromInventory()
+    {
+        foreach(Item item in inventory)
+        {
+            RemoveItemFromInventory(item);
+        }
     }
 
     /// <summary>
@@ -167,6 +180,20 @@ public class PlayerInventory : MonoBehaviour
     }
 
     /// <summary>
+    /// Gets the currently selected item from the inventory.
+    /// </summary>
+    /// <returns>The currently selected item, or null if no item is selected.</returns>
+    public Item GetSelectedItem()
+    {
+        // Return the selected item if there is one.
+        if (inventory.Count > 0 && selectedItemIndex >= 0 && selectedItemIndex < inventory.Count)
+        {
+            return inventory[selectedItemIndex];
+        }
+        return null; // Return null if no item is selected.
+    }
+
+    /// <summary>
     /// Logs a debug message to the Console if debugging is enabled.
     /// Includes the object's name as an identifier if 'identifyObject' is true.
     /// </summary>
@@ -178,5 +205,10 @@ public class PlayerInventory : MonoBehaviour
             if (identifyObject) Debug.Log(message, this); // Logs with object name if 'identifyObject' is true.
             else Debug.Log(message); // Logs message without object name.
         }
+    }
+
+    public void SetCanChangeSelection(bool value)
+    {
+        canChangeSelection = value;
     }
 }

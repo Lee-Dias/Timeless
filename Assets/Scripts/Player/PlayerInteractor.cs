@@ -37,6 +37,8 @@ public class PlayerInteractor : MonoBehaviour
     private PlayerInputs playerInputs; // Reference to the PlayerInputs script to get player input.
     private CrosshairUI crosshair; // The crosshair UI component that will change size based on interaction availability.
 
+    private bool canInteract = true;
+
     private void Start()
     {
         try
@@ -59,6 +61,8 @@ public class PlayerInteractor : MonoBehaviour
 
     private void Update()
     {
+        if (!canInteract) return;
+
         // Default action: Shrink the crosshair if no interaction happens.
         bool shouldGrowCrosshair = false;
 
@@ -103,5 +107,10 @@ public class PlayerInteractor : MonoBehaviour
             else
                 Debug.Log(message); // Log without object name.
         }
+    }
+
+    public void SetCanInteract(bool value)
+    {
+        canInteract = value;
     }
 }

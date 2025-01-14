@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 12
   Icon: {fileID: 0}
-  Name: Bootle3
+  Name: Bottle3
   era: 1
   Prefab: {fileID: 2667123762677865891, guid: ef8104b480301134d84e708b5cebd834, type: 3}
   heightWhenPlacedY: 0
