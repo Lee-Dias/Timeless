@@ -17,5 +17,5 @@ MonoBehaviour:
   Name: StoneAx
   era: 0
   Prefab: {fileID: 3394654022111380294, guid: 167460d23a360244bb218500c403b45e, type: 3}
-  heightWhenPlacedY: 0
+  heightWhenPlacedY: 0.05
   Puzzlenumber: 1

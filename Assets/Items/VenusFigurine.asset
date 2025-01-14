@@ -17,5 +17,5 @@ MonoBehaviour:
   Name: VenusFigurine
   era: 0
   Prefab: {fileID: 7160117404180365471, guid: 2074bfc86c46d2b4493124b8808e9e04, type: 3}
-  heightWhenPlacedY: 0.1
+  heightWhenPlacedY: 0.05
   Puzzlenumber: 1
