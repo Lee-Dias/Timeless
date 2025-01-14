@@ -74,11 +74,7 @@ namespace GameConsole
                 {
                     "start_game",
                     new CommandDefinition(
-                        action: args => StartGame((int)args[0]), // Pass the scene ID to the action
-                        arguments: new List<CommandArgument>
-                        {
-                            new CommandArgument("scene", typeof(int), 0) // Default scene ID is 0
-                        }
+                        action: args => StartGame()
                     )
                 },
                 {
@@ -207,8 +203,7 @@ namespace GameConsole
 
         private void StartGame(params object[] args)
         {
-            if ((int)args[0] == 0) SceneManager.LoadScene("FirstCutscene");
-            else if ((int)args[0] == 1) SceneManager.LoadScene("PrototypeScene");
+            SceneManager.LoadScene("PrototypeScene");
         }
 
         private void RestartScene(params object[] args)
