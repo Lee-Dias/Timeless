@@ -6,8 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.Linq;
-using System.Runtime.InteropServices;
-using JetBrains.Annotations;
+using UnityEngine.Audio;
 
 namespace GameConsole
 {
@@ -38,6 +37,8 @@ namespace GameConsole
 
         [SerializeField] private Item[] allItems;
 
+        [SerializeField] private AudioMixer audioMixer;
+
         public UnityEvent consoleOpened;
         public UnityEvent consoleClosed;
 
@@ -58,29 +59,21 @@ namespace GameConsole
                 // Example 'help' command which lists all available commands
                 {
                     "help",
-                    new CommandDefinition(
-                        action: args => ShowHelp() // Action to show help
-                    )
+                    new CommandDefinition(ShowHelp)
                 },
                 // Command to restart the current scene
                 {
                     "restart_scene",
-                    new CommandDefinition(
-                        action: args => RestartScene() // Action to restart the scene
-                    )
+                    new CommandDefinition(RestartScene)
                 },
                 // Command to start the game with a specific scene ID
                 {
                     "start_game",
-                    new CommandDefinition(
-                        action: args => StartGame()
-                    )
+                    new CommandDefinition(StartGame)
                 },
                 {
                     "home",
-                    new CommandDefinition(
-                        action: args => Home()
-                    )
+                    new CommandDefinition(Home)
                 },
                 {
                     "get_item",
@@ -94,9 +87,25 @@ namespace GameConsole
                 },
                 {
                     "clear_inventory",
-                    new CommandDefinition(
-                        action: args => ClearInventory()
-                    )
+                    new CommandDefinition(ClearInventory)
+                },
+                {
+                    "snd_effects", new CommandDefinition(SoundEffectVolume, new List<CommandArgument>
+                    {
+                        new CommandArgument("volume", typeof(float), 1.0f)
+                    })
+                },
+                {
+                    "snd_music", new CommandDefinition(MusicVolume, new List<CommandArgument>
+                    {
+                        new CommandArgument("volume", typeof(float), 1.0f)
+                    })
+                },
+                {
+                    "snd_main", new CommandDefinition(MainVolume, new List<CommandArgument>
+                    {
+                        new CommandArgument("volume", typeof(float), 1.0f)
+                    })
                 },
             };
 
@@ -181,9 +190,10 @@ namespace GameConsole
                 // Invoke the action associated with the command using the parsed arguments.
                 command.Action.Invoke(parsedArgs);
             }
-            catch
+            catch (Exception ex)
             {
-                Log("An error occurred."); // Log errors during command execution.
+                Log("An error occurred.");
+                Debug.LogError($"Error: {ex.Message}"); // Log errors during command execution.
             }
         }
 
@@ -225,13 +235,17 @@ namespace GameConsole
 
             if (args.Length == 0)
             {
-                Log("Please provide a gear name.");
+                Log("Please provide an item name.");
                 return;
             }
             if (args[0] is string itemName)
             {
+                itemName = itemName.ToLower();
                 PlayerInventory playerInventory = FindFirstObjectByType<PlayerInventory>();
-                if (itemName.ToLower() == "gearAll" || itemName.ToLower() == "gear*")
+
+                if (itemName == "gearall" || itemName == "gear*"
+                    || itemName == "allgears" || itemName == "allgear"
+                    || itemName == "*gear")
                 {
                     foreach (Item gear in gears)
                     {
@@ -266,6 +280,66 @@ namespace GameConsole
                 playerInventory.RemoveAllItemsFromInventory();
             }
             Log("Inventory cleared.");
+        }
+
+        private void SoundEffectVolume(params object[] args)
+        {
+            if (args == null || args.Length == 0)
+            {
+                Log("Please provide a volume value.");
+                return;
+            }
+
+            float v = (float)args[0];
+
+            if (v <= 0)
+            {
+                v = 1e-5f;
+                Log($"Sound effects volume set to {0}");
+            }
+            else Log($"Sound effects volume set to {v}");
+
+            audioMixer.SetFloat("effectsVol", Mathf.Log10(v) * 20);
+        }
+
+        private void MusicVolume(params object[] args)
+        {
+            if (args == null || args.Length == 0)
+            {
+                Log("Please provide a volume value.");
+                return;
+            }
+
+            float v = (float)args[0];
+
+            if (v <= 0)
+            {
+                v = 1e-5f;
+                Log($"Music volume set to {0}");
+            }
+            else Log($"Music volume set to {v}");
+
+            audioMixer.SetFloat("effectsVol", Mathf.Log10(v) * 20);
+        }
+
+        private void MainVolume(params object[] args)
+        {
+            if (args == null || args.Length == 0)
+            {
+                Log("Please provide a volume value.");
+                return;
+            }
+
+            float v = (float)args[0];
+
+            if (v <= 0)
+            {
+                v = 1e-5f;
+                Log($"Main volume set to {0}");
+            }
+            else Log($"Main volume set to {v}");
+
+            audioMixer.SetFloat("effectsVol", Mathf.Log10(v) * 20);
         }
 
         /// <summary>

@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
 using System.Linq;
+using UnityEngine.Audio;
 
 public class PianoPuzzle : MonoBehaviour
 {
@@ -16,7 +18,10 @@ public class PianoPuzzle : MonoBehaviour
 
     [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
     private bool identifyObject = true;
-    public List<Key> rightKeysInOrder;
+
+    [SerializeField] private List<Key> rightKeysInOrder;
+
+    [SerializeField] private AudioMixer audioMixer;
 
     private int rightKeysPressed = 0;
     private PianoKey[] pianoKeys;
@@ -42,6 +47,11 @@ public class PianoPuzzle : MonoBehaviour
         else
         {
             Log($"Wrong key! Resetting progress.");
+            if (rightKeysPressed > 0)
+            {
+                Debug.Log("Starting coroutine");
+                StartCoroutine(PitchChangeCoroutine());
+            }
             rightKeysPressed = 0;
         }
 
@@ -66,6 +76,21 @@ public class PianoPuzzle : MonoBehaviour
             safe.GetComponent<AudioSource>()?.Play();
         }
 
+    }
+
+    private IEnumerator PitchChangeCoroutine()
+    {
+        float time = 0;
+        float pitch = 1;
+        do
+        {
+            time += Time.deltaTime;
+            Debug.Log("wrong");
+            pitch = Mathf.Lerp(pitch, 1.3f, Time.deltaTime);
+            audioMixer.SetFloat("keysPitch", pitch);
+            yield return null;
+        } while (time < .5f || rightKeysPressed == 0);
+        audioMixer.SetFloat("keysPitch", 1);
     }
 
     /// <summary>

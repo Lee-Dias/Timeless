@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace GameConsole
 {
@@ -28,7 +29,7 @@ namespace GameConsole
         public CommandDefinition(Action<object[]> action, List<CommandArgument> arguments = null)
         {
             Action = action;  // Assign the action to be performed when the command is executed.
-            
+
             Arguments = new List<CommandArgument>();
             if (arguments != null) Arguments = arguments;  // Assign the list of arguments required for this command.
         }
@@ -39,6 +40,7 @@ namespace GameConsole
         /// </summary>
         /// <param name="inputArgs">The raw input arguments as strings from the user.</param>
         /// <returns>An array of parsed arguments in the correct data types.</returns>
+
         public object[] ParseArguments(string[] inputArgs)
         {
             // Create an array to hold the parsed argument values.
@@ -81,7 +83,7 @@ namespace GameConsole
                 if (argument.Type == typeof(int))
                     return int.Parse(input);
                 if (argument.Type == typeof(float))
-                    return float.Parse(input);
+                    return float.Parse(input.Replace(',', '.'), CultureInfo.InvariantCulture);
                 if (argument.Type == typeof(bool))
                     return bool.Parse(input);
 
