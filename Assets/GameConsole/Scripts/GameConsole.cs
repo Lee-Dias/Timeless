@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 using System.Runtime.InteropServices;
 using JetBrains.Annotations;
-using UnityEditor.Search;
 
 namespace GameConsole
 {
