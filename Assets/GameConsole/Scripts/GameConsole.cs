@@ -77,26 +77,26 @@ namespace GameConsole
                 },
                 {
                     "get_item",
-                    new CommandDefinition(
-                        GetItem,
+                    new CommandDefinition(GetItem,
                         new List<CommandArgument>
                         {
                             new CommandArgument("item_name", typeof(string))
-                        }
-                    )
+                        })
                 },
                 {
                     "clear_inventory",
                     new CommandDefinition(ClearInventory)
                 },
                 {
-                    "snd_effects", new CommandDefinition(SoundEffectVolume, new List<CommandArgument>
-                    {
-                        new CommandArgument("volume", typeof(float), 1.0f)
-                    })
+                    "snd_effects", new CommandDefinition(SoundEffectVolume,
+                        new List<CommandArgument>
+                        {
+                            new CommandArgument("volume", typeof(float), 1.0f)
+                        })
                 },
                 {
-                    "snd_music", new CommandDefinition(MusicVolume, new List<CommandArgument>
+                    "snd_music", new CommandDefinition(MusicVolume,
+                    new List<CommandArgument>
                     {
                         new CommandArgument("volume", typeof(float), 1.0f)
                     })
@@ -156,7 +156,8 @@ namespace GameConsole
         /// <param name="input">The command entered by the user.</param>
         public void OnCommandEntered(string input)
         {
-            if (string.IsNullOrWhiteSpace(input)) return; // Ignore empty inputs.
+            if (string.IsNullOrWhiteSpace(input) ||
+                string.IsNullOrEmpty(input)) return; // Ignore empty inputs.
 
             // Log the command entered by the user.
             Log($"> {input}");
@@ -202,11 +203,21 @@ namespace GameConsole
         /// </summary>
         private void ShowHelp(params object[] args)
         {
-            Log("Available commands:");
+            Log("");
+            Log("<size=22>Available commands:</size>");
+            Log("");
             foreach (var cmd in commands)
             {
+                string commandText = $"{cmd.Key}";
+                string usage = cmd.Value.GetUsage();
+                if (!string.IsNullOrEmpty(usage) || !string.IsNullOrWhiteSpace(usage))
+                {
+                    commandText += $": {usage}";
+                }
+                commandText += ";";
+
                 // Log each command's name and usage description.
-                Log($"{cmd.Key}: {cmd.Value.GetUsage()}");
+                Log($"{commandText}");
             }
         }
 

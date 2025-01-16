@@ -1,10 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using UnityEngine.Events;
-using System.Linq;
-using System;
 using System.Collections;
 
 namespace GameConsole
@@ -84,7 +81,7 @@ namespace GameConsole
             if (!canListenToInput) return;
             HandleTextInput();     // Handle user input
             HandleSelection();     // Handle text selection
-            if (!isPreviewing) HandleCaretBlinking(); // Handle the caret blinking only when not previewing
+            HandleCaretBlinking(); // Handle the caret blinking only when not previewing
         }
         private void OnEnable()
         {
@@ -97,6 +94,7 @@ namespace GameConsole
             yield return null;
             canListenToInput = true;
         }
+
         /// <summary>
         /// Handles all text input, including typing, backspace, and special key presses.
         /// </summary>
@@ -165,7 +163,7 @@ namespace GameConsole
                             {
                                 ClearPreview();
                             }
-                            
+
                             text = text.Remove(caretPosition - 1, 1);
                             caretPosition--; // Move caret position back
                             selectionStart = -1; // Reset selection
@@ -289,7 +287,17 @@ namespace GameConsole
         /// </summary>
         private void UpdateTextArea()
         {
-            string displayText = isPreviewing ? previewText : text;
+            string displayText;
+
+            // Make preview text darker
+            if (isPreviewing)
+            {
+                // Ensure the intersecting text is correctly handled
+                string intersectingText = text.Substring(0, Mathf.Min(previewText.Length, text.Length));
+                string remainingText = previewText.Length > text.Length ? previewText.Substring(text.Length) : "";
+                displayText = $"{intersectingText}<color=#808080>{remainingText}</color>";
+            }
+            else displayText = text;
 
             if (selectionStart >= 0)
             {
@@ -301,15 +309,14 @@ namespace GameConsole
                 selectionImage.gameObject.SetActive(false);
             }
 
-            // Display caret only when not previewing
-            if (!isPreviewing && caretVisible)
+            // Display caret even when previewing
+            if (caretVisible)
             {
-                textArea.text = displayText.Insert(caretPosition, "|");
+                displayText = displayText.Insert(caretPosition, "|");
             }
-            else
-            {
-                textArea.text = displayText;
-            }
+
+            // Apply rich text tags to the TMP_Text component
+            textArea.text = displayText;
         }
 
         /// <summary>

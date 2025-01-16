@@ -132,7 +132,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: -1
+  m_AdditionalShaderChannelsFlag: 31
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -487,8 +487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: 0, y: 0, z: 0, w: 0}
-  m_Softness: {x: 0, y: 0}
+  m_Padding: {x: 0, y: 0, z: 0, w: 15}
+  m_Softness: {x: 0, y: 100}
 --- !u!1 &2250363894379850012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1051,15 @@ MonoBehaviour:
   logText: {fileID: 59250394233123378}
   canvas: {fileID: 56426722857194054}
   openConsoleAction: {fileID: -3709386831015648423, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  gears: []
+  allItems: []
+  audioMixer: {fileID: 0}
+  consoleOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  consoleClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8635972397463990080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1125,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1168,7 +1177,7 @@ MonoBehaviour:
   m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 1
   checkPaddingRequired: 0
-  m_isRichText: 0
+  m_isRichText: 1
   m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
