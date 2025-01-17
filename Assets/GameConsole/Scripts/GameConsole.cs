@@ -252,6 +252,13 @@ namespace GameConsole
             if (args[0] is string itemName)
             {
                 itemName = itemName.ToLower();
+
+                if (string.IsNullOrEmpty(itemName) || string.IsNullOrWhiteSpace(itemName))
+                {
+                    Log("Please provide an item name.");
+                    return;
+                }
+
                 PlayerInventory playerInventory = FindFirstObjectByType<PlayerInventory>();
 
                 if (itemName == "gearall" || itemName == "gear*"
@@ -293,73 +300,157 @@ namespace GameConsole
             Log("Inventory cleared.");
         }
 
+        /// <summary>
+        /// <br>Adjusts the sound effects volume in the audio mixer.</br>
+        /// <br>Converts a linear volume value (0.0 to 1.0) into a decibel (dB) scale to match Unity's audio system.</br>
+        /// </summary>
+        /// <remarks>
+        /// <br>- Clamps very low values (≤ 1e-5) to prevent errors from logarithm calculations.</br>
+        /// <br>- Unity audio mixer interprets 0 dB as the original volume and clamps values near 0 to -80 dB (mute).</br>
+        /// </remarks>
+        /// <param name="args">
+        /// <br>A single parameter is expected:</br>
+        /// <br>- <c>args[0]</c>: A float between, being 0 mute.</br>
+        /// </param>
         private void SoundEffectVolume(params object[] args)
         {
+            // Check if arguments are provided
             if (args == null || args.Length == 0)
             {
                 Log("Please provide a volume value.");
                 return;
             }
 
+            // Retrieve the first argument and cast it to a float
             float v = (float)args[0];
 
-            if (v <= 0)
+            // Ensure the volume is not too small to avoid invalid calculations
+            // 1e-5f is used as a practical lower bound to prevent issues like taking the logarithm of zero.
+            if (v <= 1e-5f)
             {
-                v = 1e-5f;
-                Log($"Sound effects volume set to {0}");
+                v = 1e-5f; // Clamp to the lower bound
+                Log($"Sound effects volume set to {0}"); // Log that the volume is effectively muted
             }
-            else Log($"Sound effects volume set to {v}");
-
-            audioMixer.SetFloat("effectsVol", Mathf.Log10(v) * 20);
-        }
-
-        private void MusicVolume(params object[] args)
-        {
-            if (args == null || args.Length == 0)
+            else
             {
-                Log("Please provide a volume value.");
-                return;
+                // Log the actual volume level
+                Log($"Sound effects volume set to {v}");
             }
 
-            float v = (float)args[0];
-
-            if (v <= 0)
-            {
-                v = 1e-5f;
-                Log($"Music volume set to {0}");
-            }
-            else Log($"Music volume set to {v}");
-
-            audioMixer.SetFloat("effectsVol", Mathf.Log10(v) * 20);
-        }
-
-        private void MainVolume(params object[] args)
-        {
-            if (args == null || args.Length == 0)
-            {
-                Log("Please provide a volume value.");
-                return;
-            }
-
-            float v = (float)args[0];
-
-            if (v <= 0)
-            {
-                v = 1e-5f;
-                Log($"Main volume set to {0}");
-            }
-            else Log($"Main volume set to {v}");
-
+            // Convert the linear volume (0.0 to 1.0) to a decibel scale using a logarithmic function
+            // Unity’s audio mixer expects decibel values. `20 * Mathf.Log10(v)` converts:
+            // - Linear input of 1.0 to 0 dB (no attenuation).
+            // - Linear input < 1.0 to negative decibels (attenuated volume).
+            // - Values near 0 are clamped to approximately -80 dB.
             audioMixer.SetFloat("effectsVol", Mathf.Log10(v) * 20);
         }
 
         /// <summary>
-        /// Logs messages to the console display.
+        /// <br>Adjusts the sound effects volume in the audio mixer.</br>
+        /// <br>Converts a linear volume value (0.0 to 1.0) into a decibel (dB) scale to match Unity's audio system.</br>
         /// </summary>
-        /// <param name="message">Message to be logged.</param>
-        private void Log(string message)
+        /// <remarks>
+        /// <br>- Clamps very low values (≤ 1e-5) to prevent errors from logarithm calculations.</br>
+        /// <br>- Unity audio mixer interprets 0 dB as the original volume and clamps values near 0 to -80 dB (mute).</br>
+        /// </remarks>
+        /// <param name="args">
+        /// <br>A single parameter is expected:</br>
+        /// <br>- <c>args[0]</c>: A float between, being 0 mute.</br>
+        /// </param>
+        private void MusicVolume(params object[] args)
         {
-            logText.text += message + "\n"; // Append the message to the log text.
+            // Check if arguments are provided
+            if (args == null || args.Length == 0)
+            {
+                Log("Please provide a volume value.");
+                return;
+            }
+
+            // Retrieve the first argument and cast it to a float
+            float v = (float)args[0];
+
+            // Ensure the volume is not too small to avoid invalid calculations
+            // 1e-5f is used as a practical lower bound to prevent issues like taking the logarithm of zero.
+            if (v <= 1e-5f)
+            {
+                v = 1e-5f; // Clamp to the lower bound
+                Log($"Music volume set to {0}"); // Log that the volume is effectively muted
+            }
+            else
+            {
+                // Log the actual volume level
+                Log($"Music volume set to {v}");
+            }
+
+            // Convert the linear volume (0.0 to 1.0) to a decibel scale using a logarithmic function
+            // Unity’s audio mixer expects decibel values. `20 * Mathf.Log10(v)` converts:
+            // - Linear input of 1.0 to 0 dB (no attenuation).
+            // - Linear input < 1.0 to negative decibels (attenuated volume).
+            // - Values near 0 are clamped to approximately -80 dB.
+            
+            audioMixer.SetFloat("musicVol", Mathf.Log10(v) * 20);
+        }
+
+        /// <summary>
+        /// <br>Adjusts the sound effects volume in the audio mixer.</br>
+        /// <br>Converts a linear volume value (0.0 to 1.0) into a decibel (dB) scale to match Unity's audio system.</br>
+        /// </summary>
+        /// <remarks>
+        /// <br>- Clamps very low values (≤ 1e-5) to prevent errors from logarithm calculations.</br>
+        /// <br>- Unity audio mixer interprets 0 dB as the original volume and clamps values near 0 to -80 dB (mute).</br>
+        /// </remarks>
+        /// <param name="args">
+        /// <br>A single parameter is expected:</br>
+        /// <br>- <c>args[0]</c>: A float between, being 0 mute.</br>
+        /// </param>
+        private void MainVolume(params object[] args)
+        {
+            // Check if arguments are provided
+            if (args == null || args.Length == 0)
+            {
+                Log("Please provide a volume value.");
+                return;
+            }
+
+            // Retrieve the first argument and cast it to a float
+            float v = (float)args[0];
+
+            // Ensure the volume is not too small to avoid invalid calculations
+            // 1e-5f is used as a practical lower bound to prevent issues like taking the logarithm of zero.
+            if (v <= 1e-5f)
+            {
+                v = 1e-5f; // Clamp to the lower bound
+                Log($"Main volume set to {0}"); // Log that the volume is effectively muted
+            }
+            else
+            {
+                // Log the actual volume level
+                Log($"Main volume set to {v}");
+            }
+
+            // Convert the linear volume (0.0 to 1.0) to a decibel scale using a logarithmic function
+            // Unity’s audio mixer expects decibel values. `20 * Mathf.Log10(v)` converts:
+            // - Linear input of 1.0 to 0 dB (no attenuation).
+            // - Linear input < 1.0 to negative decibels (attenuated volume).
+            // - Values near 0 are clamped to approximately -80 dB.
+            audioMixer.SetFloat("mainVol", Mathf.Log10(v) * 20);
+        }
+
+        /// <summary>
+        /// Logs a message to the console with optional spacing before and after the message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="beforeSpace">The size of the space before the message.</param>
+        /// <param name="afterSpace">The size of the space after the message.</param>
+        private void Log(string message, float beforeSpace = 4, float afterSpace = 0)
+        {
+            if (beforeSpace > 0)
+                logText.text += $"<size={beforeSpace}> </size>\n";
+
+            logText.text += $"{message}\n";
+
+            if (afterSpace > 0)
+                logText.text += $"<size={afterSpace}> </size>\n";
         }
     }
 }
