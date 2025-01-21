@@ -47,8 +47,7 @@ namespace GameConsole
         // Dictionary to store available commands and their corresponding definitions.
         private Dictionary<string, CommandDefinition> commands;
 
-        public Dictionary<string, CommandDefinition> Commands
-            => new(commands);
+        public Dictionary<string, CommandDefinition> Commands => new(commands);
 
 
         private void Awake()
@@ -59,36 +58,51 @@ namespace GameConsole
                 // Example 'help' command which lists all available commands
                 {
                     "help",
-                    new CommandDefinition(ShowHelp)
+                    new CommandDefinition(
+                        ShowHelp,
+                        "Displays a list of all available commands.\n" +
+                        "Provide a command name as an argument to see details " +
+                        "about what it does.",
+                        new List<CommandArgument>
+                        {
+                            new("Command name", typeof(string)),
+                        }
+                    )
+
                 },
-                // Command to restart the current scene
                 {
                     "restart_scene",
-                    new CommandDefinition(RestartScene)
+                    new CommandDefinition(RestartScene, "Restart current scene.")
                 },
-                // Command to start the game with a specific scene ID
                 {
                     "start_game",
-                    new CommandDefinition(StartGame)
+                    new CommandDefinition(StartGame, "Start the game.")
                 },
                 {
                     "home",
-                    new CommandDefinition(Home)
+                    new CommandDefinition(Home, "Go to Main Menu.")
                 },
                 {
                     "get_item",
                     new CommandDefinition(GetItem,
+                        help: "Give player an item.",
+                        arguments:
                         new List<CommandArgument>
                         {
-                            new CommandArgument("item_name", typeof(string))
+                            new("item_name", typeof(string))
                         })
                 },
                 {
                     "clear_inventory",
-                    new CommandDefinition(ClearInventory)
+                    new CommandDefinition(ClearInventory, "Clear player inventory.")
                 },
                 {
                     "snd_effects", new CommandDefinition(SoundEffectVolume,
+                        help: "Change sound effects volume.\n" +
+                            " 0 = mute, 1 = default volume.\n" +
+                            " To make it lower then default use decimals."+
+                            " To make it higher then default volume, give it a higher number.",
+                        arguments:
                         new List<CommandArgument>
                         {
                             new CommandArgument("volume", typeof(float), 1.0f)
@@ -96,16 +110,27 @@ namespace GameConsole
                 },
                 {
                     "snd_music", new CommandDefinition(MusicVolume,
-                    new List<CommandArgument>
-                    {
-                        new CommandArgument("volume", typeof(float), 1.0f)
-                    })
+                        help: "Change music volume.\n" +
+                            " 0 = mute, 1 = default volume.\n" +
+                            " To make it lower then default use decimals."+
+                            " To make it higher then default volume, give it a higher number.",
+                        arguments:
+                        new List<CommandArgument>
+                        {
+                            new CommandArgument("volume", typeof(float), 1.0f)
+                        })
                 },
                 {
-                    "snd_main", new CommandDefinition(MainVolume, new List<CommandArgument>
-                    {
-                        new CommandArgument("volume", typeof(float), 1.0f)
-                    })
+                    "snd_main", new CommandDefinition(MainVolume,
+                        help: "Change main sound volume. This includes all sounds in the game.\n" +
+                            " 0 = mute, 1 = default volume.\n" +
+                            " To make it lower then default use decimals."+
+                            " To make it higher then default volume, give it a higher number.",
+                        arguments:
+                        new List<CommandArgument>
+                        {
+                            new CommandArgument("volume", typeof(float), 1.0f)
+                        })
                 },
             };
 
@@ -203,21 +228,31 @@ namespace GameConsole
         /// </summary>
         private void ShowHelp(params object[] args)
         {
-            Log("");
-            Log("<size=22>Available commands:</size>");
-            Log("");
-            foreach (var cmd in commands)
+            if (args != null && args.Length > 0 && args[0] is string commandStr)
             {
-                string commandText = $"{cmd.Key}";
-                string usage = cmd.Value.GetUsage();
-                if (!string.IsNullOrEmpty(usage) || !string.IsNullOrWhiteSpace(usage))
+                if (commands.TryGetValue(commandStr, out CommandDefinition value))
                 {
-                    commandText += $": {usage}";
+                    Log(value.Help, 6);
                 }
-                commandText += ";";
+                else ShowHelp(null);
+            }
+            else
+            {
+                Log("<size=22>Available commands:</size>", 8, 6);
 
-                // Log each command's name and usage description.
-                Log($"{commandText}");
+                foreach (var cmd in commands)
+                {
+                    string commandText = $"{cmd.Key}";
+                    string usage = cmd.Value.GetUsage();
+                    if (!string.IsNullOrEmpty(usage) || !string.IsNullOrWhiteSpace(usage))
+                    {
+                        commandText += $": {usage}";
+                    }
+                    commandText += ";";
+
+                    // Log each command's name and usage description.
+                    Log($"{commandText}");
+                }
             }
         }
 
@@ -387,7 +422,7 @@ namespace GameConsole
             // - Linear input of 1.0 to 0 dB (no attenuation).
             // - Linear input < 1.0 to negative decibels (attenuated volume).
             // - Values near 0 are clamped to approximately -80 dB.
-            
+
             audioMixer.SetFloat("musicVol", Mathf.Log10(v) * 20);
         }
 

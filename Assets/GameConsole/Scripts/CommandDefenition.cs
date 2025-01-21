@@ -21,15 +21,19 @@ namespace GameConsole
         /// </summary>
         public List<CommandArgument> Arguments { get; }
 
+        public string Help { get; }
+
         /// <summary>
         /// Constructor that initializes the command with its action and arguments.
         /// </summary>
         /// <param name="action">The action (method) that will be invoked for this command.</param>
         /// <param name="arguments">A list of arguments that the command expects.</param>
-        public CommandDefinition(Action<object[]> action, List<CommandArgument> arguments = null)
+        public CommandDefinition(Action<object[]> action, string help = "", List<CommandArgument> arguments = null)
         {
             Action = action;  // Assign the action to be performed when the command is executed.
 
+            Help = help;
+            
             Arguments = new List<CommandArgument>();
             if (arguments != null) Arguments = arguments;  // Assign the list of arguments required for this command.
         }
