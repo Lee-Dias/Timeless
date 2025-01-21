@@ -63,9 +63,9 @@ namespace GameConsole
                         "Displays a list of all available commands.\n" +
                         "Provide a command name as an argument to see details " +
                         "about what it does.",
-                        new List<CommandArgument>
+                        new[]
                         {
-                            new("Command name", typeof(string)),
+                            new CommandArgument("Command name", typeof(string))
                         }
                     )
 
@@ -87,7 +87,7 @@ namespace GameConsole
                     new CommandDefinition(GetItem,
                         help: "Give player an item.",
                         arguments:
-                        new List<CommandArgument>
+                        new CommandArgument[]
                         {
                             new("item_name", typeof(string))
                         })
@@ -103,9 +103,9 @@ namespace GameConsole
                             " To make it lower then default use decimals."+
                             " To make it higher then default volume, give it a higher number.",
                         arguments:
-                        new List<CommandArgument>
+                        new CommandArgument[]
                         {
-                            new CommandArgument("volume", typeof(float), 1.0f)
+                            new("volume", typeof(float), defaultValue: 1.0f)
                         })
                 },
                 {
@@ -115,9 +115,9 @@ namespace GameConsole
                             " To make it lower then default use decimals."+
                             " To make it higher then default volume, give it a higher number.",
                         arguments:
-                        new List<CommandArgument>
+                        new CommandArgument[]
                         {
-                            new CommandArgument("volume", typeof(float), 1.0f)
+                            new("volume", typeof(float), defaultValue: 1.0f)
                         })
                 },
                 {
@@ -127,9 +127,9 @@ namespace GameConsole
                             " To make it lower then default use decimals."+
                             " To make it higher then default volume, give it a higher number.",
                         arguments:
-                        new List<CommandArgument>
+                        new CommandArgument[]
                         {
-                            new CommandArgument("volume", typeof(float), 1.0f)
+                            new("volume", typeof(float), defaultValue: 1.0f)
                         })
                 },
             };
@@ -195,7 +195,7 @@ namespace GameConsole
         /// Parses the entered command and executes it.
         /// </summary>
         /// <param name="input">The command string to parse.</param>
-        private void ParseCommand(string input)
+        private void ParseCommand(string input) //todo: preview command arguments too.
         {
             string[] parts = input.Split(' ');  // Split the input into command and arguments.
             string commandName = parts[0].ToLower();  // Get the command name (first word).

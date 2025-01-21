@@ -28,16 +28,20 @@ namespace GameConsole
         /// </summary>
         public bool HasDefaultValue => DefaultValue != null;
 
+        private string[] argumentExemples;
+        public string[] ArgumentExemples => (string[])argumentExemples.Clone();
+
         /// <summary>
         /// Constructor to initialize a new command argument with a name, type, and an optional default value.
         /// </summary>
         /// <param name="name">The name of the argument (e.g., "direction", "speed").</param>
         /// <param name="type">The type of the argument (e.g., typeof(int), typeof(string)).</param>
         /// <param name="defaultValue">An optional default value for the argument (default is null).</param>
-        public CommandArgument(string name, Type type, object defaultValue = null)
+        public CommandArgument(string name, Type type, string[] argumentExemples = null, object defaultValue = null)
         {
             Name = name;  // Assign the name of the argument.
             Type = type;  // Assign the type of the argument.
+            this.argumentExemples = argumentExemples;
             DefaultValue = defaultValue;  // Assign the default value (if any).
         }
     }

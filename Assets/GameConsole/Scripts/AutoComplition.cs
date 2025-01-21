@@ -50,22 +50,6 @@ namespace GameConsole
         }
 
         /// <summary>
-        /// Subscribes to the input field's text change event when the component is enabled.
-        /// </summary>
-        private void OnEnable()
-        {
-            inputFieldHandler.onTextChanged.AddListener(OnTextChanged);
-        }
-
-        /// <summary>
-        /// Unsubscribes from the input field's text change event when the component is disabled.
-        /// </summary>
-        private void OnDisable()
-        {
-            inputFieldHandler.onTextChanged.RemoveListener(OnTextChanged);
-        }
-
-        /// <summary>
         /// Populates the <see cref="allSuggestions"/> dictionary with commands and their parameters from the GameConsole.
         /// </summary>
         private void PopulateSuggestionsFromCommands()
@@ -85,7 +69,7 @@ namespace GameConsole
         /// Called whenever the text in the input field changes. Filters and updates suggestions accordingly.
         /// </summary>
         /// <param name="input">The current input text.</param>
-        private void OnTextChanged(string input)
+        private void OnTextChanged(string input) //todo: Make it also preview arguments.
         {
             if (string.IsNullOrEmpty(input))
             {
@@ -104,7 +88,6 @@ namespace GameConsole
                 return;
             }
 
-            // Populate suggestions
             ClearSuggestions();
             foreach (var match in matches)
             {
@@ -114,7 +97,7 @@ namespace GameConsole
                 string suggestionText = match.Key;
                 if (match.Value.Length > 0)
                 {
-                    suggestionText += " " + string.Join(" ", match.Value.Select(p => $"{{{p}}}")); // Add parameter placeholders
+                    suggestionText += " " + string.Join(" ", match.Value.Select(p => $"{p}")); // Add parameter placeholders
                 }
 
                 suggestionUI.suggestionText.text = suggestionText; // Set suggestion text
@@ -170,6 +153,22 @@ namespace GameConsole
             }
             activeSuggestions.Clear(); // Clear the active suggestions list
             currentIndex = -1; // Reset selection
+        }
+
+        /// <summary>
+        /// Subscribes to the input field's text change event when the component is enabled.
+        /// </summary>
+        private void OnEnable()
+        {
+            inputFieldHandler.onTextChanged.AddListener(OnTextChanged);
+        }
+
+        /// <summary>
+        /// Unsubscribes from the input field's text change event when the component is disabled.
+        /// </summary>
+        private void OnDisable()
+        {
+            inputFieldHandler.onTextChanged.RemoveListener(OnTextChanged);
         }
     }
 }

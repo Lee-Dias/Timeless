@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using UnityEngine.DedicatedServer;
 
 namespace GameConsole
 {
@@ -16,10 +17,8 @@ namespace GameConsole
         /// </summary>
         public Action<object[]> Action { get; }
 
-        /// <summary>
-        /// The list of arguments that this command expects to receive.
-        /// </summary>
-        public List<CommandArgument> Arguments { get; }
+        private readonly CommandArgument[] arguments;
+        public CommandArgument[] Arguments => (CommandArgument[])arguments.Clone();
 
         public string Help { get; }
 
@@ -28,14 +27,13 @@ namespace GameConsole
         /// </summary>
         /// <param name="action">The action (method) that will be invoked for this command.</param>
         /// <param name="arguments">A list of arguments that the command expects.</param>
-        public CommandDefinition(Action<object[]> action, string help = "", List<CommandArgument> arguments = null)
+        public CommandDefinition(Action<object[]> action, string help = "", CommandArgument[] arguments = null)
         {
             Action = action;  // Assign the action to be performed when the command is executed.
 
             Help = help;
-            
-            Arguments = new List<CommandArgument>();
-            if (arguments != null) Arguments = arguments;  // Assign the list of arguments required for this command.
+
+            this.arguments = arguments ?? Array.Empty<CommandArgument>();  // Assign the list of arguments required for this command or an empty array if null.
         }
 
         /// <summary>
@@ -48,10 +46,10 @@ namespace GameConsole
         public object[] ParseArguments(string[] inputArgs)
         {
             // Create an array to hold the parsed argument values.
-            object[] parsedArgs = new object[Arguments.Count];
+            object[] parsedArgs = new object[Arguments.Length];
 
             // Iterate over each defined argument.
-            for (int i = 0; i < Arguments.Count; i++)
+            for (int i = 0; i < Arguments.Length; i++)
             {
                 // If there are enough input arguments, parse and convert the input argument.
                 if (i < inputArgs.Length)
@@ -108,7 +106,7 @@ namespace GameConsole
         public string GetUsage()
         {
             // Build the usage string, combining all arguments, with optional/default ones in square brackets.
-            string usage = string.Join(" ", Arguments.ConvertAll(arg =>
+            string usage = string.Join(" ", Array.ConvertAll(Arguments, arg =>
                 arg.HasDefaultValue ? $"[{arg.Name}]" : $"<{arg.Name}>"));
             return usage;  // Return the constructed usage string.
         }
