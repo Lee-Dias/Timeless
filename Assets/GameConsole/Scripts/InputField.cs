@@ -17,6 +17,9 @@ namespace GameConsole
         // The image used to highlight selected text.
         [SerializeField] private Image selectionImage;
 
+        [SerializeField] private float holdKeyThreashold = .25f;
+        [SerializeField] private float delectionDelay = 0.05f;
+
         // Event triggered when the user submits the text (presses Enter).
         public UnityEvent<string> onSubmit;
 
@@ -169,6 +172,8 @@ namespace GameConsole
                             selectionStart = -1; // Reset selection
                         }
                         allTextSelected = false;
+
+                        StartCoroutine(HoldBackspaceKey());
                     }
                 }
 
@@ -192,6 +197,8 @@ namespace GameConsole
                         selectionStart = -1; // Reset selection
                     }
                     allTextSelected = false;
+
+                    StartCoroutine(HoldDeleteKey());
                 }
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) && caretPosition > 0)
                 {
@@ -312,7 +319,7 @@ namespace GameConsole
             // Display caret even when previewing
             if (caretVisible)
             {
-                displayText = displayText.Insert(caretPosition, "|");
+                displayText = displayText.Insert(caretPosition, "<mark=#00000000>|</mark>");
             }
 
             // Apply rich text tags to the TMP_Text component
@@ -385,6 +392,78 @@ namespace GameConsole
             else
             {
                 selectionImage.gameObject.SetActive(false);
+            }
+        }
+
+        private IEnumerator HoldDeleteKey()
+        {
+            yield return new WaitForSeconds(holdKeyThreashold);
+
+            // Check if delete is being held before creating the WaitForSeconds
+            // GC likes it.
+            if (!Input.GetKey(KeyCode.Delete)) yield break;
+
+            YieldInstruction waitForDelectionDelay = new WaitForSeconds(delectionDelay);
+
+            while (Input.GetKey(KeyCode.Delete))
+            {
+                if (allTextSelected)
+                {
+                    ClearText();
+                }
+                else if (caretPosition >= 0 && caretPosition < text.Length)
+                {
+                    if (isPreviewing)
+                    {
+                        text = previewText + " ";
+                        caretPosition = text.Length; // Move caret to end of preview text
+                        isPreviewing = false;
+                    }
+
+                    text = text.Remove(caretPosition, 1);
+                    selectionStart = -1; // Reset selection
+                }
+                allTextSelected = false;
+
+                UpdateTextArea();
+
+                yield return waitForDelectionDelay;
+            }
+        }
+        
+        private IEnumerator HoldBackspaceKey()
+        {
+            yield return new WaitForSeconds(holdKeyThreashold);
+
+            // Check if backspace is being held before creating the WaitForSeconds
+            // GC likes it.
+            if (!Input.GetKey(KeyCode.Backspace)) yield break;
+
+            YieldInstruction waitForDelectionDelay = new WaitForSeconds(delectionDelay);
+
+            while (Input.GetKey(KeyCode.Backspace))
+            {
+                // Regular Backspace
+                if (allTextSelected)
+                {
+                    ClearText();
+                }
+                else if (caretPosition > 0 && caretPosition <= text.Length)
+                {
+                    if (isPreviewing)
+                    {
+                        ClearPreview();
+                    }
+
+                    text = text.Remove(caretPosition - 1, 1);
+                    caretPosition--; // Move caret position back
+                    selectionStart = -1; // Reset selection
+                }
+                allTextSelected = false;
+
+                UpdateTextArea();
+
+                yield return waitForDelectionDelay;
             }
         }
 
