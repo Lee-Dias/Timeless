@@ -65,7 +65,7 @@ namespace GameConsole
                         "about what it does.",
                         new[]
                         {
-                            new CommandArgument("Command name", typeof(string))
+                            new CommandArgument("Command name", typeof(string), new string[]{"home"})
                         }
                     )
 
@@ -85,7 +85,27 @@ namespace GameConsole
                 {
                     "get_item",
                     new CommandDefinition(GetItem,
-                        help: "Give player an item.",
+                        help: "Gives player an item. Item list:\n"+
+                            "Berries;\n" +
+                            "Bone;\n" +
+                            "CoinLady;\n" +
+                            "CoinSoldier;\n" +
+                            "CoinWolf;\n" +
+                            "Cristal;\n" +
+                            "GearEgypt;\n" +
+                            "GearMedieval;\n" +
+                            "GearPreHistoric;\n" +
+                            "GearWildWest;\n" +
+                            "Gear* - Gives you all gears;\n" +
+                            "Shield;\n" +
+                            "StoneAx;\n" +
+                            "StoneBone;\n" +
+                            "StoneLeaf;\n" +
+                            "StonePyramid;\n" +
+                            "StoneSun;\n" +
+                            "StoneWater;\n" +
+                            "Stone* - Gives you all stones;\n" +
+                            "VenusFigurine;\n",
                         arguments:
                         new CommandArgument[]
                         {

@@ -127,7 +127,11 @@ public class PlayerInventory : MonoBehaviour
 
     public void RemoveAllItemsFromInventory()
     {
-        foreach(Item item in inventory)
+        // Create a separate list to store items to be removed.
+        List<Item> itemsToRemove = new(inventory);
+
+        // Iterate over the separate list and remove items from the inventory.
+        foreach(Item item in itemsToRemove)
         {
             RemoveItemFromInventory(item);
         }
