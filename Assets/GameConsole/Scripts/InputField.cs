@@ -302,7 +302,13 @@ namespace GameConsole
                 // Ensure the intersecting text is correctly handled
                 string intersectingText = text.Substring(0, Mathf.Min(previewText.Length, text.Length));
                 string remainingText = previewText.Length > text.Length ? previewText.Substring(text.Length) : "";
-                displayText = $"{intersectingText}<color=#808080>{remainingText}</color>";
+
+                if (string.IsNullOrEmpty(remainingText) || string.IsNullOrWhiteSpace(remainingText))
+                {
+                    displayText = $"{intersectingText}";
+                }
+                else
+                    displayText = $"{intersectingText}<color=#808080>{remainingText}</color>";
             }
             else displayText = text;
 
@@ -319,7 +325,7 @@ namespace GameConsole
             // Display caret even when previewing
             if (caretVisible)
             {
-                displayText = displayText.Insert(caretPosition, "<mark=#00000000>|</mark>");
+                displayText = displayText.Insert(caretPosition, "|");
             }
 
             // Apply rich text tags to the TMP_Text component
@@ -430,7 +436,7 @@ namespace GameConsole
                 yield return waitForDelectionDelay;
             }
         }
-        
+
         private IEnumerator HoldBackspaceKey()
         {
             yield return new WaitForSeconds(holdKeyThreashold);
