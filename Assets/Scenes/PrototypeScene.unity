@@ -12894,9 +12894,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1722545065}
     - target: {fileID: 2317055694074553077, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+      propertyPath: Completedpuzzle.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317055694074553077, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+      propertyPath: Completedpuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317055694074553077, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
       propertyPath: Completedpuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1722545065}
+      objectReference: {fileID: 5763775897876679237}
+    - target: {fileID: 2317055694074553077, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+      propertyPath: Completedpuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317055694074553077, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+      propertyPath: Completedpuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317055694074553077, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+      propertyPath: Completedpuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317055694074553077, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+      propertyPath: Completedpuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317055694074553077, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+      propertyPath: Completedpuzzle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5225368258865400647, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
       propertyPath: onTakeItem.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -12965,11 +12993,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: MedievalCorner
       objectReference: {fileID: 0}
+    - target: {fileID: 9198715396604940898, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+--- !u!1 &5763775897876679237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9096423888782697443, guid: f646946fce1dc98418ec15dc89e73b90, type: 3}
+  m_PrefabInstance: {fileID: 5763775897876679236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6531375701350659956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13085,27 +13122,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 1.4055582
+      value: 1.499148
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 0.7166748
+      value: 0.99744415
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 4.436954
+      value: 4.4880004
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.436954
+      value: 1.4880005
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.1977155
+      value: 3.0021448
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.9942884
+      value: 1.5053619
       objectReference: {fileID: 0}
     - target: {fileID: 5362403209802887317, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13149,11 +13186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 2.5000396
+      value: 3.0545504
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.0000265
+      value: 1.3697003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
