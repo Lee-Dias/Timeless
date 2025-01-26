@@ -7,6 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using UnityEngine.Audio;
+using System.Reflection;
 
 namespace GameConsole
 {
@@ -23,6 +24,8 @@ namespace GameConsole
     /// </summary>
     public class GameConsole : MonoBehaviour
     {
+        [SerializeField] private PlayerPrefs playerPrefs;
+
         // Command input field where users type commands.
         [SerializeField] private InputField commandInputField;
 
@@ -151,6 +154,32 @@ namespace GameConsole
                         {
                             new("volume", typeof(float), defaultValue: 1.0f)
                         })
+                },
+                {
+                    "sense", new CommandDefinition(ChangeSense,
+                        help: "Change mouse sensitivity.",
+                        arguments: new CommandArgument[]
+                        {
+                            new("value", typeof(float), defaultValue: 1f)
+                        })
+                },
+                {
+                    "invert_mouse_y", new CommandDefinition(ChangeMuseInvertY,
+                        help: "Iverts mouse y",
+                        arguments: new CommandArgument[]
+                        {
+                            new ("value", typeof(bool))
+                        }
+                    )
+                },
+                {
+                    "invert_zoom", new CommandDefinition(ChangeZoomInvert,
+                        help: "Inverts zoom",
+                        arguments: new CommandArgument[]
+                        {
+                            new ("value", typeof(bool))
+                        }
+                    )
                 },
             };
 
@@ -379,6 +408,8 @@ namespace GameConsole
             // Retrieve the first argument and cast it to a float
             float v = (float)args[0];
 
+            playerPrefs.effectsVolume = v;
+
             // Ensure the volume is not too small to avoid invalid calculations
             // 1e-5f is used as a practical lower bound to prevent issues like taking the logarithm of zero.
             if (v <= 1e-5f)
@@ -423,6 +454,8 @@ namespace GameConsole
 
             // Retrieve the first argument and cast it to a float
             float v = (float)args[0];
+
+            playerPrefs.musicVolume = v;
 
             // Ensure the volume is not too small to avoid invalid calculations
             // 1e-5f is used as a practical lower bound to prevent issues like taking the logarithm of zero.
@@ -470,6 +503,8 @@ namespace GameConsole
             // Retrieve the first argument and cast it to a float
             float v = (float)args[0];
 
+            playerPrefs.mainVolume = v;
+
             // Ensure the volume is not too small to avoid invalid calculations
             // 1e-5f is used as a practical lower bound to prevent issues like taking the logarithm of zero.
             if (v <= 1e-5f)
@@ -489,6 +524,77 @@ namespace GameConsole
             // - Linear input < 1.0 to negative decibels (attenuated volume).
             // - Values near 0 are clamped to approximately -80 dB.
             audioMixer.SetFloat("mainVol", Mathf.Log10(v) * 20);
+        }
+
+        private void ChangeSense(params object[] args)
+        {
+            if (args == null || args.Length == 0)
+            {
+                Log("Please provide a sensitivity value.");
+                return;
+            }
+
+            if (args[0] is float senseValue)
+            {
+                playerPrefs.sense = senseValue;
+                Log($"Mouse sensitivity set to {senseValue}");
+            }
+            else
+            {
+                Log("Invalid value. Expected a number.");
+            }
+        }
+
+        private void ChangeMuseInvertY(params object[] args)
+        {
+            if (args != null && args.Length > 0)
+            {
+                if (args[0] is bool boolValue)
+                {
+                    playerPrefs.invertMouseY = boolValue;
+                    Log($"Invert Mouse Y set to {playerPrefs.invertMouseY}");
+                }
+                else if (args[0] == null)
+                {
+                    playerPrefs.invertMouseY = !playerPrefs.invertMouseY;
+                    Log($"Invert Mouse Y set to {playerPrefs.invertMouseY}");
+                }
+                else
+                {
+                    Log("Invalid value. Expected: True, False, 0, 1");
+                }
+            }
+            else
+            {
+                playerPrefs.invertMouseY = !playerPrefs.invertMouseY;
+                Log($"Invert Mouse Y set to {playerPrefs.invertMouseY}");
+            }
+        }
+
+        private void ChangeZoomInvert(params object[] args)
+        {
+            if (args != null && args.Length > 0)
+            {
+                if (args[0] is bool boolValue)
+                {
+                    playerPrefs.invertZoom = boolValue;
+                    Log($"Invert Mouse Y set to {playerPrefs.invertZoom}");
+                }
+                else if (args[0] == null)
+                {
+                    playerPrefs.invertZoom = !playerPrefs.invertZoom;
+                    Log($"Invert Zoom set to {playerPrefs.invertZoom}");
+                }
+                else
+                {
+                    Log("Invalid value. Expected: True, False, 0, 1");
+                }
+            }
+            else
+            {
+                playerPrefs.invertZoom = !playerPrefs.invertZoom;
+                Log($"Invert Zoom set to {playerPrefs.invertZoom}");
+            }
         }
 
         /// <summary>

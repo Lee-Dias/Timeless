@@ -68,6 +68,9 @@ using UnityEngine.Events;
 /// </remarks>
 public class InspectionsHandler : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerPrefs playerPrefs;
+
     //Event triggered when an inspection starts.
     public UnityEvent onInspectionStarted;
 
@@ -95,7 +98,6 @@ public class InspectionsHandler : MonoBehaviour
     private CrosshairUI crosshairUI;
 
     [HideInInspector] public bool inspecting;
-    private Inspectable inspectable;
 
 
     /// <summary>
@@ -200,9 +202,6 @@ public class InspectionsHandler : MonoBehaviour
         GetComponent<Camera>().enabled = true;
         inspectionInstructions.SetActive(true);
 
-        float pitch = 0; // Rotation around the X-axis.
-        float yaw = 0; // Rotation around the Y-axis.
-
         // Loop while the current item is being inspected.
         while (currentItem != null)
         {
@@ -210,7 +209,9 @@ public class InspectionsHandler : MonoBehaviour
             if (playerInputs.ZoomInput != Vector2.zero)
             {
                 Vector3 pos = inspectingObject.transform.localPosition;
-                pos.z += playerInputs.ZoomInput.y / 100; // Adjust zoom level based on input.
+                float zoomInput = playerInputs.ZoomInput.y / 100;
+                zoomInput *= playerPrefs.invertZoom ? -1 : 1;
+                pos.z += zoomInput; // Adjust zoom level based on input.
                 pos.z = Mathf.Clamp(pos.z, minDistance, maxDistance); // Clamp zoom within limits.
                 inspectingObject.transform.localPosition = pos;
             }
@@ -218,8 +219,8 @@ public class InspectionsHandler : MonoBehaviour
             // Handle rotation input if the rotate button is pressed.
             if (playerInputs.RotateButton)
             {
-                yaw = -playerInputs.LookInput.x; // Horizontal rotation input.
-                pitch = -playerInputs.LookInput.y; // Vertical rotation input.
+                float yaw = -playerInputs.LookInput.x;
+                float pitch = -playerInputs.LookInput.y;
 
                 // Apply rotation in world space.
                 inspectingObject.transform.Rotate(new Vector3(0, yaw, pitch), Space.World);
