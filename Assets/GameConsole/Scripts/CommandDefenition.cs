@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using UnityEngine.DedicatedServer;
+using System.Linq;
 
 namespace GameConsole
 {
@@ -45,6 +45,9 @@ namespace GameConsole
 
         public object[] ParseArguments(string[] inputArgs)
         {
+            // Filter out null, empty, or whitespace strings from inputArgs.
+            inputArgs = inputArgs.Where(arg => !string.IsNullOrWhiteSpace(arg)).ToArray();
+
             // Create an array to hold the parsed argument values.
             object[] parsedArgs = new object[Arguments.Length];
 
@@ -61,10 +64,9 @@ namespace GameConsole
                 {
                     parsedArgs[i] = Arguments[i].DefaultValue;
                 }
-                // If the argument is missing and has no default value, throw an exception.
                 else
                 {
-                    throw new ArgumentException($"Missing required argument: {Arguments[i].Name}");
+                    parsedArgs[i] = null;
                 }
             }
 
@@ -87,7 +89,11 @@ namespace GameConsole
                 if (argument.Type == typeof(float))
                     return float.Parse(input.Replace(',', '.'), CultureInfo.InvariantCulture);
                 if (argument.Type == typeof(bool))
-                    return bool.Parse(input);
+                {
+                    if (input == "0") return false;
+                    else if (input == "1") return true;
+                    else return bool.Parse(input.ToLower());
+                }
 
                 return input;  // If no conversion is required, return the input as a string.
             }

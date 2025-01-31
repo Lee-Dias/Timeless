@@ -3398,6 +3398,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 563861328996430125, guid: 384b75b71d9c90448b3f8f19fb8be687, type: 2}
     - target: {fileID: 1420850467778509425, guid: 54b0aaedd3fa6d542b3c5e33cb8bc49e, type: 3}
+      propertyPath: playerPrefs
+      value: 
+      objectReference: {fileID: 11400000, guid: 9690aaf3145bd6740ac21ec1bf665203, type: 2}
+    - target: {fileID: 1420850467778509425, guid: 54b0aaedd3fa6d542b3c5e33cb8bc49e, type: 3}
       propertyPath: gears.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -10114,8 +10118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6c36435439e544e86ef13aa17fb9f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefs: {fileID: 11400000, guid: 9690aaf3145bd6740ac21ec1bf665203, type: 2}
   cameraPivot: {fileID: 1643067973}
-  invertY: 0
   maxLookUpDownAndle: 75
   smoothCamera: 1
   smoothness: 35
@@ -11168,6 +11172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6829d1154e89eb4c972891dda0b3976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefs: {fileID: 11400000, guid: 9690aaf3145bd6740ac21ec1bf665203, type: 2}
   onInspectionStarted:
     m_PersistentCalls:
       m_Calls:
@@ -13093,27 +13098,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 1.4051313
+      value: 1.4917992
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 0.7153941
+      value: 0.97539777
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 4.863348
+      value: 4.882587
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.8633478
+      value: 1.882587
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.1909351
+      value: 3.1870515
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.9773377
+      value: 1.967629
       objectReference: {fileID: 0}
     - target: {fileID: 5362403209802887317, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13157,11 +13162,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.9092493
+      value: 3.9983118
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.9394995
+      value: 1.9988745
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

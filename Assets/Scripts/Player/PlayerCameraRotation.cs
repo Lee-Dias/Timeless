@@ -16,6 +16,8 @@ using UnityEngine;
 /// </remarks>
 public class PlayerCameraRotation : MonoBehaviour
 {
+    [SerializeField] private PlayerPrefs playerPrefs;
+
     private PlayerInputs playerInputs;
 
     [Header("Camera")]
@@ -23,10 +25,6 @@ public class PlayerCameraRotation : MonoBehaviour
     private Transform cameraPivot; // Reference to the camera pivot that controls vertical rotation.
 
     [Space]
-
-    [Tooltip("Invert the vertical camera movement.")]
-    [SerializeField]
-    private bool invertY = false; // Inverts the Y-axis for camera control.
 
     [SerializeField, Range(60, 85), Tooltip("Maximum pitch angle the camera can rotate up or down.")]
     private float maxLookUpDownAndle = 75f; // Max limit for vertical camera rotation.
@@ -63,8 +61,6 @@ public class PlayerCameraRotation : MonoBehaviour
         }
     }
 
-
-
     private void Update()
     {
         // If the player cannot look around, exit the method.
@@ -87,10 +83,10 @@ public class PlayerCameraRotation : MonoBehaviour
     private void CalculateCameraRotation()
     {
         // Get the mouse movement input for looking around.
-        Vector2 mouseDelta = playerInputs.LookInput;
+        Vector2 mouseDelta = playerInputs.LookInput * playerPrefs.sense;
 
         // Apply Y-axis inversion if set.
-        mouseDelta.y = invertY ? mouseDelta.y * -1 : mouseDelta.y;
+        mouseDelta.y = playerPrefs.invertMouseY ? mouseDelta.y * -1 : mouseDelta.y;
 
         // Adjust yaw and pitch based on the mouse input.
         yaw += mouseDelta.x;
@@ -103,10 +99,10 @@ public class PlayerCameraRotation : MonoBehaviour
     private void CalculateSmoothCameraRotation()
     {
         // Get the mouse movement input for looking around.
-        Vector2 mouseDelta = playerInputs.LookInput;
+        Vector2 mouseDelta = playerInputs.LookInput * playerPrefs.sense;
 
         // Apply Y-axis inversion if set.
-        mouseDelta.y = invertY ? mouseDelta.y * -1 : mouseDelta.y;
+        mouseDelta.y = playerPrefs.invertMouseY ? mouseDelta.y * -1 : mouseDelta.y;
 
         // Update target yaw and pitch based on mouse input.
         targetYaw += mouseDelta.x;
