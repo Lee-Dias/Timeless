@@ -106,7 +106,10 @@ public class InspectionsHandler : MonoBehaviour
     {
         inspecting = false;
         crosshairUI = FindFirstObjectByType<CrosshairUI>();
-        crosshairUI?.gameObject.SetActive(true);
+        if (crosshairUI != null)
+        {
+            crosshairUI.gameObject.SetActive(true);
+        }
         // Check for the Camera component and disable it if present.
         Camera camera = GetComponent<Camera>();
         if (camera != null)
@@ -252,14 +255,15 @@ public class InspectionsHandler : MonoBehaviour
                 yield break;
             }
 
-            if (playerInputs.GrabButtonDown && inspectingFromInv)
+            if ((playerInputs.GrabButtonDown || playerInputs.ReturnButtonDown) && inspectingFromInv)
             {
                 currentItem = null;
                 Destroy(inspectingObject);
                 GetComponent<Camera>().enabled = false;
                 inspectionInstructions.SetActive(false);
                 onInspectionEndedFromInv.Invoke();
-                crosshairUI?.gameObject.SetActive(true);
+                if (crosshairUI != null)
+                    crosshairUI.gameObject.SetActive(true);
                 inspecting = false;
                 yield break;
             }
