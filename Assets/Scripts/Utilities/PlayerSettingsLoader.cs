@@ -42,6 +42,9 @@ public class PlayerSettingsLoader : MonoBehaviour
         // - Linear input of 1.0 to 0 dB (no attenuation).
         // - Linear input < 1.0 to negative decibels (attenuated volume).
         // - Values near 0 are clamped to approximately -80 dB.
-        audioMixer.SetFloat(mixerGroup, Mathf.Log10(v) * 20);
+        if (audioMixer != null){
+            audioMixer.SetFloat(mixerGroup, Mathf.Log10(v) * 20);
+        }
+
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 /// <summary>
 /// Manages player input actions using Unity's new Input System. This class is a singleton
@@ -45,10 +47,13 @@ public class PlayerInputs : Singleton<PlayerInputs>
 {
     [Header("Sensitivities")]
     [Tooltip("Sensitivity for mouse input.")]
-    [SerializeField] private float mouseSensitivity = .2f; // Mouse sensitivity for look input.
+    [SerializeField] private float mouseSensitivity = 2f; // Mouse sensitivity for look input.
 
     [Tooltip("Sensitivity for gamepad input.")]
-    [SerializeField] private float gamepadSensitivity = 75f; // Gamepad sensitivity for look input.
+    [SerializeField] private float gamepadSensitivity = 2f; // Gamepad sensitivity for look input.
+
+    //[Tooltip("Sensitivity for mouse input.")]
+    //[SerializeField] private Slider Sensitivityadjuster; // Mouse sensitivity for look input.
 
     private InputSystem_Actions inputActions; // Holds input actions from the Input System.
 
@@ -179,6 +184,7 @@ public class PlayerInputs : Singleton<PlayerInputs>
         {
             inputActions = new InputSystem_Actions();
         }
+        //Sensitivityadjuster.value = mouseSensitivity;
     }
 
     /// <summary>
@@ -221,7 +227,7 @@ public class PlayerInputs : Singleton<PlayerInputs>
         InspectButtonUp = false;
         PauseButtonDown = false;
         PauseButtonUp = false;
-
+        //mouseSensitivity = Sensitivityadjuster.value;
     }
 
     /// <summary>
@@ -294,9 +300,7 @@ public class PlayerInputs : Singleton<PlayerInputs>
     private void OnMoveCanceled(InputAction.CallbackContext context) { MoveInput = Vector2.zero; }
     private void OnLookPerformed(InputAction.CallbackContext context)
     {
-        LookInput = context.ReadValue<Vector2>() *
-                                                                        (CurrentDeviceType == DeviceType.Gamepad ?
-                                                                        gamepadSensitivity : mouseSensitivity);
+        LookInput = context.ReadValue<Vector2>() *(CurrentDeviceType == DeviceType.Gamepad ? (gamepadSensitivity/100) : (mouseSensitivity/100));
     }
     private void OnLookCanceled(InputAction.CallbackContext context) { LookInput = Vector2.zero; }
     private void OnZoomPerformed(InputAction.CallbackContext context) { ZoomInput = context.ReadValue<Vector2>(); }

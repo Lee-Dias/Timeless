@@ -2,10 +2,20 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResolutionManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
+    [SerializeField] 
+    private TMP_Dropdown resolutionDropdown;
+    [SerializeField] 
+    private TextMeshProUGUI sensTextSlider;
+    [SerializeField] 
+    private Slider senseSlider;
+    [SerializeField] 
+    private TextMeshProUGUI volumeTextSlider;
+    [SerializeField] 
+    private Slider volumeSlider;
 
     private Resolution[] resolutions;
     private List<Resolution> filteredResolutions;
@@ -32,7 +42,7 @@ public class ResolutionManager : MonoBehaviour
         List<String> options = new List<String>();
         for (int i = 0; i < filteredResolutions.Count ; i++){
             string resolutionOption =   filteredResolutions[i].width + "x" + filteredResolutions[i].height +
-            " " + filteredResolutions[i].refreshRateRatio + " HZ";
+            " " + ((int)filteredResolutions[i].refreshRateRatio.value + 1) + " HZ";
 
             options.Add(resolutionOption);
 
@@ -44,6 +54,10 @@ public class ResolutionManager : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResIndex;
         resolutionDropdown.RefreshShownValue();
+    }
+    void Update(){
+        sensTextSlider.text = senseSlider.value.ToString("F2");
+        volumeTextSlider.text = volumeSlider.value.ToString("F2");
     }
     public void SetResolution(int resolutionIndex){
         Resolution resolution = filteredResolutions[resolutionIndex];

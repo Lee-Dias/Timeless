@@ -17,4 +17,4 @@ MonoBehaviour:
   musicVolume: 1
   invertZoom: 0
   invertMouseY: 0
-  sense: 1
+  sense: 2
