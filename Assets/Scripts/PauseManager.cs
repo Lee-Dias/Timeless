@@ -14,6 +14,9 @@ public class PauseManager : MonoBehaviour
 
     [SerializeField]
     private GameObject Crosshair;
+    [SerializeField]
+    private InspectionsHandler inspectionsHandler;
+
 
     private bool canPause = true;
 
@@ -33,6 +36,7 @@ public class PauseManager : MonoBehaviour
     }
     private void Update()
     {
+        if(inspectionsHandler.inspecting) return;
         if (!canPause) return;
         if (playerInputs.PauseButtonDown)
         {
@@ -41,26 +45,31 @@ public class PauseManager : MonoBehaviour
     }
     public void ButtonPressed()
     {
-        IsPaused = !IsPaused;
         PauseSystem();
     }
 
     private void PauseSystem()
     {
-        if (IsPaused)
+        if (!IsPaused)
         {
             Crosshair.SetActive(false);
             PauseMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
+            IsPaused = !IsPaused;
         }
         else
         {
-            Crosshair.SetActive(true);
-            Cursor.lockState = CursorLockMode.Locked;
-            PauseMenu.SetActive(false);
-            Time.timeScale = 1;
+            if(PauseMenu.activeSelf){
+                Crosshair.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
+                PauseMenu.SetActive(false);
+                Time.timeScale = 1; 
+                IsPaused = !IsPaused;
+            }
+
         }
+  
     }
 
     public void SetCanPause(bool value)
