@@ -25,7 +25,6 @@ public class PlayerSettingsLoader : MonoBehaviour
 
         if (volumeSlider != null)
             volumeSlider.value = playerPrefs.mainVolume;
-
         if (senseSlider != null)
             senseSlider.value = playerPrefs.sense;
     }
