@@ -13,7 +13,11 @@ public class PauseManager : MonoBehaviour
     private GameObject PauseMenu;
 
     [SerializeField]
+    private GameObject InventorySlots;
+
+    [SerializeField]
     private GameObject Crosshair;
+
     [SerializeField]
     private InspectionsHandler inspectionsHandler;
 
@@ -54,6 +58,7 @@ public class PauseManager : MonoBehaviour
         {
             Crosshair.SetActive(false);
             PauseMenu.SetActive(true);
+            InventorySlots.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             IsPaused = !IsPaused;
@@ -62,6 +67,7 @@ public class PauseManager : MonoBehaviour
         {
             if(PauseMenu.activeSelf){
                 Crosshair.SetActive(true);
+                InventorySlots.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 PauseMenu.SetActive(false);
                 Time.timeScale = 1; 

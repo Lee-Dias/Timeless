@@ -1845,7 +1845,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 107, y: 76}
+  m_SizeDelta: {x: 76.3522, y: 44.4547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298233126
 MonoBehaviour:
@@ -2450,8 +2450,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -227, y: 338}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -286.49487, y: 194.48106}
+  m_SizeDelta: {x: 128.752, y: 128.752}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433128481
 MonoBehaviour:
@@ -2589,8 +2589,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.1}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 69.3215, y: 74.5872}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449724495
 MonoBehaviour:
@@ -3548,8 +3548,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: -104}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -13, y: -206.4161}
+  m_SizeDelta: {x: 88.8, y: 18.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550218922
 MonoBehaviour:
@@ -3680,6 +3680,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5346,8 +5358,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0.6278644}
+  m_SizeDelta: {x: 64.8733, y: 64.8733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &738441693
 MonoBehaviour:
@@ -5422,7 +5434,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 61.0684, y: 61.0684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775667640
 MonoBehaviour:
@@ -7003,7 +7015,7 @@ MonoBehaviour:
   playerPrefs: {fileID: 11400000, guid: 9690aaf3145bd6740ac21ec1bf665203, type: 2}
   volumeSlider: {fileID: 1384622998}
   senseSlider: {fileID: 229537414}
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 384b75b71d9c90448b3f8f19fb8be687, type: 2}
 --- !u!4 &1096584705
 Transform:
   m_ObjectHideFlags: 0
@@ -7332,7 +7344,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 61.0684, y: 61.0684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143425088
 MonoBehaviour:
@@ -8761,7 +8773,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 61.0684, y: 61.0684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409187696
 MonoBehaviour:
@@ -9831,8 +9843,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: -283}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -13, y: -311.44894}
+  m_SizeDelta: {x: 88.8, y: 18.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1630383425
 MonoBehaviour:
@@ -10147,6 +10159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 2001836350}
+  InventorySlots: {fileID: 1213707280}
   Crosshair: {fileID: 957787870}
   inspectionsHandler: {fileID: 1860885614}
 --- !u!4 &1661514995
@@ -10202,8 +10215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 73}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -13, y: -98.76879}
+  m_SizeDelta: {x: 88.8, y: 18.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677871837
 MonoBehaviour:
@@ -10321,6 +10334,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1661514994}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12653,7 +12678,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -14007,27 +14032,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 1.4819983
+      value: 1.4952924
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 0.94599485
+      value: 0.9858772
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 4.725643
+      value: 4.1055546
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.725643
+      value: 1.1055547
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.1240003
+      value: 3.1789963
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.8100008
+      value: 1.9474905
       objectReference: {fileID: 0}
     - target: {fileID: 5362403209802887317, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14071,11 +14096,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.7375891
+      value: 2.5391731
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.8250594
+      value: 1.0261154
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
