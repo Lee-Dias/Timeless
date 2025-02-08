@@ -129,18 +129,18 @@ public class InventoryItemMatcher : MonoBehaviour
                 }
             }
             else{
-                    // Check if the selected item is the correct one.
-                    if (rightItem == selected)
-                    {    
-                        // Invoke the event to notify that the item has been selected, passing the selected item.
-                        selectedItem.Invoke(selected);
-                        Log("Right item checked!");
-                        isRightItem = true; // Set the flag to true if it's the correct item.
-                    }
-                    else
-                    {
+                // Check if the selected item is the correct one.
+                if (rightItem == selected)
+                {    
+                    // Invoke the event to notify that the item has been selected, passing the selected item.
+                    selectedItem.Invoke(selected);
+                    Log("Right item checked!");
+                    isRightItem = true; // Set the flag to true if it's the correct item.
+                }
+                else
+                {
                     Log("Item checked is wrong.");
-                    }
+                }
             }
         }
     }

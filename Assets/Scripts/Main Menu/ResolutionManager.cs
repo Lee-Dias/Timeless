@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class ResolutionManager : MonoBehaviour
 {
     [SerializeField] 
-    private TMP_Dropdown resolutionDropdown;
-    [SerializeField] 
     private TextMeshProUGUI sensTextSlider;
     [SerializeField] 
     private Slider senseSlider;
@@ -26,38 +24,10 @@ public class ResolutionManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        resolutions = Screen.resolutions;
-        filteredResolutions = new List<Resolution>();
-
-        resolutionDropdown.ClearOptions();
-        //gets current monitor refresh Rate
-        currentHZ = Screen.currentResolution.refreshRateRatio.numerator;
-
-        for(int i = 0 ; i < resolutions.Length; i++){
-            if(resolutions[i].refreshRateRatio.numerator == currentHZ){
-                filteredResolutions.Add(resolutions[i]);
-            }
-        }
-
-        List<String> options = new List<String>();
-        for (int i = 0; i < filteredResolutions.Count ; i++){
-            string resolutionOption =   filteredResolutions[i].width + "x" + filteredResolutions[i].height +
-            " " + ((int)filteredResolutions[i].refreshRateRatio.value + 1) + " HZ";
-
-            options.Add(resolutionOption);
-
-            if(filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height){
-                currentResIndex = i;
-            }
-        }
-
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResIndex;
-        resolutionDropdown.RefreshShownValue();
     }
     void Update(){
-        sensTextSlider.text = senseSlider.value.ToString("F2");
-        volumeTextSlider.text = volumeSlider.value.ToString("F2");
+        sensTextSlider.text = senseSlider.value.ToString("F0");
+        volumeTextSlider.text = volumeSlider.value.ToString("F0");
     }
     public void SetResolution(int resolutionIndex){
         Resolution resolution = filteredResolutions[resolutionIndex];
