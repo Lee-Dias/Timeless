@@ -219,8 +219,8 @@ public class InspectionsHandler : MonoBehaviour
             // Handle rotation input if the rotate button is pressed.
             if (playerInputs.RotateButton)
             {
-                float yaw = -playerInputs.LookInput.x;
-                float pitch = -playerInputs.LookInput.y;
+                float yaw = -playerInputs.LookInput.x * playerPrefs.sense;
+                float pitch = -playerInputs.LookInput.y * playerPrefs.sense;
 
                 // Apply rotation in world space.
                 inspectingObject.transform.Rotate(new Vector3(0, yaw, pitch), Space.World);
