@@ -9426,6 +9426,42 @@ PrefabInstance:
       propertyPath: onItemDisplayed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1722545065}
+    - target: {fileID: 7233375447741984006, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233375447741984006, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233375447741984006, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.058550365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233375447741984006, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.9982845
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233375447741984006, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000014000589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233375447741984006, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000029918815
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233375447741984006, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -6.713
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233375447741984006, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233375447741984006, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 7572067094030954983, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
       propertyPath: onTakeItem.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -9996,27 +10032,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 1.4241832
+      value: 1.4672356
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 0.7725497
+      value: 0.90170664
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127452674056125916, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 4.690013
+      value: 4.655409
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.6900127
+      value: 1.6554086
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.0864537
+      value: 3.12773
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.7161344
+      value: 1.8193245
       objectReference: {fileID: 0}
     - target: {fileID: 5362403209802887317, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10060,11 +10100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.7944925
+      value: 3.9996905
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.862995
+      value: 1.9997938
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
