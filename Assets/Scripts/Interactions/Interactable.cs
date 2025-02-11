@@ -131,6 +131,7 @@ public class Interactable : MonoBehaviour
             if (pickUpSounds != null && pickUpSounds.Length > 0 && audioPrefab != null) 
             {
                 AudioClip clip = pickUpSounds[Random.Range(0, pickUpSounds.Length)];
+                if (clip == null) return;
                 Instantiate(audioPrefab, transform.position, Quaternion.identity).PlayOneShot(clip, volume);
             }
         }
