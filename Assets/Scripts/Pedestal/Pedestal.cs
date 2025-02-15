@@ -12,6 +12,7 @@ public class Pedestal : Interactable
     [SerializeField] private Camera pedestalCamera;
     [SerializeField] private Light glowLight;
     [SerializeField] private Canvas pedestalInstructions;
+    [SerializeField] private Canvas inventoryCanvas;
     [SerializeField] private Renderer sarcophagusRenderer;
     [SerializeField] private Material cristalMaterial;
     [SerializeField] private float maxRotationX = 45;
@@ -206,6 +207,7 @@ public class Pedestal : Interactable
         lineRenderer.gameObject.SetActive(true);
         glowLight.gameObject.SetActive(true);
         pedestalInstructions.gameObject.SetActive(true);
+        inventoryCanvas.gameObject.SetActive(false);
 
         crosshairUI.gameObject.SetActive(false);
         playerUIInventory.SetActive(false);
@@ -216,6 +218,7 @@ public class Pedestal : Interactable
         pedestalCamera.gameObject.SetActive(false);
         glowLight.gameObject.SetActive(false);
         pedestalInstructions.gameObject.SetActive(false);
+        inventoryCanvas.gameObject.SetActive(true);
         playerUIInventory.SetActive(true);
         crosshairUI.gameObject.SetActive(true);
 

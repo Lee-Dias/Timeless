@@ -9437,6 +9437,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7703263656406108664, guid: 3e52a2a0e9f6644489a7df3774c7f3c3, type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1213707283}
+    - target: {fileID: 7703263656406108664, guid: 3e52a2a0e9f6644489a7df3774c7f3c3, type: 3}
       propertyPath: pedestalInstructions
       value: 
       objectReference: {fileID: 596544418}
@@ -10251,11 +10255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 1.4895998
+      value: 1.4918784
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 0.96879953
+      value: 0.97563523
       objectReference: {fileID: 0}
     - target: {fileID: 2127452674056125916, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_IsActive
@@ -10263,19 +10267,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 4.062335
+      value: 4.7050076
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.0623348
+      value: 1.7050073
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.172762
+      value: 3.19752
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.9319044
+      value: 1.9937997
       objectReference: {fileID: 0}
     - target: {fileID: 5362403209802887317, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10319,11 +10323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.9659414
+      value: 2.9937015
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.9772942
+      value: 1.3291342
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
