@@ -3763,7 +3763,7 @@ GameObject:
   - component: {fileID: 5903281517627826671}
   - component: {fileID: 4340490907250599054}
   - component: {fileID: 107584815211017352}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4207,7 +4207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addToInv: 0
   item: {fileID: 0}
-  interactOnce: 0
+  interactOnce: 1
   pickUpSounds:
   - {fileID: 8300000, guid: a803a75b0b2ea974299cfae706bf64d0, type: 3}
   volume: 0.75
@@ -5607,7 +5607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8037126037991833126}
   - component: {fileID: 7337392822005390645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

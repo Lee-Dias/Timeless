@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6919777368149227301}
   - component: {fileID: 2680520245913556982}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5388898627498257599}
   - component: {fileID: 8820687191659290745}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2888061129701167890}
   - component: {fileID: 4006398859296579143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7532410959490099546}
   - component: {fileID: 6661496531620381660}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8486646209468932634}
   - component: {fileID: 1327173203123774761}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542238701311384588}
   - component: {fileID: 13996005847783544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8092503724107454507}
   - component: {fileID: 2243551724671848295}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3788366046884284491}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RoomCollisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6790084199708275380}
   - component: {fileID: 5350360801539285782}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294839226148364581}
   - component: {fileID: 7316200644797442844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 38336092084365869}
   - component: {fileID: 907674348187557076}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5676085441324116907}
   - component: {fileID: 7463555701606445487}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6783681724625805114}
   - component: {fileID: 5193502342365319480}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coll (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

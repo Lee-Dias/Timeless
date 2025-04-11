@@ -17,10 +17,6 @@ using UnityEngine;
 /// </summary>
 public class PlayerInteractor : MonoBehaviour
 {
-    [Header("Interaction Settings")]
-    [Tooltip("Layer mask used to define which objects are interactable.")]
-    [SerializeField] private LayerMask interactablesLayerMask; // Defines which layers are interactable.
-
     [Tooltip("Maximum distance for interaction with objects.")]
     [SerializeField] private float interactionDistance = 2f; // Distance at which the player can interact with objects.
 
@@ -31,8 +27,10 @@ public class PlayerInteractor : MonoBehaviour
     [Tooltip("Enable this to display debug messages from this script in the Console.")]
     [SerializeField] private bool showDebugMessages = false; // Flag to enable or disable debug messages.
 
+    [SerializeField]
+    private LayerMask ignoreRayCastLayerMask;
+    [Space]
     [SerializeField, Tooltip("If enabled, debug messages will include the object's name as an identifier."), ShowIf(nameof(showDebugMessages))]
-
     private bool identifyObject = true; // Flag to include the object name in debug messages if debugging is enabled.
     private PlayerInputs playerInputs; // Reference to the PlayerInputs script to get player input.
     private CrosshairUI crosshair; // The crosshair UI component that will change size based on interaction availability.
@@ -66,8 +64,11 @@ public class PlayerInteractor : MonoBehaviour
         // Default action: Shrink the crosshair if no interaction happens.
         bool shouldGrowCrosshair = false;
 
+        // Combine the interactables layer mask with the ignore raycast layer mask to exclude ignored layers.
+        int combinedLayerMask = ~ignoreRayCastLayerMask;
+
         // Raycast to check if there is an interactable object in front of the player.
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, interactionDistance, interactablesLayerMask))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, interactionDistance, combinedLayerMask))
         {
             Interactable interactable = hit.transform.GetComponent<Interactable>(); // Get the Interactable component.
 

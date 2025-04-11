@@ -7413,12 +7413,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958a0c7b2d234cd4889a1e7ce0243dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactablesLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
   interactionDistance: 2
   crosshairPrefab: {fileID: 5966336692137408965, guid: 11366e3cc2883b340a3d39c32321558b, type: 3}
   showDebugMessages: 0
+  ignoreRayCastLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
   identifyObject: 0
 --- !u!4 &1722545073
 Transform:
@@ -9436,6 +9436,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7533393425562628912, guid: 3e52a2a0e9f6644489a7df3774c7f3c3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7703263656406108664, guid: 3e52a2a0e9f6644489a7df3774c7f3c3, type: 3}
       propertyPath: inventoryCanvas
       value: 
@@ -9640,6 +9644,10 @@ PrefabInstance:
     - target: {fileID: 6252535479069895959, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
       propertyPath: m_Name
       value: PreHistoricCorner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6478269567682835404, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7080638916006362494, guid: 96eefeca04029704d9af635d36c87cf1, type: 3}
       propertyPath: onTakeItem.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -10255,11 +10263,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 1.4918784
+      value: 1.4770491
       objectReference: {fileID: 0}
     - target: {fileID: 518719443853236092, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 0.97563523
+      value: 0.93114734
       objectReference: {fileID: 0}
     - target: {fileID: 2127452674056125916, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_IsActive
@@ -10267,19 +10275,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 4.7050076
+      value: 4.648089
       objectReference: {fileID: 0}
     - target: {fileID: 4870976181564681568, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.7050073
+      value: 1.6480889
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 3.19752
+      value: 3.009598
       objectReference: {fileID: 0}
     - target: {fileID: 4926463138574268965, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.9937997
+      value: 1.5239952
       objectReference: {fileID: 0}
     - target: {fileID: 5362403209802887317, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10323,11 +10331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Range
-      value: 2.9937015
+      value: 2.6267717
       objectReference: {fileID: 0}
     - target: {fileID: 7266160779495539259, guid: bc7c5216c0748394c9553cf45a3f25f6, type: 3}
       propertyPath: m_Intensity
-      value: 1.3291342
+      value: 1.0845145
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

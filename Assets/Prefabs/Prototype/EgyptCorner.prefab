@@ -3730,7 +3730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6299375229743493963}
   - component: {fileID: 7620028830744713222}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4345,7 +4345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9115018874514234287}
   - component: {fileID: 9182862500289152702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16745,6 +16745,7 @@ MonoBehaviour:
   pedestalCamera: {fileID: 8197860727875478729}
   glowLight: {fileID: 2907128083557642103}
   pedestalInstructions: {fileID: 0}
+  inventoryCanvas: {fileID: 0}
   sarcophagusRenderer: {fileID: 2692549014257964583}
   cristalMaterial: {fileID: 2100000, guid: 12dedaeafda9b1844bf92d4e83cd7648, type: 2}
   maxRotationX: 25

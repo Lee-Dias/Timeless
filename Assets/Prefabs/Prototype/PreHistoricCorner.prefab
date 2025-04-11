@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 1392137897060807863}
   - component: {fileID: 2120298613476076631}
   - component: {fileID: 8377432993541980767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: logs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2413,7 +2413,7 @@ GameObject:
   - component: {fileID: 8544247081020630398}
   - component: {fileID: 5520396067442462853}
   - component: {fileID: 8627577775549044506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: prehistoricTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3955,7 +3955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7394802876397597385, guid: af0acb802a938864587b92edad431275, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.977
+      value: -4.171
       objectReference: {fileID: 0}
     - target: {fileID: 7394802876397597385, guid: af0acb802a938864587b92edad431275, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3963,7 +3963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7394802876397597385, guid: af0acb802a938864587b92edad431275, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.506
+      value: 2.353
       objectReference: {fileID: 0}
     - target: {fileID: 7394802876397597385, guid: af0acb802a938864587b92edad431275, type: 3}
       propertyPath: m_LocalRotation.w

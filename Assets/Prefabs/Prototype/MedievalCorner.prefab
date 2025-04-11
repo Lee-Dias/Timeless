@@ -755,8 +755,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0001, y: 0.01, z: 0.008}
-  m_Center: {x: 0, y: 0.0084, z: 0}
+  m_Size: {x: 0.0018429381, y: 0.017277855, z: 0.007301174}
+  m_Center: {x: 0, y: 0.0047610714, z: 0}
 --- !u!114 &2581333013695571538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,7 +2214,7 @@ GameObject:
   - component: {fileID: 8826385932928118551}
   - component: {fileID: 8141634724186590947}
   - component: {fileID: 3184743045660176299}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: drawer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2522,7 +2522,7 @@ GameObject:
   - component: {fileID: 2849822063058009857}
   - component: {fileID: 3026201820781606609}
   - component: {fileID: 129655064410737431}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: medievalTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3027,7 +3027,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6520457563199791340}
-  m_Layer: 0
+  - component: {fileID: 4532845386335656305}
+  m_Layer: 7
   m_Name: ArmorNew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3053,6 +3054,27 @@ Transform:
   - {fileID: 2070281319686903612}
   m_Father: {fileID: 8138189126286767188}
   m_LocalEulerAnglesHint: {x: 0, y: 133.02, z: 0}
+--- !u!65 &4532845386335656305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8407846884021313215}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 103.82909, y: 258.06424, z: 126.91195}
+  m_Center: {x: -13.5350065, y: 116.185524, z: 1.830088}
 --- !u!1 &8664418519099590718
 GameObject:
   m_ObjectHideFlags: 0
