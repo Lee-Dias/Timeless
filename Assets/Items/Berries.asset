@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b1707758307994294ca3ff3dcb8da7, type: 3}
+  m_Name: Berries
+  m_EditorClassIdentifier: 
+  ID: 1
+  Icon: {fileID: 21300000, guid: df0aa18ffe997ec4aac9ae2609d3d773, type: 3}
+  Name: Berries
+  era: 0
+  Prefab: {fileID: 8734415776421872286, guid: 15a3f4523a4c75c4fb9504ee6447b31e, type: 3}
+  heightWhenPlacedY: 0
+  Puzzlenumber: 1
